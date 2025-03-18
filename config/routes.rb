@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'steps/completed'
+  get 'careers/show'
+  get 'careers/create'
+  get 'favorites/create'
+  get 'psy_profiles/show'
+  get 'jobs/show'
+  get 'answers/new'
+  get 'answers/create'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

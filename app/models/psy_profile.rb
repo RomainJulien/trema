@@ -1,0 +1,2 @@
+class PsyProfile < ApplicationRecord
+end
