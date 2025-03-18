@@ -31,7 +31,8 @@ end
     #longitude: Faker::Address.longitude,
     evaluation_completed: false
   )
-  # user.avatar.attach()
+  file = URI.parse("https://tse4.mm.bing.net/th?id=OIP.ry0FnYNVVc6OOFGJhoPRKAHaI0&pid=Api").open
+  user.photo.attach(io: file, filename: "avatar", content_type: "image/png")
 end
 
 
