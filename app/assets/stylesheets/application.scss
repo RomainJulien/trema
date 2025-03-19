@@ -7,14 +7,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+@import "config/variables";
+
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
-@import "header";
-
-body {
-  background: linear-gradient(to bottom, rgba(255, 159, 111, 0) 0%, #FF9F6F 100%);
-  min-height: 100vh;
-  margin: 0;
-}
+@import "components/header";
+@import "pages/home";
