@@ -7,7 +7,10 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_many :answers, dependent: :destroy
-  belongs_to :psy_profile
+  
+
+
+  belongs_to :psy_profile, optional: true
   has_many :favorites, dependent: :destroy
   has_one :career, dependent: :destroy
 
