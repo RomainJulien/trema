@@ -1,14 +1,31 @@
-// Specific CSS for your home-page
+
+// Styles globaux
+* {
+  font-family: $font-primary;
+}
+
+body {
+  background: $primary-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  overflow: hidden; // Empêche le dépassement des éléments
+  text-align: center;
+}
+
 .homepage-header {
   text-align: center;
-  margin-top: 50px;
+  position: absolute;
+  top: 27px;
+  left: 209px;
 }
 
 h1 {
   font-size: 64px;
-  font-weight: 600;
-  top: 48px;
-  left: 251px;
+  font-weight: 900;
   color: #1E1E1E;
   line-height: 1.2;
 }
@@ -28,37 +45,139 @@ h1 {
      2px  2px 0 #DA4167;
 }
 
+// Box Designs
 .box1 {
-  width: 1213px; /* Match Figma width */
-  height: 300px; /* Match Figma height */
-  background-color: #FF9F6F; /* Figma color */
-  border-radius: 12px; /* Rounded corners */
+    position: absolute;
+    top: 20vh;
+    bottom: auto;
+    right: 20vw;
+    width: 100vw;
+    height: 50vh; // Ajustement pour atteindre le bas du rectangle
+    background: #FF9F6F;
+    border-radius: 15px;
+    z-index: 1; // Au-dessus du background
+}
+
+.znenflow1-img {
   position: absolute;
-  top: 390px; /* Adjust based on placement */
-  left: -73px; /* Adjust based on placement */
-  z-index: -1; /* Behind content if necessary */
+  width: 1046.29px;
+  height: 92.1px;
+  top: -690px;
+  left: 7332px;
+  object-fit: contain;
+  z-index: 2;
 }
 
 .box2 {
-  width: 1213px; /* Placeholder width (adjust as needed) */
-  height: 300px; /* Placeholder height (adjust as needed) */
-  background-color: #FFAB5B; /* Figma color */
-  border-radius: 12px; /* Rounded corners */
   position: absolute;
-  top: 500px; /* Adjust as needed */
-  right: -73px; /* Adjust as needed */
-  z-index: -1; /* Behind content */
+  top: auto;
+  bottom: 0;
+  right: 0;
+  width: 90vw;
+  height: 50vh; // Ajustement pour atteindre le bas de la page
+  background: #FFAB5B;
+  border-radius: 15px;
+  z-index: 2;
 }
 
+.zenflow-img {
+  position: absolute;
+  width: 1046.29px;
+  height: 92.1px;
+  top: 743px;
+  left: 767px;
+  object-fit: contain; // Ensures the image maintains proportions
+  z-index: 2; // Adjust layering as needed
+}
+
+
+// Text Blocks
 .text1 {
-  font-size: 25px; /* Adjust if needed */
+  font-size: 25px;
   font-weight: normal;
-  color: #F6F6F6; /* Light gray from Figma */
-  width: 949px; /* Set width */
-  height: 100px; /* Set height */
-  opacity: 1; /* 100% opacity */
+  font-family: 'Chillax', sans-serif;
+  color: #F6F6F6;
+  width: 949px;
+  height: 100px;
+  opacity: 1;
   text-align: center;
   position: absolute;
-  top: 352px; /* From Figma */
-  left: 436px; /* From Figma */
+  top: 352px;
+  left: 436px;
+  z-index: 3;
+}
+
+.text2 {
+  font-size: 32px;
+  font-weight: normal;
+  font-family: 'Chillax', sans-serif;
+  color: #F6F6F6;
+  width: 775px;
+  height: 90px;
+  opacity: 1;
+  text-align: center;
+  position: absolute;
+  top: 489px;
+  left:171px;
+  z-index: 3;
+}
+
+// CTA Button
+.aide-btn {
+  display: inline-block;
+  background: #7EBDC2; // Couleur du bouton depuis Figma
+  color: #FFFFFF; // Couleur du texte (blanc)
+  font-family: $font-primary;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 15px 170px;
+  border-radius: 12px;
+  border: 2px solid #F0F0F6; // Couleur du contour
+  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2); // Effet d’ombre intérieure
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  z-index: 3;
+
+  &:hover {
+    background: darken(#7EBDC2, 10%); // Légèrement plus foncé au hover
+    transform: scale(1.05); // Effet zoom au survol
+  }
+  &:active {
+    background: darken(#7EBDC2, 15%); // Encore plus foncé au clic
+    transform: scale(0.95);
+  }
+}
+
+// Secondary Button (Disabled)
+button[disabled] {
+  display: inline-block;
+  width: 493px;
+  height: 91px;
+  background-color: #DA4167;
+  color: #F6F6F6;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 91px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid #F6F6F6;
+  position: absolute;
+  top: 822px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: not-allowed;
+  opacity: 0.8;;
+  z-index: 4;
+
+  &:hover {
+    background: darken(#7EBDC2, 10%); // Légèrement plus foncé au hover
+    transform: scale(1.05); // Effet zoom au survol
+  }
+
+  &:active {
+    background: darken(#7EBDC2, 15%); // Encore plus foncé au clic
+    transform: scale(0.95);
+  }
 }

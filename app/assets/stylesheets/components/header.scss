@@ -1,0 +1,19 @@
+// Trema Logo - Positioned on the Left
+.trema-logo {
+  position: absolute;
+  width: 200px; // Adjust size as needed
+  height: auto;
+  top: 20px;
+  left: 30px; // Position at the top-left corner
+  z-index: 10; // Ensures it's above other elements
+}
+
+// Company Logo - Positioned on the Right
+.company-logo {
+  position: absolute;
+  width: 80px; // Adjust size as needed
+  height: auto;
+  top: 20px;
+  right: 30px; // Position at the top-right corner
+  z-index: 10;
+}
