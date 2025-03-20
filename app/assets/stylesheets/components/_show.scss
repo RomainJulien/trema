@@ -9,17 +9,17 @@ $font-primary: 'Chillax', sans-serif;
   font-family: $font-primary;
 }
 
-body {
-  background: $primary-bg;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  position: relative;
+//body {
+//  background: $primary-bg;
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//  height: 100vh;
+//  margin: 0;
+ /*  position: relative;
   overflow: hidden;
-  text-align: center;
-}
+  text-align: center; */
+//}
 
 .rectangle-left {
   position: absolute;

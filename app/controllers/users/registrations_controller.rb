@@ -11,8 +11,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    raise
-    super
+    @user = User.create(user_params)
+    sign_in(@user)
+    params[:user][:answers].each do |key, value|
+      #JE RECUPERE LE NOMBRE DANS KEY
+      question_number = key.gsub("answer_","")[0].to_i
+      #JE RECUPERE LA REPONSE DANS VALUE
+      answer_number = value.to_i
+      unless question_number.nil? || answer_number.nil?
+        #JE CREE UNE REPONSE AVEC LE NOMBRE ET LA REPONSE
+        answer = Answer.new(question_number: question_number, answer_number: answer_number)
+        #JE L'ASSOCIE A L'UTILISATEUR
+        answer.user = current_user
+        #JE SAUVEGARDE
+        answer.save
+      end
+    end
+    redirect_to psy_profile_path(@user)
   end
 
   # GET /resource/edit
@@ -44,6 +59,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :address, answers: []])
   end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :address, :email, :password, :password_confirmation)
+  end
+
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
