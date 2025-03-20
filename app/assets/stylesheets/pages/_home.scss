@@ -7,10 +7,11 @@
 body {
   background: $primary-bg;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Permet aux éléments de se stacker verticalement */
+  justify-content: flex-start; /* Ajuste pour commencer en haut */
   align-items: center;
-  
 }
+
 
 .homepage-header {
   text-align: center;
