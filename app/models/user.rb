@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_many :answers, dependent: :destroy
-  
 
+  #has_one :psy_profile
 
   belongs_to :psy_profile, optional: true
   has_many :favorites, dependent: :destroy
@@ -17,4 +17,9 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :address, presence: true
+
+  def update_profile_psy
+    self.psy_profile_id = PsyProfile.find_by(name: "Creatif et innovant")&.id
+    save
+  end
 end

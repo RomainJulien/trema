@@ -27,7 +27,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
         answer.save
       end
     end
-    redirect_to psy_profile_path(@user)
+    @user.update_profile_psy
+    redirect_to psy_profile_path(@user.psy_profile_id)
   end
 
   # GET /resource/edit
