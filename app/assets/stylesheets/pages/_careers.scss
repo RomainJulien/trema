@@ -1,0 +1,99 @@
+.career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 100px 0 50px; /* Ajusté pour retirer le padding latéral */
+  width: 100%;
+}
+
+/* Conteneur du métier */
+.career-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ajuste l'espacement */
+  width: 100%;
+  min-height: 250px;
+  overflow: hidden;
+  padding: 0 5vw; /* Assure un petit padding intérieur pour éviter trop de collage */
+}
+
+/* Alternance des positions */
+.career-item.left {
+  flex-direction: row;
+}
+
+.career-item.right {
+  flex-direction: row-reverse;
+}
+
+/* Rectangle de fond */
+.career-bg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50vw; /* Largeur ajustée pour coller aux bords */
+  height: 80%;
+  border-radius: 0; /* Supprime les bords arrondis pour coller */
+  z-index: -1;
+}
+
+/* Couleur des rectangles */
+.career-item.left .career-bg {
+  left: 0;
+  background: #FF9F6F;
+}
+
+.career-item.right .career-bg {
+  right: 0;
+  background: #FFAB5B;
+}
+
+/* Contenu du métier */
+.career-content {
+  flex: 1;
+  padding: 20px;
+  z-index: 1;
+}
+
+/* Image */
+.career-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.career-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des textes */
+h3 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+p {
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Bouton */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  background: #33b5e5;
+  color: white;
+  transition: background 0.3s;
+
+  &:hover {
+    background: #0288d1;
+  }
+}

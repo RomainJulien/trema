@@ -7,14 +7,15 @@
 body {
   background: $primary-bg;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Permet aux éléments de se stacker verticalement */
+  justify-content: flex-start; /* Ajuste pour commencer en haut */
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Permet le scroll si nécessaire */
   margin: 0;
   position: relative;
-  overflow: hidden; // Empêche le dépassement des éléments
-  text-align: center;
+  overflow-x: hidden; /* Cache uniquement le débordement horizontal */
 }
+
 
 .homepage-header {
   text-align: center;
