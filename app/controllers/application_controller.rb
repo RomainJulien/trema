@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
  # before_action :authenticate_user!
+=======
+  #before_action :authenticate_user!
+>>>>>>> 227179f1c586d9beb11fa068424846590ef73910
 
   protected
 

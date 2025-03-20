@@ -12,20 +12,20 @@ $font-primary: 'Chillax', sans-serif;
 body {
   background: $primary-bg;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Permet aux éléments de se stacker verticalement */
+  justify-content: flex-start; /* Ajuste pour commencer en haut */
   align-items: center;
-  height: 100vh;
+  min-height: 100vh; /* Permet le scroll si nécessaire */
   margin: 0;
   position: relative;
-  overflow: hidden;
-  text-align: center;
+  overflow-x: hidden; /* Cache uniquement le débordement horizontal */
 }
 
 .rectangle-left {
   position: absolute;
   top: 20vh;
   bottom: auto;
-  right: 20vw;
+  right: 30vw;
   width: 100vw;
   height: 50vh;
   background: #FF9F6F;
