@@ -15,7 +15,7 @@
   width: 100%;
   min-height: 250px;
   overflow: hidden;
-  padding: 0 5vw; /* Assure un petit padding intérieur pour éviter trop de collage */
+  padding: 0;
 }
 
 /* Alternance des positions */
@@ -32,20 +32,24 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50vw; /* Largeur ajustée pour coller aux bords */
-  height: 80%;
-  border-radius: 0; /* Supprime les bords arrondis pour coller */
+  height: 100%;
+  border-radius: 0;
   z-index: -1;
 }
 
-/* Couleur des rectangles */
+/* 🔹 RECTANGLES À GAUCHE - COLLE AU BORD GAUCHE */
 .career-item.left .career-bg {
   left: 0;
+  width: 100vw; /* Assure que ça touche complètement la gauche */
+  max-width: 75%; /* Ajuste pour éviter qu'il dépasse trop */
   background: #FF9F6F;
 }
 
+/* 🔹 RECTANGLES À DROITE - COLLE AU BORD DROIT */
 .career-item.right .career-bg {
   right: 0;
+  width: 100vw; /* Assure que ça touche complètement la droite */
+  max-width: 75%; /* Ajuste pour éviter qu'il dépasse trop */
   background: #FFAB5B;
 }
 
@@ -92,8 +96,8 @@ p {
   background: #33b5e5;
   color: white;
   transition: background 0.3s;
+}
 
-  &:hover {
-    background: #0288d1;
-  }
+.btn-primary:hover {
+  background: #0288d1;
 }
