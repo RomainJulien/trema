@@ -10,10 +10,6 @@ body {
   flex-direction: column; /* Permet aux éléments de se stacker verticalement */
   justify-content: flex-start; /* Ajuste pour commencer en haut */
   align-items: center;
-  min-height: 100vh; /* Permet le scroll si nécessaire */
-  margin: 0;
-  position: relative;
-  overflow-x: hidden; /* Cache uniquement le débordement horizontal */
 }
 
 
