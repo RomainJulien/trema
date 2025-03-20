@@ -1,0 +1,124 @@
+/* Job Description Wrapper */
+.job-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  position: relative; /* Ensure stacking context */
+}
+
+/* Background Rectangle */
+.job-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 80%;
+  background: #FF9F6F;
+  z-index: 1; /* Ensure it does not overlap title and image */
+}
+
+/* Image Container */
+.job-image-container {
+  position: relative; /* Needed to ensure proper stacking */
+  z-index: 3; /* Bring it in front of background and sections */
+  text-align: center;
+}
+
+/* Title Styling */
+.job-title {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #DA4167,
+     2px -2px 0 #DA4167,
+    -2px  2px 0 #DA4167,
+     2px  2px 0 #DA4167;
+  position: relative;
+  z-index: 4; /* Make sure title is visible above all elements */
+  margin-bottom: 20px;
+}
+
+/* Image Styling */
+.image_ebeniste {
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+  position: relative;
+  z-index: 4; /* Bring image in front of sections */
+}
+
+/* Job Section Styling */
+.description, .compet, .format, .amour {
+  display: flex;
+  flex-direction: column; /* Ensures title stays above text */
+  align-items: center; /* Centers title and text */
+  justify-content: center;
+  padding: 60px 5vw; /* Increased vertical padding to make sections larger */
+  min-height: 350px; /* Increased height */
+  width: 70%; /* Reduced width to make sections less wide */
+  text-align: center;
+  border-radius: 15px; /* Adds rounded corners */
+  margin: 0 auto; /* Centers the divs horizontally */
+}
+
+/* Ensures the text does not align next to each other */
+.description p, .compet p, .format p, .amour p {
+  width: 80%; /* Restricts width to avoid text spreading horizontally */
+  text-align: justify;
+}
+
+/* Alternating Sections */
+.description, .format {
+  background: #FF9F6F;
+  width: 70%;
+}
+
+.compet, .amour {
+  background: #FFAB5B;
+  width: 70%;
+}
+
+/* Styling for Titles and Paragraphs */
+h2 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 15px; /* Adds spacing below title */
+}
+
+p {
+  color: #fff;
+  margin: 10px 0;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+/* Button */
+.btn-primary {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #7EBDC2;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background: darken(#7EBDC2, 10%);
+  transform: scale(1.05);
+}
