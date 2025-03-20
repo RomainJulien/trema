@@ -17,4 +17,24 @@
 @import "pages/home";
 
 @import "components/show";
+@import "pages/careers";
 
+@font-face {
+  font-family: 'Chillax';
+  src: url(asset-path('Chillax-Regular.woff2')) format('woff2'),
+       url(asset-path('Chillax-Regular.woff')) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url(asset-path('Chillax-Bold.woff2')) format('woff2'),
+       url(asset-path('Chillax-Bold.woff')) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Chillax', sans-serif;
+}

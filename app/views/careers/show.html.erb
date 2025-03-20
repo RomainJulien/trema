@@ -1,2 +1,15 @@
-<h1>Careers#show</h1>
-<p>Find me in app/views/careers/show.html.erb</p>
+<div class="career-list">
+  <% @careers.each_with_index do |career, index| %>
+    <div class="career-item <%= index.even? ? 'left' : 'right' %>">
+      <div class="career-bg"></div>
+      <div class="career-content">
+        <h3><%= career[:title] %></h3>
+        <p><%= career[:description] %></p>
+        <a href="#" class="btn btn-primary">Regarder la vidéo</a>
+      </div>
+      <div class="career-image-container">
+        <img src="<%= asset_path(career[:image_url]) %>" alt="<%= career[:title] %>" class="career-image">
+      </div>
+    </div>
+  <% end %>
+</div>
