@@ -1,22 +1,15 @@
-<div class="background-wrapper">
-  <div class="rectangle-left"></div>
-  <div class="rectangle-right"></div>
-
-  <!-- Logo Manuel placé ici dans le background -->
-  <div class="logo-container">
-    <img src="<%= asset_path 'manuel.png' %>" alt="Logo Manuel">
-  </div>
-
-  <div class="container">
-    <h1>Tu es <span class="highlight"><%= @psy_profile.name %></span> !</h1>
-
-    <div class="description-container">
-      <p class="description"><%= @psy_profile.description %></p>
+<div class="career-list">
+  <% @careers.each_with_index do |career, index| %>
+    <div class="career-item <%= index.even? ? 'left' : 'right' %>">
+      <div class="career-bg"></div>
+      <div class="career-content">
+        <h3><%= career[:title] %></h3>
+        <p><%= career[:description] %></p>
+        <a href="#" class="btn btn-primary">Regardez ce metier</a>
+      </div>
+      <div class="career-image-container">
+        <img src="<%= asset_path(career[:image_url]) %>" alt="<%= career[:title] %>" class="career-image">
+      </div>
     </div>
-
-    <div class="cta-container">
-      <p class="cta-text">Enregistre-toi pour découvrir ton métier !</p>
-      <%= link_to "Poursuivre", "#", class: "button" %>
-    </div>
-  </div>
+  <% end %>
 </div>
