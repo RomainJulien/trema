@@ -1,41 +1,51 @@
-
-// Styles globaux
+/* Global Styles */
 * {
   font-family: $font-primary;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   background: $primary-bg;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  position: relative;
-  overflow: hidden; // Empêche le dépassement des éléments
+  min-height: 100vh;
   text-align: center;
+  overflow-x: hidden;
+  padding: 20px;
+  position: relative;
 }
 
-.homepage-header {
-  text-align: center;
-  position: absolute;
-  top: 27px;
-  left: 209px;
+.background-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 
 h1 {
-  font-size: 64px;
+  font-size: clamp(32px, 6vw, 64px);
   font-weight: 900;
   color: #1E1E1E;
   line-height: 1.2;
-}
-
-.highlight {
-  color: #FF9F6F;
+  margin-top: 20px;
+  position: relative;
+  z-index: 3;
 }
 
 .stress {
-  font-size: 64px;
+  font-size: clamp(32px, 6vw, 64px);
   font-weight: 900;
   color: #7EBDC2;
   text-shadow:
@@ -45,139 +55,137 @@ h1 {
      2px  2px 0 #DA4167;
 }
 
-// Box Designs
+/* Box 1 directly under title */
 .box1 {
-    position: absolute;
-    top: 20vh;
-    bottom: auto;
-    right: 20vw;
-    width: 100vw;
-    height: 50vh; // Ajustement pour atteindre le bas du rectangle
-    background: #FF9F6F;
-    border-radius: 15px;
-    z-index: 1; // Au-dessus du background
+  position: absolute;
+  top: 20vh;
+  right: 30vw;
+  width: 80vw;
+  height: 45vh;
+  background: #FF9F6F;
+  border-radius: 15px;
+  z-index: 1;
 }
 
+/* Box 2 positioned at the bottom */
+.box2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80vw;
+  height: 45vh;
+  background: #FFAB5B;
+  border-radius: 15px;
+  z-index: 1;
+}
+
+/* Text 1: Center to right, slightly lower than box1 */
+.text1 {
+  font-size: clamp(20px, 3vw, 30px);
+  font-family: 'Chillax', sans-serif;
+  font-weight: bold;
+  color: #F6F6F6;
+  width: 120%;
+  max-width: 1100px;
+  text-align: right;
+  position: absolute;
+  top: 23vh;
+  left: 50%;
+  transform: translateX(-25%);
+  z-index: 3;
+}
+
+/* Text 2: Starts from 1/4 of the page to the center, slightly lower than text1 */
+.text2 {
+  font-size: clamp(20px, 3vw, 30px);
+  font-family: 'Chillax', sans-serif;
+  font-weight: 20;
+  color: #F6F6F6;
+  width: 110%;
+  max-width: 1000px;
+  text-align: left;
+  position: absolute;
+  top: 38vh;
+  left:-5%;
+  transform: translateX(-10%);
+  z-index: 3;
+}
+
+/* Zenflow(1) on the left, 1/4 outside page, aligned with text1 */
 .znenflow1-img {
   position: absolute;
-  width: 1046.29px;
-  height: 92.1px;
-  top: -690px;
-  left: 7332px;
+  width: 700px;
+  height: auto;
+  top: 23vh;
+  left: -85%; /* 1/4 outside the page */
   object-fit: contain;
   z-index: 2;
 }
 
-.box2 {
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  right: 0;
-  width: 90vw;
-  height: 50vh; // Ajustement pour atteindre le bas de la page
-  background: #FFAB5B;
-  border-radius: 15px;
-  z-index: 2;
-}
-
-.zenflow-img {
-  position: absolute;
-  width: 1046.29px;
-  height: 92.1px;
-  top: 743px;
-  left: 767px;
-  object-fit: contain; // Ensures the image maintains proportions
-  z-index: 2; // Adjust layering as needed
-}
-
-
-// Text Blocks
-.text1 {
-  font-size: 25px;
-  font-weight: normal;
-  font-family: 'Chillax', sans-serif;
-  color: #F6F6F6;
-  width: 949px;
-  height: 100px;
-  opacity: 1;
-  text-align: center;
-  position: absolute;
-  top: 352px;
-  left: 436px;
-  z-index: 3;
-}
-
-.text2 {
-  font-size: 32px;
-  font-weight: normal;
-  font-family: 'Chillax', sans-serif;
-  color: #F6F6F6;
-  width: 775px;
-  height: 90px;
-  opacity: 1;
-  text-align: center;
-  position: absolute;
-  top: 489px;
-  left:171px;
-  z-index: 3;
-}
-
-// CTA Button
-.aide-btn {
-  display: inline-block;
-  background: #7EBDC2; // Couleur du bouton depuis Figma
-  color: #FFFFFF; // Couleur du texte (blanc)
-  font-family: $font-primary;
-  font-weight: 500;
-  font-size: 1.2rem;
-  padding: 15px 170px;
+/* Buttons stacked in center under each other lower on the page */
+.btn1 {
+  background: #7EBDC2;
+  color: #FFFFFF;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  padding: 20px 100px;
   border-radius: 12px;
-  border: 2px solid #F0F0F6; // Couleur du contour
-  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.2); // Effet d’ombre intérieure
+  border: 2px solid #F0F0F6;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
-  z-index: 3;
-
-  &:hover {
-    background: darken(#7EBDC2, 10%); // Légèrement plus foncé au hover
-    transform: scale(1.05); // Effet zoom au survol
-  }
-  &:active {
-    background: darken(#7EBDC2, 15%); // Encore plus foncé au clic
-    transform: scale(0.95);
-  }
+  width: 500px; /* Same width */
+  height: 100px;/* Same height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  position: absolute;
+  top:60vh;
+  left: 30%;
+  transform: translateX(-50%);
+  z-index: 5;
 }
 
-// Secondary Button (Disabled)
-button[disabled] {
-  display: inline-block;
-  width: 493px;
-  height: 91px;
-  background-color: #DA4167;
-  color: #F6F6F6;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 91px;
+.btn1:hover {
+  background: darken(#7EBDC2, 10%);
+  transform: scale(1.05);
+}
+
+.btn2 {
+  background: #DA4167;
+  color: #FFFFFF;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  padding: 20px 100px; /* Increased size */
   border-radius: 12px;
+  border: 2px solid #F0F0F6;
   text-decoration: none;
-  border: 2px solid #F6F6F6;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  width: 500px; /* Same width */
+  height: 100px;/* Same height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
   position: absolute;
-  top: 822px;
-  left: 50%;
+  top: 75vh;
+  left: 30%;
   transform: translateX(-50%);
-  cursor: not-allowed;
-  opacity: 0.8;;
-  z-index: 4;
+  z-index: 5;
+}
 
-  &:hover {
-    background: darken(#7EBDC2, 10%); // Légèrement plus foncé au hover
-    transform: scale(1.05); // Effet zoom au survol
-  }
+.btn2:hover {
+  background: darken(#DA4167,10%);
+  transform: scale(1.05);
+}
 
-  &:active {
-    background: darken(#7EBDC2, 15%); // Encore plus foncé au clic
-    transform: scale(0.95);
-  }
+/* Zenflow image aligned with first button, 1/4 outside right */
+.zenflow-img {
+  position: absolute;
+  width: 700px;
+  height: auto;
+  top: 60vh;
+  left: 110%;
+  object-fit: contain;
+  z-index: 2;
 }

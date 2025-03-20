@@ -4,9 +4,9 @@
   <div class="container">
     <div class="description-container">
 
-      <section class="homepage-header">
-        <h1>La reconversion,<br> mais sans <span class="stress">stress</span>.</h1>
-      </section>
+      <div>
+        <h1>La reconversion,<br> &nbsp;&nbsp;&nbsp;&nbsp;mais sans <span class="stress">stress</span>.</h1>
+      </div>
 
       <div>
         <%= image_tag("Zenflow (1).png", class: "znenflow1-img") %>
@@ -16,17 +16,29 @@
         <%= image_tag("Zenflow.png", class: "zenflow-img") %>
       </div>
 
+      <div>
       <p class="text1">
-        Que tu saches déjà où tu vas ou que tu sois complètement paumé, on est là pour te guider.
-      </p>
-
-      <p class="text2">
         Trema t’aide à trouver le métier qui te correspond et à franchir chaque étape, pas à pas.
       </p>
+      </div>
 
-      <%= link_to "Aide-moi à trouver !", new_answer_path, class: "aide-btn" %>
+      <div>
+      <p class="text2">
+        Que tu saches déjà où tu vas ou que tu sois complètement paumé, on est là pour te guider.
+      </p>
+      </div>
 
-      <button disabled>Je fonce !</button>
+      <div>
+      <%= link_to "Aide-moi à trouver !", new_answer_path, class: "btn1" %>
+      </div>
+
+      <div>
+        <p class="btn2">
+          Je fonce!
+        </p>
+      </div>
+
+      </div>
 
     </div>
   </div>
