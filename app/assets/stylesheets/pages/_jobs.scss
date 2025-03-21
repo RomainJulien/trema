@@ -112,12 +112,13 @@ p {
   margin: 10px 0;
 }
 
-.btn-container {
+.btn-links-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center; /* Ensures vertical centering if needed */
-  margin: 80px 0 50px; /* Increased top margin for more spacing */
-  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 80px auto 50px;
+  width: 80%;
+  max-width: 1200px;
   text-align: center;
 }
 
@@ -135,10 +136,8 @@ p {
   border: 2px solid #f6f6f6;
   transition: background 0.3s, transform 0.2s;
   justify-content: center;
-  align-items: center; /* Ensures vertical centering if needed */
-  margin: 80px 0 50px; /* Increased top margin for more spacing */
-  text-align: center;
-  margin: 0 auto; /* Centers button horizontally */
+  align-items: center;
+  margin: 0 auto;
 }
 
 
@@ -147,36 +146,32 @@ p {
   background: linear-gradient(45deg, #FF9F6F, #7EBDC2);
 }
 
-.voir-metiers-link {
-  display: inline-flex;
+.voir-metiers-link,
+.fiche_enregistrement-link {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   color: #DB4467;
-  gap: 8px; // space between text and image
+  gap: 8px;
   font-size: 1rem;
-
-  img {
-    height: 16px; // adjust size of the arrow image
-    width: auto;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
+  text-decoration: none;
+  justify-content: center;
 }
 
-.fiche_enregistrement-link {
-  display: inline-flex;
-  align-items: center;
-  color: #DB4467;
-  gap: 8px; // space between text and image
-  font-size: 1rem;
+.voir-metiers-link span,
+.fiche_enregistrement-link span {
+  margin-top: 5px;
+}
 
-  img {
-    height: 16px; // adjust size of the arrow image
-    width: auto;
-  }
+.voir-metiers-link img,
+.fiche_enregistrement-link img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
 
-  &:hover {
-    text-decoration: underline;
-  }
+.voir-metiers-link:hover,
+.fiche_enregistrement-link:hover {
+  text-decoration: underline;
+  height: 36px;
 }
