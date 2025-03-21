@@ -21,7 +21,7 @@
         <h2 class="dashboard-section-title">Mon profil de reconversion</h2>
         <div class="dashboard-profile-box">
           <p class="dashboard-profile-title">Manuel(le) et Concret(e)</p>
-          <a href="/users/sign_up" class="dashboard-quiz-btn">Je recommence le quiz</a>
+          <%= link_to "Revoir les métiers", psy_profile_path(current_user.psy_profile.id), class: "dashboard-quiz-btn" %>
         </div>
       </div>
 
