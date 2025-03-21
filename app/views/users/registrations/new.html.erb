@@ -1,9 +1,21 @@
-<h2>Mieux vous connaitre! C'est pas long pour de vrai....</h2>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 class="fs-1 m-5 p-2">Aide-nous à te connaitre! C'est pas long pour de vrai....</h2>
 
 
 
 
-<div>
+<div class="m-5 p-2">
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html:{novalidate: false}) do |f| %>
   <%= f.error_notification %>
 
@@ -34,10 +46,13 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+<br>
+<br>
+  <div class="form-actions btn-primary">
+    <%= f.button :submit, "Poursuivre" %>
   </div>
 <% end %>
 </div>
+
+
 <%#= render "devise/shared/links" %>

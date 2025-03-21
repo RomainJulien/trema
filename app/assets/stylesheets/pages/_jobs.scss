@@ -108,17 +108,19 @@ p {
 .btn-primary {
   display: inline-block;
   padding: 15px 30px;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
   text-decoration: none;
   color: #fff;
-  background: #7EBDC2;
+  background: linear-gradient(45deg, #7EBDC2, #FF9F6F);
+  border: 2px solid #f6f6f6;
   transition: background 0.3s, transform 0.2s;
 }
 
+
 .btn-primary:hover {
-  background: darken(#7EBDC2, 10%);
   transform: scale(1.05);
+  background: linear-gradient(45deg, #FF9F6F, #7EBDC2);
 }
