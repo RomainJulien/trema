@@ -1,24 +1,22 @@
-<%= stylesheet_link_tag "start", media: "all" %>
-
-<div class="background-wrapper">
-  <div class="rectangle-left"></div>
-  <div class="rectangle-right"></div>
+<div class="start-background-wrapper">
+  <div class="start-rectangle-left"></div>
+  <div class="start-rectangle-right"></div>
 
   <!-- Logo Manuel placé ici dans le background -->
-  <div class="logo-container">
-    <img src="<%= asset_path 'manuel.png' %>" alt="Logo Manuel">
+  <div class="start-logo-container">
+    <img src="<%= asset_path 'default_profile.png' %>" alt="Logo Manuel">
   </div>
 
-  <div class="container">
-    <h1>Tu es <span class="highlight"><%= @psy_profile.name %></span> !</h1>
+  <div class="start-container">
+    <h1>Tu es <span class="start-highlight"><%= @psy_profile.name %></span> !</h1>
 
-    <div class="description-container">
-      <p class="description"><%= @psy_profile.description %></p>
+    <div class="start-description-container">
+      <p class="start-description"><%= @psy_profile.description %></p>
     </div>
 
-    <div class="cta-container">
-      <p class="cta-text">Découvrir ton futur métier !</p>
-        <%= link_to "Poursuivre", psy_profile_path(profile), class: "button" %>
+    <div class="start-cta-container">
+      <p class="start-cta-text">Découvrir ton futur métier !</p>
+      <%= link_to "Poursuivre", psy_profile_path(@psy_profile.id), class: "start-button" %>
     </div>
   </div>
 </div>
