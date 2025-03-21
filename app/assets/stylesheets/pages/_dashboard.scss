@@ -1,13 +1,13 @@
 /* 🔹 Conteneur principal du Dashboard */
 .dashboard-container {
   width: 100%;
-  min-height: 100vh; /* 🔥 Prend 100% de la hauteur de l'écran */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 🔥 Évite l’espace blanc */
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(to bottom, #f8a055, #f7c27d); /* 🔥 Dégradé de fond */
+  background: linear-gradient(to bottom, #f8a055, #f7c27d);
 }
 
 /* 🔹 TITRE PRINCIPAL */
@@ -38,7 +38,7 @@
 /* 🔹 Ma carrière et Profil reconversion */
 .dashboard-career,
 .dashboard-profile,
-.dashboard-user { /* 🔥 Ajout de la section Profil */
+.dashboard-user {
   background: #ffcc80;
   padding: 15px;
   border-radius: 10px;
@@ -47,7 +47,7 @@
 
 .dashboard-career-box,
 .dashboard-profile-box,
-.dashboard-user-box { /* 🔥 Uniformisation */
+.dashboard-user-box {
   background: white;
   padding: 15px;
   border-radius: 10px;
@@ -56,7 +56,7 @@
 /* 🔹 TITRES */
 .dashboard-career-title,
 .dashboard-profile-title,
-.dashboard-user-box p strong { /* 🔥 Uniformisation des titres */
+.dashboard-user-box p strong {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
@@ -64,23 +64,22 @@
 
 /* 🔹 Style des labels (Nom, Email, Mot de passe) */
 .dashboard-user-box p {
-  color: #333; /* 🔥 Met le texte en noir pour qu'il soit visible */
+  color: #333;
   font-size: 1.2rem;
   font-weight: normal;
 }
 
-
 /* 🔹 Style des valeurs de l’utilisateur */
 .dashboard-user-box p span {
   font-weight: normal;
-  color: #555; /* 🔥 Texte légèrement plus clair */
+  color: #555;
   margin-left: 5px;
 }
 
 /* 🔹 Boutons */
 .dashboard-career-btn,
 .dashboard-quiz-btn,
-.dashboard-logout-btn { /* 🔥 Ajout du bouton de déconnexion */
+.dashboard-logout-btn {
   display: block;
   width: 100%;
   padding: 10px;
@@ -115,6 +114,8 @@
   background: #ffb74d;
   padding: 15px;
   border-radius: 10px;
+  text-align: center;
+  height: 20%;
 }
 
 /* 🔹 TITRE SECTIONS */
@@ -124,57 +125,47 @@
 }
 
 /* 🔹 Métiers enregistrés */
+/* 🔹 Conteneur principal des métiers enregistrés */
 .dashboard-jobs {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.dashboard-job-large,
-.dashboard-job-small {
-  position: relative;
-  padding: 15px;
-  border-radius: 10px;
-  text-align: center;
-  background: #ffcc80;
-  display: flex;
-  align-items: center; /* 🔥 Centrage vertical */
-  justify-content: flex-start; /* 🔥 Aligner le texte et l’image */
+  justify-content: center; /* ✅ Centre l'élément principal */
+  align-items: center;
   width: 100%;
+  max-width: 400px; /* ✅ Ajuste la largeur pour éviter un débordement */
+  margin: 0 auto;
 }
 
-.dashboard-job-small {
-  width: 45%;
+/* 🔹 Conteneur unique du métier en vedette */
+.dashboard-job-featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ✅ Centre l'image et le texte */
+  background: #ffcc80;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px; /* ✅ Ajuste la taille max */
+  text-align: center;
+  overflow: hidden; /* ✅ Empêche tout dépassement */
 }
 
-/* 🔹 Icônes et images des métiers */
-.dashboard-icon {
-  width: 50px;
-  height: 50px;
-  object-fit: contain;
-  border-radius: 5px;
-  margin-right: 10px;
+/* 🔹 Image du métier */
+.dashboard-job-featured-image {
+  width: 100%;
+  max-width: 300px; /* ✅ Taille max pour éviter l'énorme image */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover; /* ✅ Ajuste l’image sans la déformer */
 }
 
-/* 🔹 BOUTON FERMETURE */
-.dashboard-close-btn {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
+/* 🔹 Titre du métier */
+.dashboard-job-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
 }
 
-/* 🔹 Image des métiers */
-.dashboard-job-image {
-  width: 50px;
-  height: 50px;
-  object-fit: cover; /* 🔥 Ajuste l’image sans la déformer */
-  border-radius: 5px;
-  margin-right: 10px;
-}
 
 /* 🔹 Bouton "Se connecter" */
 .dashboard-login-btn {
@@ -188,11 +179,11 @@
   font-size: 1.2rem;
   color: white;
   text-align: center;
-  background: #42a5f5; /* Bleu */
+  background: #42a5f5;
   text-decoration: none;
   font-weight: bold;
 
   &:hover {
-    background: #1e88e5; /* Bleu plus foncé au survol */
+    background: #1e88e5;
   }
 }
