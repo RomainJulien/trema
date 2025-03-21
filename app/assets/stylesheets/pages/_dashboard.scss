@@ -1,0 +1,125 @@
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 🔹 TITRE PRINCIPAL */
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6f61;
+  text-align: left;
+}
+
+/* 🔹 SECTION PRINCIPALE */
+.dashboard-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* 🔹 BLOC GAUCHE */
+.dashboard-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40%;
+}
+
+/* 🔹 Ma carrière */
+.dashboard-career,
+.dashboard-profile {
+  background: #ffcc80;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.dashboard-career-box,
+.dashboard-profile-box {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.dashboard-career-title,
+.dashboard-profile-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 🔹 Boutons */
+.dashboard-career-btn,
+.dashboard-quiz-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.dashboard-career-btn {
+  background: #80cbc4;
+}
+
+.dashboard-quiz-btn {
+  background: #42a5f5;
+}
+
+/* 🔹 BLOC DROIT */
+.dashboard-right {
+  width: 55%;
+  background: #ffb74d;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* 🔹 TITRE SECTIONS */
+.dashboard-section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 🔹 Métiers enregistrés */
+.dashboard-jobs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dashboard-job-large,
+.dashboard-job-small {
+  position: relative;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  background: #ffcc80;
+  width: 100%;
+}
+
+.dashboard-job-small {
+  width: 45%;
+}
+
+.dashboard-icon {
+  font-size: 2rem;
+  display: block;
+}
+
+/* 🔹 BOUTON FERMETURE */
+.dashboard-close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
