@@ -1,11 +1,8 @@
 <div class="job-description">
-  <div class="job-bg"></div> <!-- Move background outside so it doesn't wrap content -->
-
-  <div class="job-image-container">
-    <div class="job-title">
-      Deviens <br>
-      <span class="stress">Ébéniste</span>
+  <div class="job-title">
+      Deviens <span class="stress">Ébéniste</span>
     </div>
+  <div class="job-image-container">
     <%= image_tag "ebeniste.png", alt: "ebeniste", class: "image_ebeniste" %>
   </div>
 </div>
@@ -57,6 +54,17 @@
   </p>
 </div>
 
-<div class="btn-primary">
+<%= link_to dashboard_path, class: "btn-primary logo-link" do %>
   Je démarre ma carrière
-</div>
+<% end %>
+
+<%= link_to psy_profile_path, class: "voir-metiers-link" do %>
+  <span>voir les métiers</span>
+  <%= image_tag "arrow-right.svg", alt: "flèche vers la droite" %>
+<% end %>
+
+
+<%= link_to dashboard_path, class: "fiche_enregistrement-link" do %>
+  <span>sauvegarder la fiche</span>
+  <%= image_tag "fich_enregistrement.svg", alt: "flèche vers la droite" %>
+<% end %>
