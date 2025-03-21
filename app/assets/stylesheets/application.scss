@@ -17,10 +17,9 @@
 @import "pages/home";
 
 
-@import "pages/jobs";
-@import "components/start";
 @import "pages/profile";
-
+@import "pages/jobs";
+@import "pages/start";
 
 @font-face {
   font-family: 'Chillax';
@@ -40,4 +39,5 @@
 
 body {
   font-family: 'Chillax', sans-serif;
+  background: linear-gradient(to bottom, #F9B872, #FF9F6F);
 }

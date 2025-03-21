@@ -1,79 +1,119 @@
-.career-list {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding: 100px 0 50px; /* Ajusté pour retirer le padding latéral */
-  width: 100%;
+/* 🔹 Appliquer ces styles uniquement à la page psy_profiles#show */
+/* 🔹 Appliquer ces styles uniquement à la page psy_profiles#show */
+.psy-profile-show {
+  .psy-profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 0 50px; /* Ajusté pour retirer le padding latéral */
+    width: 100%;
+  }
+
+  /* Conteneur du métier */
+  .psy-profile-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 250px;
+    padding: 0;
+}
+  /* Alternance des positions */
+  .psy-profile-item.left {
+    flex-direction: row;
+  }
+
+  .psy-profile-item.right {
+    flex-direction: row-reverse;
+  }
+
+  /* Rectangle de fond */
+  .psy-profile-bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+  }
+
+  /* 🔹 RECTANGLES À GAUCHE - COLLE AU BORD GAUCHE */
+  .psy-profile-item.left .psy-profile-bg {
+    left: 0;
+    width: 100vw;
+    max-width: 75%;
+    background: #FF9F6F;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
-/* Conteneur du métier */
-.career-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ajuste l'espacement */
-  width: 100%;
-  min-height: 250px;
-  overflow: hidden;
-  padding: 0;
+
+  /* 🔹 RECTANGLES À DROITE - COLLE AU BORD DROIT */
+  .psy-profile-item.right .psy-profile-bg {
+    right: 0;
+    width: 100vw;
+    max-width: 75%;
+    background: #FFAB5B;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
-/* Alternance des positions */
-.career-item.left {
-  flex-direction: row;
-}
-
-.career-item.right {
-  flex-direction: row-reverse;
-}
-
-/* Rectangle de fond */
-.career-bg {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  border-radius: 0;
-  z-index: -1;
-}
-
-/* 🔹 RECTANGLES À GAUCHE - COLLE AU BORD GAUCHE */
-.career-item.left .career-bg {
-  left: 0;
-  width: 100vw; /* Assure que ça touche complètement la gauche */
-  max-width: 75%; /* Ajuste pour éviter qu'il dépasse trop */
-  background: #FF9F6F;
-}
-
-/* 🔹 RECTANGLES À DROITE - COLLE AU BORD DROIT */
-.career-item.right .career-bg {
-  right: 0;
-  width: 100vw; /* Assure que ça touche complètement la droite */
-  max-width: 75%; /* Ajuste pour éviter qu'il dépasse trop */
-  background: #FFAB5B;
-}
-
-/* Contenu du métier */
-.career-content {
+.psy-profile-content {
   flex: 1;
   padding: 20px;
   z-index: 1;
 }
 
-/* Image */
-.career-image-container {
+/* 🔹 Ajustements pour que les images restent bien alignées dans les rectangles */
+.psy-profile-image-container {
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.career-image {
-  width: 300px;
-  height: 200px;
-  object-fit: cover;
+/* Ajustement des images pour qu'elles restent à l'intérieur des rectangles */
+.psy-profile-image {
+  width: 500px; /* Taille contrôlée */
+  height: 300px; /* Taille fixe */
+  object-fit: cover; /* Ajuste sans déformer */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* 🔹 Ajustement pour que les images soient bien à côté des rectangles */
+.psy-profile-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 250px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 🔹 Gérer l'alternance des images et du texte */
+.psy-profile-item.left {
+  flex-direction: row; /* Texte à gauche, image à droite */
+}
+
+.psy-profile-item.right {
+  flex-direction: row-reverse; /* Texte à droite, image à gauche */
+}
+
+
 
 /* Style des textes */
 h3 {
@@ -100,4 +140,74 @@ p {
 
 .btn-primary:hover {
   background: #0288d1;
+}
+}
+
+/* 🔹 HEADER - Rectangle de fond pour le titre */
+.psy-profile-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  width: 100%;
+  min-height: 250px;
+  margin-top: 50px; /* Espace entre le header et ce bloc */
+}
+
+/* 🔹 Rectangle de fond du HEADER (collé à droite) */
+.psy-profile-header .psy-profile-bg {
+  position: absolute;
+  top: 50%;
+  right: 0; /* Colle au bord droit */
+  width: 75vw; /* Largeur du rectangle */
+  height: 100%;
+  background: #7EBDC2;
+  transform: translateY(-50%);
+  z-index: -1;
+
+  /* 🔹 Bord arrondi UNIQUEMENT sur le côté gauche */
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 0px; /* Côté droit (collé) sans arrondi */
+  border-bottom-right-radius: 0px;
+
+  /* 🔹 Ajout de l'ombre portée */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* 🔹 Contenu du header (Titre + Description) */
+.psy-profile-header .psy-profile-content {
+  flex: 2;
+  text-align: left;
+  color: white;
+  padding: 20px;
+  padding-left: 50px; /* Décalage du texte pour ne pas toucher le bord */
+  z-index: 1; /* Devant le rectangle */
+}
+
+.psy-profile-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.psy-profile-header p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* 🔹 Logo */
+.psy-profile-header .psy-profile-logo {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  z-index: 1; /* Devant le rectangle */
+}
+
+.psy-profile-header .psy-profile-logo img {
+  max-height: 100px;
+
 }

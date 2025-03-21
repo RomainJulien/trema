@@ -92,5 +92,6 @@ JOBS.each do |job|
 end
 
 
+
 puts "✅ #{User.count} utilisateurs créés! 🎉"
 puts "✅ #{Job.count} fiches métiers créées avec succès ! 🥳"
