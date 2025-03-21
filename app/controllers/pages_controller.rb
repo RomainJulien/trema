@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def dashboard
+    @psy_profile = current_user.psy_profile
     @job_psy = [
       { title: "Ébéniste", image_url: "ebeniste.png" },
       { title: "Cuisinier", image_url: "cuisinier.png" },
