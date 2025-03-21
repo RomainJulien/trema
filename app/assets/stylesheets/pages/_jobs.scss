@@ -7,25 +7,22 @@
   padding: 50px 0;
   text-align: center;
   position: relative; /* Ensure stacking context */
-}
-
-/* Background Rectangle */
-.job-bg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50vw;
-  height: 80%;
-  background: #FF9F6F;
-  z-index: 1; /* Ensure it does not overlap title and image */
+  border-radius: 15px; /* Rounded corners for the container */
+  padding: 20px;
+  margin-top: 4%;
 }
 
 /* Image Container */
 .job-image-container {
-  position: relative; /* Needed to ensure proper stacking */
-  z-index: 3; /* Bring it in front of background and sections */
+  position: relative;
+  z-index: 3;
   text-align: center;
+  padding: 40px;
+  background: #7EBDC2; /* Ensures background covers the image */
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Title Styling */
@@ -38,9 +35,26 @@
      2px -2px 0 #DA4167,
     -2px  2px 0 #DA4167,
      2px  2px 0 #DA4167;
-  position: relative;
-  z-index: 4; /* Make sure title is visible above all elements */
-  margin-bottom: 20px;
+  position: absolute;
+  top: -30px; /* Moves the title above the container */
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.stress {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 900;
+  color: #7EBDC2;
+  text-shadow:
+    -2px -2px 0 #DA4167,
+     2px -2px 0 #DA4167,
+    -2px  2px 0 #DA4167,
+     2px  2px 0 #DA4167;
+     z-index: 5;
 }
 
 /* Image Styling */
@@ -50,9 +64,9 @@
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  margin-top: 40px;
   position: relative;
-  z-index: 4; /* Bring image in front of sections */
+  z-index: 4;
 }
 
 /* Job Section Styling */
@@ -101,7 +115,10 @@ p {
 .btn-container {
   display: flex;
   justify-content: center;
-  margin: 50px 0;
+  align-items: center; /* Ensures vertical centering if needed */
+  margin: 80px 0 50px; /* Increased top margin for more spacing */
+  width: 100%;
+  text-align: center;
 }
 
 /* Button */
@@ -116,9 +133,48 @@ p {
   color: #fff;
   background: #7EBDC2;
   transition: background 0.3s, transform 0.2s;
+  justify-content: center;
+  align-items: center; /* Ensures vertical centering if needed */
+  margin: 80px 0 50px; /* Increased top margin for more spacing */
+  text-align: center;
+  margin: 0 auto; /* Centers button horizontally */
 }
 
 .btn-primary:hover {
   background: darken(#7EBDC2, 10%);
   transform: scale(1.05);
+}
+
+.voir-metiers-link {
+  display: inline-flex;
+  align-items: center;
+  color: #DB4467;
+  gap: 8px; // space between text and image
+  font-size: 1rem;
+
+  img {
+    height: 16px; // adjust size of the arrow image
+    width: auto;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.fiche_enregistrement-link {
+  display: inline-flex;
+  align-items: center;
+  color: #DB4467;
+  gap: 8px; // space between text and image
+  font-size: 1rem;
+
+  img {
+    height: 16px; // adjust size of the arrow image
+    width: auto;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
