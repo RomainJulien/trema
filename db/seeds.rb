@@ -7,7 +7,7 @@ PsyProfile.destroy_all
 PSY_PROFILE = [
   { name: "Analytique et logique", description: "Esprit rationnel, structuré et curieux. Tu aimes analyser, résoudre des problèmes et travailler avec des données concrètes. La logique et la précision sont tes atouts." },
   { name: "Creatif et innovant", description: "Imagination débordante, esprit artistique et original. Tu aimes créer, innover et exprimer des idées à travers différents supports." },
-  { name: "Manuel et concret", description: "Habileté technique, pragmatisme et précision. Tu préfères le concret, travailler avec tes mains et voir le résultat de ton travail." },
+  { name: "Manuel et concret", description: "Tu aimes le concret, le travail bien fait et voir des résultats tangibles ? Tu es une personne pragmatique, qui aime fabriquer, réparer et organiser. Travailler avec tes mains, résoudre des problèmes techniques et voir le fruit de ton travail te motive au quotidien." },
   { name: "Organisateur et gestionnaire", description: "Leadership, sens de l’organisation et prise de décision. Tu aimes structurer, gérer des projets et coordonner des équipes." },
   { name: "Empathique et altruiste", description: "Écoute, bienveillance et envie d’aider les autres. Tu trouves du sens dans le contact humain et l’accompagnement." }
 ]
