@@ -25,7 +25,7 @@
         </div>
       </div>
 
-      <!-- 🔹 Mon Profil (Nouvelle section) -->
+      <!-- 🔹 Mon Profil -->
       <div class="dashboard-user">
         <h2 class="dashboard-section-title">Mon Profil</h2>
         <div class="dashboard-user-box">
@@ -43,34 +43,16 @@
         </div>
       </div>
 
-
     </div>
 
-    <!-- 🔹 Bloc DROIT (Métiers enregistrés) -->
+    <!-- 🔹 Bloc DROIT (Mes métiers enregistrés) -->
     <div class="dashboard-right">
       <h2 class="dashboard-section-title">Mes métiers enregistrés</h2>
       <div class="dashboard-jobs">
-        <!-- Métier principal -->
-        <div class="dashboard-job-large">
-          <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-image">
-          <p>Ébéniste</p>
-          <button class="dashboard-close-btn">✖</button>
-        </div>
-        <!-- Autres métiers -->
-        <div class="dashboard-job-small">
-          <img src="<%= asset_path('cuisinier.png') %>" alt="Cuisinier" class="dashboard-job-image">
-          <p>Cuisinier</p>
-          <button class="dashboard-close-btn">✖</button>
-        </div>
-        <div class="dashboard-job-small">
-          <img src="<%= asset_path('mecanicien.png') %>" alt="Mécanicien" class="dashboard-job-image">
-          <p>Mécanicien</p>
-          <button class="dashboard-close-btn">✖</button>
-        </div>
-        <div class="dashboard-job-small">
-          <img src="<%= asset_path('technicien.png') %>" alt="Technicien" class="dashboard-job-image">
-          <p>Technicien</p>
-          <button class="dashboard-close-btn">✖</button>
+        <!-- 🔥 Affichage unique de l'Ébéniste avec une image plus grande -->
+        <div class="dashboard-job-featured">
+          <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-featured-image">
+          <p class="dashboard-job-title">Ébéniste</p>
         </div>
       </div>
     </div>
