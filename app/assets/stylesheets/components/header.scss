@@ -1,19 +1,44 @@
-// Trema Logo - Positioned on the Left
-.trema-logo {
-  position: absolute;
-  width: 200px; // Adjust size as needed
-  height: auto;
-  top: 20px;
-  left: 30px; // Position at the top-left corner
-  z-index: 10; // Ensures it's above other elements
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1000;
 }
 
-// Company Logo - Positioned on the Right
-.company-logo {
-  position: absolute;
-  width: 80px; // Adjust size as needed
+.logo-link {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.trema-logo {
+  width: 180px;
   height: auto;
-  top: 20px;
-  right: 30px; // Position at the top-right corner
-  z-index: 10;
+  cursor: pointer;
+}
+
+.company-logo {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .trema-logo {
+    width: 150px;
+  }
+
+  .company-logo {
+    width: 60px;
+  }
+
+  .header {
+    padding: 15px 20px;
+  }
 }

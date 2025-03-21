@@ -1,3 +1,13 @@
-<%= image_tag "TREMÄ.png", alt: "Trema", class: "trema-logo" %>
-<%= image_tag "Logo.png", alt: "Logo", class: "company-logo" %>
+<header class="header">
+  <div class="header-left">
+    <%= link_to root_path, class: "logo-link" do %>
+      <%= image_tag "TREMÄ.png", alt: "Trema", class: "trema-logo" %>
+    <% end %>
+  </div>
 
+  <div class="header-right">
+    <%= link_to dashboard_path, class: "logo-link" do %>
+      <%= image_tag "Logo.png", alt: "Company Logo", class: "company-logo" %>
+    <% end %>
+  </div>
+</header>

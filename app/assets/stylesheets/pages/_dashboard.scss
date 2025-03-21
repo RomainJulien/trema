@@ -1,8 +1,13 @@
+/* 🔹 Conteneur principal du Dashboard */
 .dashboard-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  min-height: 100vh; /* 🔥 Prend 100% de la hauteur de l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 🔥 Évite l’espace blanc */
+  align-items: center;
   padding: 20px;
+  background: linear-gradient(to bottom, #f8a055, #f7c27d); /* 🔥 Dégradé de fond */
 }
 
 /* 🔹 TITRE PRINCIPAL */
@@ -18,6 +23,8 @@
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* 🔹 BLOC GAUCHE */
@@ -28,9 +35,10 @@
   width: 40%;
 }
 
-/* 🔹 Ma carrière */
+/* 🔹 Ma carrière et Profil reconversion */
 .dashboard-career,
-.dashboard-profile {
+.dashboard-profile,
+.dashboard-user { /* 🔥 Ajout de la section Profil */
   background: #ffcc80;
   padding: 15px;
   border-radius: 10px;
@@ -38,14 +46,17 @@
 }
 
 .dashboard-career-box,
-.dashboard-profile-box {
+.dashboard-profile-box,
+.dashboard-user-box { /* 🔥 Uniformisation */
   background: white;
   padding: 15px;
   border-radius: 10px;
 }
 
+/* 🔹 TITRES */
 .dashboard-career-title,
-.dashboard-profile-title {
+.dashboard-profile-title,
+.dashboard-user-box p strong { /* 🔥 Uniformisation des titres */
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
@@ -53,7 +64,8 @@
 
 /* 🔹 Boutons */
 .dashboard-career-btn,
-.dashboard-quiz-btn {
+.dashboard-quiz-btn,
+.dashboard-logout-btn { /* 🔥 Ajout du bouton de déconnexion */
   display: block;
   width: 100%;
   padding: 10px;
@@ -63,6 +75,7 @@
   cursor: pointer;
   font-size: 1.2rem;
   color: white;
+  text-align: center;
 }
 
 .dashboard-career-btn {
@@ -71,6 +84,14 @@
 
 .dashboard-quiz-btn {
   background: #42a5f5;
+}
+
+.dashboard-logout-btn {
+  background: #e74c3c;
+}
+
+.dashboard-logout-btn:hover {
+  background: #c0392b;
 }
 
 /* 🔹 BLOC DROIT */
@@ -101,6 +122,9 @@
   border-radius: 10px;
   text-align: center;
   background: #ffcc80;
+  display: flex;
+  align-items: center; /* 🔥 Centrage vertical */
+  justify-content: flex-start; /* 🔥 Aligner le texte et l’image */
   width: 100%;
 }
 
@@ -108,9 +132,13 @@
   width: 45%;
 }
 
+/* 🔹 Icônes et images des métiers */
 .dashboard-icon {
-  font-size: 2rem;
-  display: block;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 /* 🔹 BOUTON FERMETURE */
@@ -122,4 +150,13 @@
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
+}
+
+/* 🔹 Image des métiers */
+.dashboard-job-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* 🔥 Ajuste l’image sans la déformer */
+  border-radius: 5px;
+  margin-right: 10px;
 }
