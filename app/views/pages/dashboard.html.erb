@@ -36,7 +36,9 @@
             <%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dashboard-logout-btn" %>
           <% else %>
             <p>Vous n'êtes pas connecté.</p>
-            <%= link_to "Se connecter", new_user_session_path, class: "dashboard-login-btn" %>
+            <div class="dashboard-profile-box">
+              <%= link_to "Se connecter", new_user_session_path, class: "dashboard-login-btn" %>
+            </div>
           <% end %>
         </div>
       </div>
