@@ -4,7 +4,7 @@
 
   <!-- 🔹 Section principale -->
   <div class="dashboard-main">
-    <!-- 🔹 Bloc GAUCHE (Ma carrière + Profil reconversion) -->
+    <!-- 🔹 Bloc GAUCHE (Ma carrière + Profil reconversion + Mon Profil) -->
     <div class="dashboard-left">
 
       <!-- 🔹 Ma carrière -->
@@ -21,9 +21,26 @@
         <h2 class="dashboard-section-title">Mon profil de reconversion</h2>
         <div class="dashboard-profile-box">
           <p class="dashboard-profile-title">Manuel(le) et Concret(e)</p>
-          <a href="#" class="dashboard-quiz-btn">Je recommence le quiz</a>
+          <a href="/users/sign_up" class="dashboard-quiz-btn">Je recommence le quiz</a>
         </div>
       </div>
+
+      <!-- 🔹 Mon Profil (Nouvelle section) -->
+      <div class="dashboard-user">
+        <h2 class="dashboard-section-title">Mon Profil</h2>
+        <div class="dashboard-user-box">
+          <% if current_user %>
+            <p><strong>Nom :</strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
+            <p><strong>Email :</strong> <%= current_user.email %></p>
+            <p><strong>Mot de passe :</strong> *******</p>
+            <%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dashboard-logout-btn" %>
+          <% else %>
+            <p>Vous n'êtes pas connecté.</p>
+            <%= link_to "Se connecter", new_user_session_path, class: "dashboard-login-btn" %>
+          <% end %>
+        </div>
+      </div>
+
 
     </div>
 
@@ -33,28 +50,27 @@
       <div class="dashboard-jobs">
         <!-- Métier principal -->
         <div class="dashboard-job-large">
-          <span class="dashboard-icon">✏️📏</span>
+          <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-image">
           <p>Ébéniste</p>
           <button class="dashboard-close-btn">✖</button>
         </div>
         <!-- Autres métiers -->
         <div class="dashboard-job-small">
-          <span class="dashboard-icon">🍽️</span>
+          <img src="<%= asset_path('cuisinier.png') %>" alt="Cuisinier" class="dashboard-job-image">
           <p>Cuisinier</p>
           <button class="dashboard-close-btn">✖</button>
         </div>
         <div class="dashboard-job-small">
-          <span class="dashboard-icon">🚗</span>
+          <img src="<%= asset_path('mecanicien.png') %>" alt="Mécanicien" class="dashboard-job-image">
           <p>Mécanicien</p>
           <button class="dashboard-close-btn">✖</button>
         </div>
         <div class="dashboard-job-small">
-          <span class="dashboard-icon">🔧</span>
+          <img src="<%= asset_path('technicien.png') %>" alt="Technicien" class="dashboard-job-image">
           <p>Technicien</p>
           <button class="dashboard-close-btn">✖</button>
         </div>
       </div>
     </div>
-
   </div>
 </div>
