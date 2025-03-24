@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         #JE CREE UNE REPONSE AVEC LE NOMBRE ET LA REPONSE
         answer = Answer.new(question_number: question_number, answer_number: answer_number)
         #JE L'ASSOCIE A L'UTILISATEUR
-        answer.user = current_user
+        answer.user = @user
         #JE SAUVEGARDE
         answer.save
       end
