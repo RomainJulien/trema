@@ -6,7 +6,7 @@ PsyProfile.destroy_all
 
 PSY_PROFILE = [
   { name: "Organisé(e)", description: "Tu aimes que les choses soient claires, précises et bien structurées.Tu es fiable, méthodique et excellent(e) pour gérer des projets." },
-  { name: "Explorateur(trice)", description: "Tu es curieux(se), tu aimes apprendre et comprendre comment les choses fonctionnent. Tu préfères tester différentes options avant de faire un choix." },
+  { name: "Pragmatique", description: "Tu es curieux(se) et manuel(le), tu aimes apprendre et comprendre comment les choses fonctionnent. Tu préfères tester différentes options avant de faire un choix." },
   { name: "Social(e)", description: "Tu es tourné(e) vers les autres et tu as un excellent relationnel. Tu aimes travailler en équipe et motiver les gens autour de toi." },
   { name: "Créatif(ve)", description: "Tu penses hors des sentiers battus et tu cherches à innover. Tu aimes créer, imaginer et explorer de nouvelles idées." },
   { name: "Entreprenant(e)", description: "Tu es rapide, pragmatique et tu préfères agir plutôt que réfléchir trop longtemps. Tu prends des risques et tu n’as pas peur de l’échec." }
@@ -54,7 +54,7 @@ JOBS = [
   { title: "Scénariste", sector: "Cinéma et TV", domain: "Écriture" },
   { title: "Styliste de mode", sector: "Mode", domain: "Création textile" },
 
-  # Profil C - Explorateur(trice)
+  # Profil C - Pragmatique
   { title: "Menuisier", sector: "Artisanat", domain: "Travail du bois" },
   { title: "Mécanicien automobile", sector: "Transport", domain: "Mécanique" },
   { title: "Chef de chantier", sector: "Construction", domain: "Gestion de projet" },
