@@ -5,9 +5,17 @@
     <% end %>
   </div>
 
-  <div class="header-right">
+<div class="header-right">
+  <% if user_signed_in? %>
     <%= link_to dashboard_path, class: "logo-link" do %>
       <%= image_tag "Logo.png", alt: "Company Logo", class: "company-logo" %>
     <% end %>
-  </div>
+  <% else %>
+    <%= link_to new_user_session_path, class: "logo-link" do %>
+      <%= image_tag "Logo.png", alt: "Company Logo", class: "company-logo" %>
+    <% end %>
+  <% end %>
+</div>
+
+
 </header>

@@ -54,6 +54,82 @@
   </p>
 </div>
 
+<!-- Carte -->
+<div class="map-container">
+  <div id="map"></div>
+</div>
+
+<script>
+  function initMap() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        const userLat = position.coords.latitude;
+        const userLng = position.coords.longitude;
+        const userLocation = new google.maps.LatLng(userLat, userLng);
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: userLocation,
+          zoom: 11
+        });
+
+        // Marqueur utilisateur
+        new google.maps.Marker({
+          position: userLocation,
+          map: map,
+          title: "Vous êtes ici"
+        });
+
+        // Recherche des lieux "ébéniste" autour
+        const service = new google.maps.places.PlacesService(map);
+        const infoWindow = new google.maps.InfoWindow(); // Crée un seul infowindow à réutiliser
+
+        service.nearbySearch({
+          location: userLocation,
+          radius: 50000, // 50 km
+          keyword: 'ébéniste'
+        }, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            for (let i = 0; i < results.length; i++) {
+              const place = results[i];
+
+              const marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location,
+                title: place.name,
+                icon: "https://maps.google.com/mapfiles/ms/icons/green-dot.png"
+              });
+
+              // Clic sur le marqueur → ouvrir popup avec nom + adresse
+              google.maps.event.addListener(marker, 'click', function() {
+                const content = `
+                  <strong>${place.name}</strong><br>
+                  ${place.vicinity || "Adresse non disponible"}
+                `;
+                infoWindow.setContent(content);
+                infoWindow.open(map, marker);
+              });
+            }
+          } else {
+            console.warn("Erreur Places API :", status);
+          }
+        });
+
+      }, function() {
+        alert("Active la géolocalisation pour voir la carte.");
+      });
+    } else {
+      alert("Ton navigateur ne supporte pas la géolocalisation.");
+    }
+  }
+</script>
+
+<!-- Script avec ta clé + Places API -->
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBoZV3xuXJKsicK6D_fuL2yE5HBoDJ_pjE&libraries=places&callback=initMap">
+</script>
+
+
+
 <div class="btn-links-wrapper">
   <%= link_to psy_profile_path(current_user.psy_profile.id), class: "voir-metiers-link" do %>
     <%= image_tag "arrow-right.svg", alt: "flèche vers la droite" %>

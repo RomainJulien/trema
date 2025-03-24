@@ -5,17 +5,20 @@
   <br>
   <%= f.fields_for :answers do |a|  %>
       <% Answer::QUIZZ.each_with_index do |quizz, index| %>
-      <div class="quizz-page m-5 p-2 border border-danger rounded">
+      <div class="btn-quizz<%= index.even? ? 'left' : 'right' %>">
         <!-- Stocke le numéro de la question. Ici, question_number vaut 1 -->
         <%#= f.hidden_field :question_number, value: index %>
 
         <!-- Affichage de la question -->
-        <p><%= quizz[:question] %></p>
+        <p class="chillax-text-question"><%= quizz[:question] %></p>
 
         <%# Parcours les options numérotées de 1 à 5 %>
-        <%=a.input "answer_#{index + 1}".to_sym, as: :radio_buttons, collection: quizz[:answers], legend_tag: false, require: true  %>
-
-
+        <%=a.input "answer_#{index + 1}".to_sym,
+                    as: :radio_buttons,
+                    collection: quizz[:answers],
+                    legend_tag: false,
+                    require: true,
+                    wrapper_class: "custom-radio-buttons"  %>
 
       </div>
 

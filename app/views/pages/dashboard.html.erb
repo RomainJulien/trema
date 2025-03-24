@@ -7,14 +7,18 @@
     <!-- 🔹 Bloc GAUCHE (Ma carrière + Profil reconversion + Mon Profil) -->
     <div class="dashboard-left">
 
-      <!-- 🔹 Ma carrière -->
-      <div class="dashboard-career">
-        <h2 class="dashboard-section-title">Ma carrière</h2>
-        <div class="dashboard-career-box">
-          <p class="dashboard-career-title">Ébéniste</p>
-          <a href="#" class="dashboard-career-btn">J’accède à ma carrière</a>
-        </div>
-      </div>
+<!-- 🔹 Ma carrière -->
+<div class="dashboard-career">
+  <h2 class="dashboard-section-title">Ma carrière</h2>
+
+  <div class="dashboard-career-box">
+    <p class="dashboard-career-title">Ébéniste</p>
+
+    <%= link_to "J’accède à ma carrière", dashboard_path, class: "dashboard-career-btn" %>
+  </div>
+</div>
+
+
 
       <!-- 🔹 Mon profil de reconversion -->
       <div class="dashboard-profile">
