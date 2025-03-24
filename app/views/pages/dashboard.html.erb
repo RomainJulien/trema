@@ -20,7 +20,7 @@
       <div class="dashboard-profile">
         <h2 class="dashboard-section-title">Mon profil de reconversion</h2>
         <div class="dashboard-profile-box">
-          <p class="dashboard-profile-title">Manuel(le) et Concret(e)</p>
+          <p class="dashboard-profile-title"><%=@psy_profile.name%></p>
           <%= link_to "Revoir les métiers", psy_profile_path(current_user.psy_profile.id), class: "dashboard-quiz-btn" %>
         </div>
       </div>

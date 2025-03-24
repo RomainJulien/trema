@@ -15,7 +15,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(@user)
     params[:user][:answers].each do |key, value|
       #JE RECUPERE LE NOMBRE DANS KEY
-      question_number = key.gsub("answer_","")[0].to_i
+      question_number = key.gsub("answer_", "")[0].to_i
       #JE RECUPERE LA REPONSE DANS VALUE
       answer_number = value.to_i
       unless question_number.nil? || answer_number.nil?
