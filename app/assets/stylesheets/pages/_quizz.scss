@@ -1,22 +1,15 @@
-.btn-quizz {
-/* display:flex
-align-items:center; */
-margin: 5px;
-padding: 2px;
-max-width: 70%;
-position: relative;
-display: flex;
-align-items: center;
-justify-content: space-between;
-
+.card-quizz {
+  display: flex;
+  justify-content: center;
 }
 
-.btn-quizz.left {
-  flex-direction: row;
-}
-
-.btn-quizz.right {
-  flex-direction: row-reverse;
+.custom-radio-buttons {
+  position: relative;
+  display: flex;
+  width: 70%;
+  /* align-items: center;*/
+  /* justify-content: center; */
+  margin: 0 auto;
 }
 
 .custom-radio-buttons input[type="radio"] {
@@ -24,7 +17,6 @@ justify-content: space-between;
 }
 .custom-radio-buttons label {
   font-family: Chillax-Light;
-  display: block;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
@@ -35,12 +27,19 @@ justify-content: space-between;
   cursor: pointer;
   text-align: center;
   margin: 5px;
-  transition: all 0.3s ease;
+  width: 100%;
+}
+.custom-radio-buttons-left label {
+  justify-content: flex-start;
+}
+
+.custom-radio-buttons-right label {
+  justify-content: flex-end;
 }
 
 .custom-radio-buttons label:hover {
-   transform: scale(1.05); /* Agrandissement léger */
-   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Effet d'ombre */
+  transform: scale(1.05); /* Agrandissement léger */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Effet d'ombre */
 }
 
 .custom-radio-buttons input[type="radio"]:checked + label {
@@ -51,13 +50,23 @@ justify-content: space-between;
   transform: translateX(30px);
 }
 
-
 .chillax-text-question {
   font-family: 'Chillax', sans-serif;
   font-weight: bold;
 }
 
-.chillax-text-answer{
+.chillax-text-answer {
   font-family: 'Chillax', sans-serif;
-  font-weight: medium;
+  font-weight: bold;
+}
+
+.form-inputs {
+  background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
 }
