@@ -21,6 +21,7 @@ class User < ApplicationRecord
 
   def update_profile_psy
 
+
     # Récupérer toutes les réponses de l'utilisateur
     answers = self.answers.pluck(:answer_number)
     # Vérifier s'il y a des réponses avant de continuer

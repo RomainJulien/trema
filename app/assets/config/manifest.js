@@ -6,3 +6,4 @@
 //= link bootstrap.min.js
 //= link application.css
 
+import "bubbly_button"

@@ -5,11 +5,11 @@ Job.destroy_all
 PsyProfile.destroy_all
 
 PSY_PROFILE = [
-  { name: "Analytique et logique", description: "Esprit rationnel, structuré et curieux. Tu aimes analyser, résoudre des problèmes et travailler avec des données concrètes. La logique et la précision sont tes atouts." },
-  { name: "Creatif et innovant", description: "Imagination débordante, esprit artistique et original. Tu aimes créer, innover et exprimer des idées à travers différents supports." },
-  { name: "Manuel et concret", description: "Tu aimes le concret, le travail bien fait et voir des résultats tangibles ? Tu es une personne pragmatique, qui aime fabriquer, réparer et organiser. Travailler avec tes mains, résoudre des problèmes techniques et voir le fruit de ton travail te motive au quotidien." },
-  { name: "Organisateur et gestionnaire", description: "Leadership, sens de l’organisation et prise de décision. Tu aimes structurer, gérer des projets et coordonner des équipes." },
-  { name: "Empathique et altruiste", description: "Écoute, bienveillance et envie d’aider les autres. Tu trouves du sens dans le contact humain et l’accompagnement." }
+  { name: "Organisé(e)", description: "Tu aimes que les choses soient claires, précises et bien structurées.Tu es fiable, méthodique et excellent(e) pour gérer des projets." },
+  { name: "Pragmatique", description: "Tu es curieux(se) et manuel(le), tu aimes apprendre et comprendre comment les choses fonctionnent. Tu préfères tester différentes options avant de faire un choix." },
+  { name: "Social(e)", description: "Tu es tourné(e) vers les autres et tu as un excellent relationnel. Tu aimes travailler en équipe et motiver les gens autour de toi." },
+  { name: "Créatif(ve)", description: "Tu penses hors des sentiers battus et tu cherches à innover. Tu aimes créer, imaginer et explorer de nouvelles idées." },
+  { name: "Entreprenant(e)", description: "Tu es rapide, pragmatique et tu préfères agir plutôt que réfléchir trop longtemps. Tu prends des risques et tu n’as pas peur de l’échec." }
 ]
 
 PSY_PROFILE.each do |profile|
@@ -38,7 +38,7 @@ end
 
 
 JOBS = [
-  # Profil A - Analytique et logique
+  # Profil A - Organisé(e)
   { title: "Ingénieur en informatique", sector: "Technologie", domain: "Informatique" },
   { title: "Data Analyst", sector: "Analyse de données", domain: "Statistiques" },
   { title: "Consultant en stratégie", sector: "Conseil", domain: "Gestion" },
@@ -46,7 +46,7 @@ JOBS = [
   { title: "Chercheur en sciences", sector: "Recherche", domain: "Sciences" },
   { title: "Développeur web", sector: "Technologie", domain: "Programmation" },
 
-  # Profil B - Créatif et innovant
+  # Profil B - Créatif(ve)
   { title: "Designer graphique", sector: "Communication visuelle", domain: "Design" },
   { title: "Architecte", sector: "Construction", domain: "Architecture" },
   { title: "Illustrateur", sector: "Arts", domain: "Illustration" },
@@ -54,7 +54,7 @@ JOBS = [
   { title: "Scénariste", sector: "Cinéma et TV", domain: "Écriture" },
   { title: "Styliste de mode", sector: "Mode", domain: "Création textile" },
 
-  # Profil C - Manuel et concret
+  # Profil C - Pragmatique
   { title: "Menuisier", sector: "Artisanat", domain: "Travail du bois" },
   { title: "Mécanicien automobile", sector: "Transport", domain: "Mécanique" },
   { title: "Chef de chantier", sector: "Construction", domain: "Gestion de projet" },
@@ -62,7 +62,7 @@ JOBS = [
   { title: "Électricien", sector: "BTP", domain: "Électricité" },
   { title: "Technicien en maintenance industrielle", sector: "Industrie", domain: "Maintenance" },
 
-  # Profil D - Organisateur et gestionnaire
+  # Profil D - Entreprenant(e)
   { title: "Chef de projet", sector: "Gestion", domain: "Management" },
   { title: "Manager d’entreprise", sector: "Business", domain: "Entrepreneuriat" },
   { title: "Responsable événementiel", sector: "Événementiel", domain: "Organisation" },
@@ -70,7 +70,7 @@ JOBS = [
   { title: "Agent immobilier", sector: "Immobilier", domain: "Vente" },
   { title: "Administrateur réseau", sector: "Informatique", domain: "Systèmes et réseaux" },
 
-  # Profil E - Empathique et altruiste
+  # Profil E - Social(e)
   { title: "Psychologue", sector: "Santé", domain: "Psychologie" },
   { title: "Travailleur social", sector: "Aide sociale", domain: "Accompagnement" },
   { title: "Infirmier(ère)", sector: "Santé", domain: "Soins médicaux" },
