@@ -19,7 +19,8 @@ class User < ApplicationRecord
   validates :address, presence: true
 
   def update_profile_psy
-    self.psy_profile_id = PsyProfile.find_by(name: "Manuel et concret")&.id
-    save
+    profile = PsyProfile.find_by(name: "Manuel et concret")
+    update(psy_profile: profile) if profile
   end
+
 end
