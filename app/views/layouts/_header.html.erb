@@ -6,8 +6,9 @@
   </div>
 
   <div class="header-right">
-    <%= link_to dashboard_path, class: "logo-link" do %>
+    <%= link_to (current_user ? dashboard_path : new_user_session_path), class: "logo-link" do %>
       <%= image_tag "Logo.png", alt: "Company Logo", class: "company-logo" %>
     <% end %>
   </div>
+
 </header>
