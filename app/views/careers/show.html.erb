@@ -1,14 +1,36 @@
+<div>
+  <h1 class="h1">Ebéniste</h1>
+  <h4 class="h4">
+    <%= image_tag "default_profile.png", alt: "Profil", class: "def_profile" %>
+    Manuel(le) et concret(e)
+  </h4>
+</div>
+
+<h2 class="h2">Ma carrière</h2>
+
 <div class="step-show">
   <div class="step-steps">
+    <!-- Content goes here -->
+  </div>
+</div>
 
+<div class="step-show">
+  <div class="step-steps">
     <!-- Étape 1 -->
     <div class="step-item left">
       <div class="step-background"></div>
       <div class="step-content">
         <!-- Contenu de l'étape 1 -->
+        <h3>Construire son plan d'action</h3>
+        <p>Réfléchir à son projet : pourquoi devenir ébéniste ? Est-ce une passion, une envie de travailler le bois, de créer de ses mains ? Faire un bilan de compétences pour identifier ses atouts et les savoir-faire à acquérir dans l’artisanat.</p>
       </div>
+      <label class="step-toggle">
+        <input type="checkbox" class="step-checkbox" />
+        <span class="step-button" data-step="1">1</span>
+      </label>
       <div class="step-image">
         <!-- Image ou illustration de l'étape 1 -->
+        <%= image_tag "action_plan.png", alt: "action_plan", class: "step-image" %>
       </div>
     </div>
 
@@ -17,9 +39,16 @@
       <div class="step-background"></div>
       <div class="step-content">
         <!-- Contenu de l'étape 2 -->
+        <h3>Trouver sa formation</h3>
+        <p>Choisir un parcours adapté : CAP Ébéniste (formation de base indispensable), Bac pro Artisanat et métiers d’art, ou encore des formations spécialisées en marqueterie, sculpture ou restauration de meubles. Des formations sont disponibles en présentiel ou en ligne, selon le rythme souhaité.</p>
       </div>
+      <label class="step-toggle">
+        <input type="checkbox" class="step-checkbox" />
+        <span class="step-button" data-step="2">2</span>
+      </label>
       <div class="step-image">
         <!-- Image ou illustration de l'étape 2 -->
+        <%= image_tag "sa_formation.jpeg", alt: "action_plan", class: "step-image" %>
       </div>
     </div>
 
@@ -28,9 +57,16 @@
       <div class="step-background"></div>
       <div class="step-content">
         <!-- Contenu de l'étape 3 -->
+        <h3>Financer sa reconversion</h3>
+        <p>Utiliser son Compte Personnel de Formation (CPF), contacter Pôle emploi ou les chambres de métiers pour connaître les aides disponibles. Des dispositifs comme le Projet de Transition Professionnelle (PTP) ou les financements régionaux peuvent prendre en charge tout ou partie du coût.</p>
       </div>
+      <label class="step-toggle">
+        <input type="checkbox" class="step-checkbox" />
+        <span class="step-button" data-step="3">3</span>
+      </label>
       <div class="step-image">
         <!-- Image ou illustration de l'étape 3 -->
+        <%= image_tag "financement_reconversion.png", alt: "fin_rec", class: "step-image" %>
       </div>
     </div>
 
@@ -39,9 +75,16 @@
       <div class="step-background"></div>
       <div class="step-content">
         <!-- Contenu de l'étape 4 -->
+        <h3>Commencer son apprentissage</h3>
+        <p>Intégrer un centre de formation d’apprentis (CFA) ou une école spécialisée, et rechercher un maître d’apprentissage (atelier ou entreprise d’ébénisterie) pour apprendre en conditions réelles, tout en étant rémunéré.</p>
       </div>
+      <label class="step-toggle">
+  <input type="checkbox" class="step-checkbox" />
+  <span class="step-button" data-step="4">4</span>
+</label>
       <div class="step-image">
         <!-- Image ou illustration de l'étape 4 -->
+        <%= image_tag "ebeniste.jpg", alt: "fin_rec", class: "step-image" %>
       </div>
     </div>
 
@@ -50,11 +93,16 @@
       <div class="step-background"></div>
       <div class="step-content">
         <!-- Contenu de l'étape 5 -->
+        <h3>Je travaille</h3>
+        <p>Il est possible de se former au métier d’ébéniste tout en travaillant : cours du soir, formation à distance, ou alternance adaptée. Le CPF de transition permet de suivre une formation qualifiante tout en gardant son emploi ou son revenu.</p>
       </div>
+      <label class="step-toggle">
+  <input type="checkbox" class="step-checkbox" />
+  <span class="step-button" data-step="5">5</span>
+</label>
       <div class="step-image">
         <!-- Image ou illustration de l'étape 5 -->
       </div>
     </div>
-
   </div>
 </div>
