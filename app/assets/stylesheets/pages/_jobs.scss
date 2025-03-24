@@ -175,3 +175,19 @@ p {
   text-decoration: underline;
   height: 36px;
 }
+
+.map-container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border: 3px solid #ffb6b9;
+  background-color: #fefefe;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}

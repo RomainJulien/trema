@@ -1,0 +1,180 @@
+/* 🔹 Styles spécifiques à la page career#show */
+
+/* En-tête */
+.career-title {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 900;
+  color: #fff;
+  text-shadow:
+    -2px -2px 0 #DA4167,
+     2px -2px 0 #DA4167,
+    -2px  2px 0 #DA4167,
+     2px  2px 0 #DA4167;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 5;
+}
+
+.career-subtitle {
+  display: flex;
+  flex-direction: row; /* Alignement en ligne */
+  align-items: center;
+  justify-content: center;
+  color: #DB4467;
+  gap: 10px;
+  font-size: 1rem;
+  margin-top: 80px; /* Espace en dessous de .career-title positionné en absolute */
+}
+
+.def_profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.career-section-title {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 900;
+  color: #7EBDC2;
+  text-shadow:
+    -2px -2px 0 #DA4167,
+     2px -2px 0 #DA4167,
+    -2px  2px 0 #DA4167,
+     2px  2px 0 #DA4167;
+  z-index: 5;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Section des étapes de la carrière */
+.career-steps {
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 0 50px;
+    width: 100%;
+  }
+
+  .career-step-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 250px;
+    padding: 0;
+  }
+
+  .career-step-item.left {
+    flex-direction: row;
+  }
+
+  .career-step-item.right {
+    flex-direction: row-reverse;
+  }
+
+  .career-step-background {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    z-index: -1;
+  }
+
+  .career-step-item.left .career-step-background {
+    left: 0;
+    width: 100vw;
+    max-width: 75%;
+    background: #FF9F6F;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .career-step-item.right .career-step-background {
+    right: 0;
+    width: 100vw;
+    max-width: 75%;
+    background: #FFAB5B;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .career-step-content {
+    flex: 1;
+    padding: 20px;
+    z-index: 1;
+  }
+
+  .career-step-toggle {
+    position: relative;
+
+    .career-step-checkbox {
+      display: none;
+    }
+
+    .career-step-button {
+      width: 60px;
+      height: 60px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      margin: 15px;
+    }
+
+    .career-step-button[data-step="1"],
+    .career-step-button[data-step="2"] {
+      background-color: #7EBDC2 !important;
+    }
+
+    .career-step-button[data-step="3"] {
+      background-color: #FFB74D !important;
+    }
+
+    .career-step-button[data-step="4"],
+    .career-step-button[data-step="5"] {
+      background-color: #D84369 !important;
+    }
+
+    // État coché
+    .career-step-checkbox:checked + .career-step-button {
+      color: transparent;
+    }
+
+    .career-step-checkbox:checked + .career-step-button::before {
+      content: "✔️";
+      color: white;
+      font-size: 1.4rem;
+      position: absolute;
+    }
+  }
+
+  .career-step-content h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 15px; /* Espace en dessous du titre de l'étape */
+  }
+}
