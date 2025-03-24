@@ -1,0 +1,63 @@
+.btn-quizz {
+/* display:flex
+align-items:center; */
+margin: 5px;
+padding: 2px;
+max-width: 70%;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+
+.btn-quizz.left {
+  flex-direction: row;
+}
+
+.btn-quizz.right {
+  flex-direction: row-reverse;
+}
+
+.custom-radio-buttons input[type="radio"] {
+  display: none; /* Cache les vrais boutons radio */
+}
+.custom-radio-buttons label {
+  font-family: Chillax-Light;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
+  color: white;
+  /*  transition: background 0.3s;*/
+  cursor: pointer;
+  text-align: center;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.custom-radio-buttons label:hover {
+   transform: scale(1.05); /* Agrandissement léger */
+   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Effet d'ombre */
+}
+
+.custom-radio-buttons input[type="radio"]:checked + label {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+  transform: scale(1.05); /* Effet léger au clic */
+  transform: translateX(30px);
+}
+
+
+.chillax-text-question {
+  font-family: 'Chillax', sans-serif;
+  font-weight: bold;
+}
+
+.chillax-text-answer{
+  font-family: 'Chillax', sans-serif;
+  font-weight: medium;
+}
