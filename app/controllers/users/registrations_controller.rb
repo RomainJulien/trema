@@ -11,7 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @user = User.create(user_params)
+    @user = User.create!(user_params)
     sign_in(@user)
     params[:user][:answers].each do |key, value|
       #JE RECUPERE LE NOMBRE DANS KEY

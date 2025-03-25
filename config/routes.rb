@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get "/dashboard", to: "pages#dashboard"
+
   resources :psy_profiles, only: [:show] do
     member do
       get :start

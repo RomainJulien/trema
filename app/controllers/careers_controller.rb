@@ -1,11 +1,19 @@
 class CareersController < ApplicationController
+  def create
+    if current_user.career.present?
+      redirect_to career_path(current_user.career)
+    else
+      job = Job.where(psy_profile_id: current_user.psy_profile_id).sample || Job.first
+
+      @career = Career.create!(
+        user: current_user,
+        job: job,
+        progression: "initiale"
+      )
+
+      redirect_to career_path(@career)
+    end
+  end
   def show
-    @careers = [
-      { title: "Mécanicien automobile", description: "Un métier passionnant pour les amateurs de mécanique.", image_url: "mecanicien.png" },
-      { title: "Chef de chantier", description: "Gérez et supervisez des projets de construction.", image_url: "chef_chantier.png" },
-      { title: "Ébéniste", description: "Créez des meubles uniques avec passion.", image_url: "ebeniste.png" },
-      { title: "Cuisinier", description: "Exprimez votre créativité à travers la gastronomie.", image_url: "cuisinier.png" },
-      { title: "Technicien en maintenance industrielle", description: "Un rôle clé pour assurer le bon fonctionnement des machines.", image_url: "technicien.png" }
-    ]
   end
 end
