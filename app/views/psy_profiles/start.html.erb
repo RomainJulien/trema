@@ -3,21 +3,36 @@
   <div class="start-rectangle-right"></div>
 
   <!-- Logo Manuel placé ici dans le background -->
-  <div class="start-logo-container">
-    <img src="<%= asset_path 'default_profile.png' %>" alt="Logo Manuel">
-  </div>
 
   <div class="start-container">
-    <h1 class="welcome-title">
-      Tu es <span class="start-highlight"><%= @psy_profile.name %></span> !
-    </h1>
+    <div class="welcome-title">
+      <h1 >
+        Tu es <span class="start-highlight"><%= @psy_profile.name %></span> !
+      </h1>
+    </div>
 
     <div class="start-description-container">
       <p class="start-description"><%= @psy_profile.description %></p>
     </div>
 
+    <div class="start-logo-container">
+      <% @logo_path = case @psy_profile.name
+        when "Organisé(e)" then asset_path('profile_logo/organisateur.png')
+        when "Pragmatique" then asset_path('profile_logo/pragmatique.png')
+        when "Social(e)" then asset_path('profile_logo/social.png')
+        when "Créatif(ve)" then asset_path('profile_logo/creatif.png')
+        else asset_path('profile_logo/entreprenant.png')
+      end %>
+
+      <img src="<%= @logo_path %>" alt="Logo <%= @psy_profile.name %>">
+    </div>
+
     <div class="start-cta-container" data-controller="bubbly-button">
       <%= link_to "Découvre ton futur métier !", psy_profile_path(@psy_profile), class: "bubbly-button", data: { action:"click->bubbly-button#animateButton" } %>
+    </div>
+
+    <div class="start-zenflow">
+      <img src="<%= asset_path 'Zenflow.png' %>" alt="frise zenflow">
     </div>
   </div>
 </div>
