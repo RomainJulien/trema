@@ -2,16 +2,18 @@
 
   <!-- 🔹 En-tête avec Titre, Description et Logo -->
   <div class="psy-profile-header">
+
     <div class="psy-profile-bg">
       <div class="psy-profile-content">
         <h2>Tu es <span class="highlight"><%= @psy_profile.name %></span> !</h2>
         <p><%= @psy_profile.description %></p>
       </div>
     </div>
+
     <div class="psy-profile-logo">
-      <!-- <img src="<%= @logo_path %>" alt="Logo <%= @psy_profile.name %>"> -->
-      <%= image_tag('default_profile.png', alt: @psy_profile.name) %>
+       <%= image_tag(@logo_path || 'default_profile.png', alt: @psy_profile.name) %>
     </div>
+
   </div>
 
 
@@ -19,18 +21,20 @@
     <% @job_psy.each_with_index do |job, index| %> <%# Remplace les titres et descriptions %>
       <div class="psy-profile-item <%= index.even? ? 'left' : 'right' %>">
         <div class="psy-profile-bg"></div>
-        <div class="psy-profile-content">
-          <h3><%= job[:title] %></h3> <%# Affichage du titre du métier %>
-          <p><strong>Description :</strong> <%= job[:description] %></p>
-          <a href="<%= job_path(25) %>" class="btn btn-primary">Regardez ce métier</a>
-        </div>
+          <div class="psy-profile-content">
 
-        <div class="psy-profile-image-container">
-          <% if job[:image_url].present? %>
-            <%= image_tag(job[:image_url], alt: job[:title], class: "psy-profile-image") %>
-          <% else %>
-            <%= image_tag("default_profile.png", alt: "Image par défaut", class: "psy-profile-image") %>
-          <% end %>
+            <%= image_tag("psy_profiles_logo/#{job[:title].parameterize}.png", alt: job[:title]) %>
+            <h3><%= job[:title] %></h3> <%# Affichage du titre du métier %>
+            <p><%= job[:description] %></p>
+            <a href="<%= job_path(25) %>" class="btn btn-primary">Regardez ce métier</a>
+          </div>
+
+          <div class="psy-profile-image-container">
+            <% if job[:image_url].present? %>
+              <%= image_tag(job[:image_url], alt: job[:title], class: "psy-profile-image") %>
+            <% else %>
+              <%= image_tag("default_profile.png", alt: "Image par défaut", class: "psy-profile-image") %>
+            <% end %>
         </div>
       </div>
     <% end %>
