@@ -35,8 +35,6 @@ end
   user.photo.attach(io: file, filename: "avatar", content_type: "image/png")
 end
 
-
-
 JOBS = [
   # Profil A - Organisé(e)
   { title: "Ingénieur en informatique", sector: "Technologie", domain: "Informatique" },
@@ -91,7 +89,17 @@ JOBS.each do |job|
   )
 end
 
+users = User.all
+job = Job.find(25)
 
+User.all.each do |user|
+  Career.create!(
+    user: user,
+    job: job,
+    progression: "initiale"
+  )
+end
 
 puts "✅ #{User.count} utilisateurs créés! 🎉"
 puts "✅ #{Job.count} fiches métiers créées avec succès ! 🥳"
+puts "✅ #{Career.count} carrières créées ! 💼"
