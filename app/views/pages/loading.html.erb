@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Chargement...</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
+
+<body class="loading-screen">
+  <!-- Conteneur étoiles filantes -->
+  <div id="stars-container"></div>
+
+  <div class="center-content">
+    <div class="logo-container">
+  <h1 class="logo-text">
+    <span>T</span>
+    <span>R</span>
+    <span>E</span>
+    <span>M</span>
+    <span class="logo-a-wrapper">
+      A
+      <img src="<%= asset_path('logointro.png') %>" alt="Logo" class="logo-dot-above">
+    </span>
+  </h1>
+</div>
+
+
+    <div class="enter-button drop-in" style="animation-delay: 0.6s;" onclick="goHome()">START</div>
+
+    <!-- Étoile filante orbitale -->
+    <div class="orbit-wrapper">
+      <div class="shooting-star"></div>
+    </div>
+  </div>
+
+<script>
+  function createFlyingStar() {
+    const star = document.createElement('div');
+    star.classList.add('star');
+
+    // Position aléatoire
+    star.style.top = Math.random() * window.innerHeight + 'px';
+    star.style.left = Math.random() * window.innerWidth + 'px';
+
+    // Déplacement random (angle + distance)
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = 300 + Math.random() * 300;
+    const dx = Math.cos(angle) * distance;
+    const dy = Math.sin(angle) * distance;
+
+    star.style.setProperty('--x', `${dx}px`);
+    star.style.setProperty('--y', `${dy}px`);
+
+    document.getElementById('stars-container').appendChild(star);
+
+    setTimeout(() => star.remove(), 1500);
+  }
+
+  // 💥 Balance 10 étoiles d’un coup toutes les 100ms
+  setInterval(() => {
+    for (let i = 0; i < 50; i++) {
+      createFlyingStar();
+    }
+  }, 100);
+</script>
+
+</body>
+</html>

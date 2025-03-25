@@ -11,4 +11,13 @@ class PagesController < ApplicationController
 
     @profile = { name: "Explorateur(trice)", description: "Habilité technique, pragmatisme et précision..." }
   end
+
+  def loading
+    render layout: false
+  end
+
+  def home
+  end
+
+
 end

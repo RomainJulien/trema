@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@700&display=swap');
+
+.loading-screen {
+  height: 100vh;
+  background: linear-gradient(to bottom, #f7c27d, #f8a055);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.center-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.logo-text {
+  font-family: 'Pragati Narrow', sans-serif;
+  font-size: 140px;
+  font-weight: bold;
+  color: #DA4167;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+
+  span {
+    text-shadow:
+      -2px 0 #7EBDC2,
+       2px 0 #7EBDC2,
+       0 -2px #7EBDC2,
+       0 2px #7EBDC2;
+    animation: drop-in 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  span:nth-child(1) { animation-delay: 0.1s; }
+  span:nth-child(2) { animation-delay: 0.2s; }
+  span:nth-child(3) { animation-delay: 0.3s; }
+  span:nth-child(4) { animation-delay: 0.4s; }
+  span:nth-child(5) { animation-delay: 0.5s; }
+}
+
+@keyframes drop-in {
+  0% {
+    transform: translateY(-100px) rotate(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-dot {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: auto;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+.enter-button {
+  background: linear-gradient(to right, #DA4167, #FF8F6F);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  z-index: 2;
+}
+
+.enter-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0.95;
+}
+
+/* 🌟 Étoiles douces (style orbit) */
+#stars-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, white, transparent);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fly 1.2s linear forwards;
+  filter: blur(0.5px);
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.logo-a-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-dot-above {
+  position: absolute;
+  top: -60px; // ajuste selon besoin
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: auto;
+  animation: fadeInUp 1s ease forwards;
+  pointer-events: none;
+}
+
+.drop-in {
+  animation: drop-in 0.6s ease forwards;
+  opacity: 0;
+}

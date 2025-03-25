@@ -1,41 +1,56 @@
-<div class="home-wrapper">
-  <!-- ✅ SVG collés au bord de l’écran -->
-  <%= image_tag("Zenflow (1).png", class: "home-wave left") %>
-  <%= image_tag("Zenflow.png", class: "home-wave right") %>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Chargement...</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+</head>
 
-  <div class="home-section home-left">
-    <!-- Rectangle gauche -->
-    <div class="home-bg"></div>
+<body class="loading-screen">
+  <!-- Conteneur pour les étoiles -->
+  <div id="stars-container"></div>
 
-    <!-- Contenu central -->
-    <div class="home-content">
+  <!-- Contenu principal -->
+  <div class="center-content">
+    <div class="logo-container">
+      <h1 class="logo-text">
+        <span>T</span><span>R</span><span>E</span><span>M</span><span class="logo-a">A</span>
+        <img src="<%= asset_path('logointro.png') %>" alt="Logo" class="logo-dot">
+      </h1>
+    </div>
 
-      <!-- TITRE -->
-      <div class="home-title">
-        <h1>La reconversion,<br>mais sans <span class="home-stress">stress</span>.</h1>
-      </div>
+    <div class="enter-button" onclick="goHome()">START</div>
+  </div>
 
+  <!-- Script pour redirection -->
+  <script>
+    function goHome() {
+      window.location.href = "<%= home_path %>";
+    }
+  </script>
 
-      <!-- TEXTES -->
-      <div class="home-texts">
-        <p class="home-subtext">
-          Tremä t’aide à trouver le métier qui te correspond et à franchir chaque étape, pas à pas.
-        </p>
+  <!-- Script pour étoiles aléatoires -->
+  <script>
+    function createStar() {
+      const star = document.createElement('div');
+      star.classList.add('shooting-star');
 
-        <p class="home-smalltext home-align-left">
-          Que tu saches déjà où tu vas ou que tu sois complètement paumé, on est là pour te guider.
-        </p>
-      </div>
+      // Position de départ aléatoire
+      star.style.top = Math.random() * window.innerHeight + 'px';
+      star.style.left = Math.random() * window.innerWidth + 'px';
 
-      <div class="home-page">
-        <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "bubbly-button btn-home", data: { controller: "bubbly-button", action: "click->bubbly-button#animateButton" } %>
-      </div>
+      // Départ légèrement décalé
+      star.style.animationDelay = Math.random() * 1 + 's';
+      document.getElementById('stars-container').appendChild(star);
 
-      <div>
-        <%= link_to "Je fonce!", "#", class: "bubbly-button home-btn2", data: { controller: "bubbly-button", action: "click->bubbly-button#animateButton" } %>
-      </div>
+      // Nettoyage après animation
+      setTimeout(() => {
+        star.remove();
+      }, 1500);
+    }
 
-
-    </div> <!-- .home-content -->
-  </div> <!-- .home-section -->
-</div> <!-- .home-wrapper -->
+    // Génère une étoile toutes les 300ms
+    setInterval(createStar, 300);
+  </script>
+</body>
+</html>

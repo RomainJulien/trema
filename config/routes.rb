@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   }
 
 
-  root to: "pages#home"
-
+  root to: "pages#loading"
+  get "/loading", to: "pages#loading"
+  get "/home", to: "pages#home"
   get "/dashboard", to: "pages#dashboard"
 
   resources :psy_profiles, only: [:show] do
