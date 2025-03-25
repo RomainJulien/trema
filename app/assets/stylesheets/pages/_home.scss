@@ -111,60 +111,48 @@ h1 {
 }
 
 /* Buttons stacked in center under each other lower on the page */
-.btn1 {
-  background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #FFFFFF;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+.home-page .bubbly-button {
+  width: 500px;
+  height: 100px;
   padding: 20px 100px;
-  border-radius: 12px;
-  border: 2px solid #F0F0F6;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.6s ease-in-out, transform 0.3s ease-in-out;
-  width: 500px; /* Same width */
-  height: 100px; /* Same height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
   position: absolute;
-  top: 60vh;
-  left: 30%;
-  transform: translateX(-50%);
+  top: 52vh;  /* Ajuste cette valeur pour qu'il soit juste au-dessus de .btn2 */
+  left: 12%;
   z-index: 5;
+  padding: 0; /* Supprime les paddings qui pourraient décaler le texte */
+  line-height: 100px;
+  text-align: center;
 }
 
-.btn1:hover {
-  background: linear-gradient(90deg, #FF9F6F, #7EBDC2);
-  transform: translateX(-50%) scale(1.02);
+.home-page .bubbly-button:hover {
+  transform: scale(1.02);
 }
 
-.btn2 {
-  background: linear-gradient(45deg, #DA4167, #FE9F6F);
-  color: #FFFFFF;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  padding: 20px 100px; /* Increased size */
-  border-radius: 12px;
-  border: 2px solid #F0F0F6;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.6s ease-in-out, transform 0.3s ease-in-out;
-  width: 500px; /* Same width */
-  height: 100px; /* Same height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
+.home-page .bubbly-button:active {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #FF9F6F, #DB4367);
+}
+
+.home-btn2 {
+  width: 500px;
+  height: 100px;
+  padding: 20px 100px;  /* Suppression totale du padding */
   position: absolute;
-  top: 75vh;
-  left: 30%;
-  transform: translateX(-50%);
-  z-index: 5;
+  top: 52vh;
+  left: 12%;
+  z-index: 6;
+  padding: 0;
+  line-height: 100px;
+  text-align: center;
 }
 
-.btn2:hover {
-  background: linear-gradient(45deg, #FE9F6F, #DA4167);
-  transform: translateX(-50%) scale(1.02);
+.home-btn2:hover {
+  transform: scale(1.02);
+}
+
+.home-btn2:active {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #FF9F6F, #DB4367);
 }
 
 /* Zenflow image aligned with first button, 1/4 outside right */
@@ -172,7 +160,7 @@ h1 {
   position: absolute;
   width: 700px;
   height: auto;
-  top: 60vh;
+  top: 50vh;
   left: 110%;
   object-fit: contain;
   z-index: 2;

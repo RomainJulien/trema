@@ -28,15 +28,13 @@
       </p>
       </div>
 
-      <div>
-      <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "btn1" %>
+      <div class="home-page">
+        <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "bubbly-button btn-home", data: { controller: "bubbly-button", action: "click->bubbly-button#animateButton" } %>
       </div>
 
-      <div>
-        <p class="btn2">
-          Je fonce!
-        </p>
-      </div>
+<div>
+  <%= link_to "Je fonce!", "#", class: "bubbly-button home-btn2", data: { controller: "bubbly-button", action: "click->bubbly-button#animateButton" } %>
+</div>
 
       </div>
 
