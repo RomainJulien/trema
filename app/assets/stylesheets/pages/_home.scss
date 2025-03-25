@@ -1,10 +1,10 @@
-
-/* Wrapper & Section */
+/* === GLOBAL WRAPPER === */
 .home-wrapper {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  padding: 0;
 }
 
 .home-section {
@@ -13,7 +13,7 @@
   height: 100%;
 }
 
-/* Rectangle gauche (centré verticalement) */
+/* === RECTANGLES === */
 .home-left .home-bg {
   position: absolute;
   top: 50%;
@@ -27,7 +27,6 @@
   z-index: 0;
 }
 
-/* Rectangle droit en bas qui remonte légèrement */
 .home-left::after {
   content: "";
   position: absolute;
@@ -41,14 +40,14 @@
   z-index: 0;
 }
 
-/* Contenu centré */
+/* === CONTENU CENTRAL === */
 .home-content {
   position: relative;
   z-index: 2;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; // 🔥 titre en haut, texte au centre, boutons en bas
+  justify-content: space-between;
   gap: 40px;
   padding: 40px 80px;
   max-width: 1000px;
@@ -56,21 +55,16 @@
   text-align: left;
 }
 
-.home-texts {
-  margin-top: 60px; // ajuste ici
-}
-
 .home-title h1 {
   font-family: 'Chillax', sans-serif;
-  font-weight: 600; // important !      // Semibold comme Figma
-  font-size: 80px;        // Taille exacte
+  font-weight: 600;
+  font-size: 80px;
   line-height: 100%;
   letter-spacing: 1.5px;
   color: #231F20;
   text-align: center;
   margin-bottom: 20px;
 }
-
 
 .home-stress {
   color: #7EBDC2;
@@ -81,10 +75,14 @@
      2px  2px 0 #DA4167;
 }
 
-/* Texte sous-titre */
+/* === TEXTES === */
+.home-texts {
+  margin-top: 60px;
+}
+
 .home-subtext {
-  font-family: 'Chillax', sans-serif;
-  font-weight: 600; // Semibold
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-weight: 600;
   font-size: 30px;
   line-height: 140%;
   letter-spacing: -0.3px;
@@ -93,114 +91,80 @@
   margin-bottom: 20px;
 }
 
-
 .home-smalltext {
-  font-family: 'Chillax', sans-serif;
-  font-weight: 300; // Light
+  font-family: 'Chillax-Light', sans-serif;
+  font-weight: 300;
   font-size: 22px;
   line-height: 140%;
   letter-spacing: -0.3px;
   color: #FFFFFF;
   text-align: left;
   margin-bottom: 40px;
-  max-width: 600px; // Optionnel, pour contrôler la largeur
+  max-width: 600px;
+  margin-top: 20px;
 }
-
 
 .home-align-left {
   position: relative;
-  left: -240px; // 🔥 déplace vraiment le bloc vers la gauche
+  left: -240px;
   text-align: left;
 }
 
-
-/* Boutons alignés */
-.home-buttons {
-  display: flex;
-  flex-direction: column;      // 🔥 aligne verticalement
-  align-items: flex-start;
-  gap: 30px;
-  margin-top: 100px;
-  margin-left: -130px;
-}
-
-
-.home-smalltext {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-top: 20px; // ⬅️ AJOUTE ou augmente cette valeur
-}
-
-.home-wave {
-  position: absolute;
-  z-index: 0;
-  height: auto;
-  width: 65vw; // Ajuste ici pour plus large si tu veux
-  pointer-events: none; // évite les bugs de clic
-}
-
-// ⬅️ SVG gauche
-.home-wave.left {
-  position: absolute;
-  top: 40%;
-  left: 0; // colle au bord gauche
-  width: 530px; // ↔️ largeur plus grande ici
-  height: auto;
-  z-index: 1;
-
-/* Buttons stacked in center under each other lower on the page */
-.home-page .bubbly-button {
-  width: 500px;
-  height: 100px;
-  padding: 20px 100px;
-  position: absolute;
-  top: 52vh;  /* Ajuste cette valeur pour qu'il soit juste au-dessus de .btn2 */
-  left: 12%;
-  z-index: 5;
-  padding: 0; /* Supprime les paddings qui pourraient décaler le texte */
-  line-height: 100px;
-  text-align: center;
-}
-
-.home-page .bubbly-button:hover {
-  transform: scale(1.02);
-}
-
-.home-page .bubbly-button:active {
-  transform: scale(0.9);
-  background: linear-gradient(90deg, #FF9F6F, #DB4367);
-}
-
+/* === BOUTONS === */
+.home-page .bubbly-button,
 .home-btn2 {
   width: 500px;
   height: 100px;
-  padding: 20px 100px;  /* Suppression totale du padding */
-  position: absolute;
-  top: 52vh;
-  left: 12%;
-  z-index: 6;
-  padding: 0;
   line-height: 100px;
+  padding: 0;
   text-align: center;
+  position: absolute;
+  left: 12%;
+  z-index: 5;
 }
 
+.home-page .bubbly-button {
+  top: 52vh;
+}
+
+.home-btn2 {
+  top: calc(52vh + 120px);
+  z-index: 6;
+}
+
+.home-page .bubbly-button:hover,
 .home-btn2:hover {
   transform: scale(1.02);
 }
 
+.home-page .bubbly-button:active,
 .home-btn2:active {
   transform: scale(0.9);
   background: linear-gradient(90deg, #FF9F6F, #DB4367);
-
 }
 
-// ➡️ SVG droite
-.home-wave.right {
+/* === SVG WAVES === */
+.home-wave {
   position: absolute;
-  bottom: 5%;
-  right: 0; // colle au bord droit
-  width: 850px; // ↔️ largeur plus grande ici aussi
+  z-index: 0;
+  height: auto;
+  width: 60vw;
+  pointer-events: none;
+}
+
+/* Haut */
+.home-wave.left {
+  top: 38%;
+  left: 0;
+  width: 500px;
+  z-index: 1;
+}
+
+/* Bas */
+.home-wave.right {
+  bottom: 8%;
+  right: 0;
+  width: 500px;
   height: auto;
   z-index: 1;
-
 }
