@@ -17,59 +17,73 @@ $start-font-primary: 'Chillax', sans-serif;
   background: $start-primary-bg;
 }
 
-.start-rectangle-left {
-  position: absolute;
-  top: 20vh;
-  left: 0;
-  width: 60vw;
-  height: 50vh;
-  background: #FF9F6F;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  z-index: 1;
-}
-
-.start-rectangle-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 75vw;
-  height: 50vh;
-  background: #FFAB5B;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  z-index: 1;
-}
 
 .start-container {
-  position: relative;
-  text-align: center;
-  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  max-height: 100%;
+  padding-top: 10%;
+  /*  position: relative;*/
+  /*  text-align: left;*/
+  /* z-index: 2;
   width: 90%;
-  max-width: 800px;
+  max-width: 800px; */
 }
 
 .welcome-title {
+  grid-area: 4 / 1 / 4 / 6;
+  padding-left: 20px;
   font-size: 3.5rem;
   font-weight: 700;
   color: #231F20;
   text-shadow: -2px -2px 0 #DB4367, 2px -2px 0 #DB4367, -2px 2px 0 #DB4367, 2px 2px 0 #DB4367;
 }
 
-.start-highlight {
-  color: #7EBDC2;
-  font-weight: 700;
-}
 
 .start-description-container {
-  max-width: 70%;
+  grid-area: 5 / 1 / 6 / 5;
+  padding-left: 20px;
+  /*  max-width: 100%; */
   font-size: 1.4rem;
   font-weight: 400;
   color: #F0F0F6;
+  z-index: 3;
+}
+
+.start-logo-container {
+  grid-area: 4 / 7 / 4 / 8;
+  z-index: 3;
+  /*   position: absolute;
+  top: 10%;
+  left: 5%; */
+  /* width: 100px; */
 }
 
 .start-cta-container {
-  margin-top: 20px;
+  grid-area: 6 / 4 / 6 / 7;
+  z-index: 3;
+  /*  width: 300px */
+  /*  position: relative;*/
+  /*  text-align: center;*/
+  /*  margin-top: 20px;*/
+}
+
+.start-zenflow {
+  grid-area: 8 / 4 / 8 / 7;
+  z-index: 3;
+  /*  position: relative;*/
+  /*  bottom: 30px;*/
+  /*right: 30px;  */
+
+}
+
+
+.start-highlight {
+  color: #7EBDC2;
+  font-weight: 700;
 }
 
 .start-cta-text {
@@ -190,10 +204,26 @@ $start-font-primary: 'Chillax', sans-serif;
   }
 }
 
-
-.start-logo-container {
+.start-rectangle-left {
   position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 100px;
+  top: 20vh;
+  left: 0;
+  width: 60vw;
+  height: 50vh;
+  background: #FF9F6F;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 1;
+}
+
+.start-rectangle-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 75vw;
+  height: 40vh;
+  background: #FFAB5B;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 1;
 }
