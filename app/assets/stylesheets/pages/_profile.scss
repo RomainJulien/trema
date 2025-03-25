@@ -44,8 +44,8 @@
     width: 100vw;
     max-width: 75%;
     background: #FF9F6F;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -59,8 +59,8 @@
     width: 100vw;
     max-width: 75%;
     background: #FFAB5B;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -69,7 +69,8 @@
 
 .psy-profile-content {
   flex: 1;
-  padding: 20px;
+  text-align: justify;
+  padding: 80px;
   z-index: 1;
 }
 
@@ -82,6 +83,7 @@
   max-width: 100%;
   height: 100%;
   overflow: hidden;
+  border-radius: 12px;
 }
 
 /* Ajustement des images pour qu'elles restent à l'intérieur des rectangles */
@@ -89,7 +91,7 @@
   width: 500px; /* Taille contrôlée */
   height: 300px; /* Taille fixe */
   object-fit: cover; /* Ajuste sans déformer */
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -118,11 +120,11 @@
 /* Style des textes */
 h3 {
   font-size: 1.8rem;
-  color: #333;
+  color: #f6f6f6;
 }
 
 p {
-  color: #666;
+  color: #f6f6f6;
   margin: 10px 0;
 }
 
@@ -147,12 +149,12 @@ p {
 .psy-profile-header {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 50px;
+  padding: 20px;
   width: 100%;
   min-height: 250px;
-  margin-top: 50px; /* Espace entre le header et ce bloc */
+  margin-top: 120px; /* Espace entre le header et ce bloc */
 }
 
 /* 🔹 Rectangle de fond du HEADER (collé à droite) */
@@ -203,11 +205,12 @@ p {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
+  align-items: flex-end;
+  padding-right: 10px;
   z-index: 1; /* Devant le rectangle */
 }
 
 .psy-profile-header .psy-profile-logo img {
   max-height: 100px;
-
+  transform: scale(0.5);
 }
