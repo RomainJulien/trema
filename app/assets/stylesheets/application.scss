@@ -25,17 +25,15 @@
 @import "pages/quizz";
 
 @font-face {
-  font-family: 'Chillax';
-  src: url(asset-path('Chillax-Regular.woff2')) format('woff2'),
-       url(asset-path('Chillax-Regular.woff')) format('woff');
+  font-family: 'Chillax-Regular';
+  src: url(asset-path('Chillax-Regular.woff2')) format('woff2');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Chillax';
-  src: url(asset-path('Chillax-Bold.woff2')) format('woff2'),
-       url(asset-path('Chillax-Bold.woff')) format('woff');
+  font-family: 'Chillax-Bold';
+  src: url(asset-path('Chillax-Bold.woff2')) format('woff2');
   font-weight: 700;
   font-style: normal;
 }
@@ -49,14 +47,13 @@
 }
 
 @font-face {
-  font-family: 'Chillax';
-  src: url(asset-path('Chillax-Light.woff2')) format('woff2'),
-       url(asset-path('Chillax-Light.woff')) format('woff');
+  font-family: 'Chillax-Light';
+  src: url(asset-path('Chillax-Light.woff2')) format('woff2');
   font-weight: 300;
   font-style: normal;
 }
 
+
 body {
-  font-family: 'Chillax', sans-serif;
   background: linear-gradient(to bottom, #F9B872, #FF9F6F);
 }
