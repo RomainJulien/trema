@@ -1,0 +1,72 @@
+.forgot-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.forgot-wrapper {
+  background: #FF9F6F;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.forgot-title {
+  font-family: 'Chillax-Semibold';
+  font-size: 24px;
+  margin-bottom: 24px;
+  color: #231F20;
+}
+
+.forgot-input {
+  margin-bottom: 20px;
+}
+
+.forgot-field {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.forgot-button {
+  background: linear-gradient(to right, #7EBDC2, #DA4167);
+  color: white;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.forgot-button:hover {
+  transform: scale(1.03);
+}
+
+.forgot-links {
+  margin-top: 24px;
+}
+
+.forgot-link-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px 0;
+  text-align: center;
+  font-family: 'Chillax-Semibold';
+  font-size: 14px;
+  color: white;
+  background: linear-gradient(to right, #FF9F6F, #DA4167);
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.forgot-link-btn:hover {
+  transform: scale(1.03);
+}
