@@ -83,7 +83,7 @@
 
 /* Texte sous-titre */
 .home-subtext {
-  font-family: 'Chillax', sans-serif;
+  font-family: 'Chillax-Semibold', sans-serif;
   font-weight: 600; // Semibold
   font-size: 30px;
   line-height: 140%;
@@ -95,7 +95,7 @@
 
 
 .home-smalltext {
-  font-family: 'Chillax', sans-serif;
+  font-family: 'Chillax-Light', sans-serif;
   font-weight: 300; // Light
   font-size: 22px;
   line-height: 140%;
@@ -147,9 +147,12 @@
   width: 530px; // ↔️ largeur plus grande ici
   height: auto;
   z-index: 1;
+}
 
 /* Buttons stacked in center under each other lower on the page */
 .home-page .bubbly-button {
+  font-family: 'Chillax-Light', sans-serif;
+  font-weight: 300; /* Utilisation de Chillax en version light */
   width: 500px;
   height: 100px;
   padding: 20px 100px;
@@ -172,14 +175,17 @@
 }
 
 .home-btn2 {
+  font-family: 'Chillax-Light', sans-serif;
+  font-weight: 300; /* Utilisation de Chillax en version light */
   width: 500px;
   height: 100px;
-  padding: 20px 100px;  /* Suppression totale du padding */
-  position: absolute;
-  top: 52vh;
-  left: 12%;
+  position: relative;
+  top: auto;
+  left: auto;
   z-index: 6;
-  padding: 0;
+  padding: 0 !important;
+  box-sizing: border-box;
+  margin: 0 !important;
   line-height: 100px;
   text-align: center;
 }
