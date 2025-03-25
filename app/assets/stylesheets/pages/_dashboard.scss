@@ -1,13 +1,18 @@
-/* 🔹 Conteneur principal du Dashboard */
 .dashboard-container {
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(to bottom, #f8a055, #f7c27d);
+  align-items: flex-start;
+  background: linear-gradient(to bottom, #f7c27d, #f8a055);
+}
+
+.dashboard-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
 }
 
 /* 🔹 TITRE PRINCIPAL */
@@ -18,147 +23,160 @@
   text-align: left;
 }
 
-/* 🔹 SECTION PRINCIPALE */
-.dashboard-main {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-  max-width: 1200px;
-}
-
 /* 🔹 BLOC GAUCHE */
 .dashboard-left {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 40%;
+  align-items: stretch;
+  margin-bottom: 7%;
 }
 
-/* 🔹 Ma carrière et Profil reconversion */
+/* 🔹 Cartes à gauche */
 .dashboard-career,
 .dashboard-profile,
 .dashboard-user {
-  background: #ffcc80;
-  padding: 15px;
-  border-radius: 10px;
+  background: #FFAB5B;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  p {
+    color: #333;
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  strong {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+  }
 }
 
-.dashboard-career-box,
-.dashboard-profile-box,
-.dashboard-user-box {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-/* 🔹 TITRES */
-.dashboard-career-title,
-.dashboard-profile-title,
-.dashboard-user-box p strong {
+/* 🔹 TITRES DE SECTION */
+.dashboard-section-title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: white;
+  margin-bottom: 10px;
+  text-align: right;
 }
 
-/* 🔹 Style des labels (Nom, Email, Mot de passe) */
-.dashboard-user-box p {
-  color: #333;
+/* 🔹 TITRE MÉTIER façon Figma (bouton style) */
+.dashboard-career-title {
+  display: inline-block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
   font-size: 1.2rem;
-  font-weight: normal;
+  font-weight: bold;
+  color: #333;
+  background: linear-gradient(to right, #fbe2da, #ff9f70);
+  border: 2px solid #e27a4f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  margin-bottom: 15px;
+  cursor: default;
 }
 
-/* 🔹 Style des valeurs de l’utilisateur */
-.dashboard-user-box p span {
-  font-weight: normal;
-  color: #555;
-  margin-left: 5px;
+/* 🔹 Groupe de boutons de carrière */
+.dashboard-career-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* 🔹 Boutons */
+.dashboard-btn,
 .dashboard-career-btn,
 .dashboard-quiz-btn,
 .dashboard-logout-btn {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: white;
   text-align: center;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.dashboard-career-btn {
-  background: #80cbc4;
+/* Bouton pastel (ex: Menuisier) */
+.dashboard-btn-primary {
+  background: linear-gradient(to right, #fbe2da, #ff9f70);
+  color: #333;
+  border: 2px solid #e27a4f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Bouton accès carrière style figma */
+.dashboard-btn-secondary {
+  background: linear-gradient(to right, #78bcc2, #de4077);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .dashboard-quiz-btn {
   background: #42a5f5;
+  color: white;
 }
 
 .dashboard-logout-btn {
   background: #e74c3c;
+  color: white;
+
+  &:hover {
+    background: #c0392b;
+  }
 }
 
-.dashboard-logout-btn:hover {
-  background: #c0392b;
-}
-
-/* 🔹 BLOC DROIT */
+/* 🔹 Bloc DROIT */
 .dashboard-right {
-  width: 55%;
+  width: 60%;
   background: #ffb74d;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
-  height: 20%;
+  margin-bottom: 7%;
 }
 
-/* 🔹 TITRE SECTIONS */
-.dashboard-section-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* 🔹 Métiers enregistrés */
-/* 🔹 Conteneur principal des métiers enregistrés */
+/* 🔹 Liste métiers */
 .dashboard-jobs {
   display: flex;
-  justify-content: center; /* ✅ Centre l'élément principal */
+  justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 400px; /* ✅ Ajuste la largeur pour éviter un débordement */
   margin: 0 auto;
 }
 
-/* 🔹 Conteneur unique du métier en vedette */
+/* 🔹 Carte métier */
 .dashboard-job-featured {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ✅ Centre l'image et le texte */
+  align-items: center;
   background: #ffcc80;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  max-width: 350px; /* ✅ Ajuste la taille max */
+  max-width: 350px;
   text-align: center;
-  overflow: hidden; /* ✅ Empêche tout dépassement */
+  overflow: hidden;
 }
 
-/* 🔹 Image du métier */
 .dashboard-job-featured-image {
   width: 100%;
-  max-width: 300px; /* ✅ Taille max pour éviter l'énorme image */
+  max-width: 300px;
   height: auto;
   border-radius: 10px;
-  object-fit: cover; /* ✅ Ajuste l’image sans la déformer */
+  object-fit: cover;
 }
 
-/* 🔹 Titre du métier */
 .dashboard-job-title {
   font-size: 1.8rem;
   font-weight: bold;
@@ -166,8 +184,7 @@
   margin-top: 10px;
 }
 
-
-/* 🔹 Bouton "Se connecter" */
+/* 🔹 Bouton fallback "Se connecter" */
 .dashboard-login-btn {
   display: block;
   width: 100%;

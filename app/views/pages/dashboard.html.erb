@@ -2,62 +2,49 @@
   <!-- 🔹 En-tête -->
   <h1 class="dashboard-title">Tableau de bord</h1>
 
-  <!-- 🔹 Section principale -->
   <div class="dashboard-main">
-    <!-- 🔹 Bloc GAUCHE (Ma carrière + Profil reconversion + Mon Profil) -->
+    <!-- 🔹 Bloc GAUCHE -->
     <div class="dashboard-left">
 
-<!-- 🔹 Ma carrière -->
-<div class="dashboard-career">
-  <h2 class="dashboard-section-title">Ma carrière</h2>
-
-  <div class="dashboard-career-box">
-    <p class="dashboard-career-title">Ébéniste</p>
-      <% if @career %>
-        <%= link_to "J’accède à ma carrière", career_path(@career), class: "dashboard-career-btn" %>
-      <%else%>
-        <%= link_to "Je commence ma carrière", careers_path(), data: {turbo_method: :post}, class: "dashboard-career-btn" %>
-      <%end %>
-
-  </div>
-</div>
+      <!-- 🔹 Ma carrière -->
+      <div class="dashboard-career">
+        <div class="dashboard-career-header">
+          <h2 class="dashboard-section-title">Ma carrière</h2>
+        </div>
+        <% if @career %>
+          <%= link_to @career.job.title.capitalize, career_path(@career), class: "dashboard-btn dashboard-btn-primary" %>
+          <%= link_to "J’accède à ma carrière", career_path(@career), class: "dashboard-btn dashboard-btn-secondary" %>
+        <% else %>
+          <%= link_to "Commencer une carrière", careers_path, data: { turbo_method: :post }, class: "career-btn career-primary" %>
+        <% end %>
+      </div>
 
       <!-- 🔹 Mon profil de reconversion -->
       <div class="dashboard-profile">
         <h2 class="dashboard-section-title">Mon profil de reconversion</h2>
-        <div class="dashboard-profile-box">
-
-          <p class="dashboard-profile-title"><%=@psy_profile.name%></p>
-
-          <%= link_to "Revoir les métiers", psy_profile_path(current_user.psy_profile.id), class: "dashboard-quiz-btn" %>
-        </div>
+        <p class="dashboard-profile-title"><%= @psy_profile.name %></p>
+        <%= link_to "Revoir les métiers", psy_profile_path(@psy_profile), class: "dashboard-quiz-btn" %>
       </div>
 
       <!-- 🔹 Mon Profil -->
       <div class="dashboard-user">
         <h2 class="dashboard-section-title">Mon Profil</h2>
-        <div class="dashboard-user-box">
-          <% if current_user %>
-            <p><strong>Nom :</strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
-            <p><strong>Email :</strong> <%= current_user.email %></p>
-            <p><strong>Mot de passe :</strong> *******</p>
-            <%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dashboard-logout-btn" %>
-          <% else %>
-            <p>Vous n'êtes pas connecté.</p>
-            <div class="dashboard-profile-box">
-              <%= link_to "Se connecter", new_user_session_path, class: "dashboard-login-btn" %>
-            </div>
-          <% end %>
-        </div>
+        <% if current_user %>
+          <p><strong>Nom :</strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
+          <p><strong>Email :</strong> <%= current_user.email %></p>
+          <p><strong>Mot de passe :</strong> *******</p>
+          <%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dashboard-logout-btn" %>
+        <% else %>
+          <p>Vous n'êtes pas connecté.</p>
+          <%= link_to "Se connecter", new_user_session_path, class: "dashboard-login-btn" %>
+        <% end %>
       </div>
-
     </div>
 
-    <!-- 🔹 Bloc DROIT (Mes métiers enregistrés) -->
+    <!-- 🔹 Bloc DROIT -->
     <div class="dashboard-right">
       <h2 class="dashboard-section-title">Mes métiers enregistrés</h2>
       <div class="dashboard-jobs">
-        <!-- 🔥 Affichage unique de l'Ébéniste avec une image plus grande -->
         <div class="dashboard-job-featured">
           <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-featured-image">
           <p class="dashboard-job-title">Ébéniste</p>
