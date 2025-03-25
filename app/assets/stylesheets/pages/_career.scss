@@ -2,35 +2,32 @@
 
 /* En-tête */
 .career-title {
-  font-size: clamp(32px, 6vw, 64px);
+  font-size: clamp(40px, 8vw, 72px);
   font-weight: 900;
   color: #fff;
-  text-shadow:
-    -2px -2px 0 #DA4167,
-     2px -2px 0 #DA4167,
-    -2px  2px 0 #DA4167,
-     2px  2px 0 #DA4167;
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  text-align: center;
   background: transparent;
   padding: 10px 20px;
   border-radius: 10px;
   z-index: 5;
+  margin-top: 40px;
 }
 
+/* Sous-titre positionné juste en dessous du titre */
 .career-subtitle {
   display: flex;
-  flex-direction: row; /* Alignement en ligne */
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   color: #DB4467;
   gap: 10px;
   font-size: 1rem;
-  margin-top: 80px; /* Espace en dessous de .career-title positionné en absolute */
+  margin-top: 10px; /* petit écart avec le titre */
+  margin-bottom: 40px; /* espace avec le reste */
 }
 
+/* Avatar */
 .def_profile {
   width: 40px;
   height: 40px;
@@ -38,6 +35,7 @@
   object-fit: cover;
 }
 
+/* Titre de section déplacé visuellement à droite */
 .career-section-title {
   font-size: clamp(32px, 6vw, 64px);
   font-weight: 900;
@@ -48,11 +46,11 @@
     -2px  2px 0 #DA4167,
      2px  2px 0 #DA4167;
   z-index: 5;
-  width: 60%;
-  margin: 0 auto;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  width: fit-content;
+  margin: 0 0 20px auto; /* aligné à droite */
+  padding-right: 5%;
 }
+
 
 /* Section des étapes de la carrière */
 .career-steps {
@@ -70,7 +68,7 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    min-height: 250px;
+    min-height: 280px;
     padding: 0;
   }
 
@@ -93,7 +91,7 @@
   .career-step-item.left .career-step-background {
     left: 0;
     width: 100vw;
-    max-width: 75%;
+    max-width: 65%;
     background: #FF9F6F;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -105,7 +103,7 @@
   .career-step-item.right .career-step-background {
     right: 0;
     width: 100vw;
-    max-width: 75%;
+    max-width: 65%;
     background: #FFAB5B;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -113,15 +111,18 @@
     border-bottom-right-radius: 0;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-
   .career-step-content {
-    flex: 1;
+    max-width: 700px;
     padding: 20px;
     z-index: 1;
   }
 
   .career-step-toggle {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+  }
 
     .career-step-checkbox {
       display: none;
@@ -165,16 +166,41 @@
     }
 
     .career-step-checkbox:checked + .career-step-button::before {
-      content: "✔️";
-      color: white;
-      font-size: 1.4rem;
+      content: "";
+      background-image: url('/assets/images/tick.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 24px;  /* or adjust as needed */
+      height: 24px;
       position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
-  }
+
 
   .career-step-content h3 {
     font-size: 1.8rem;
     color: #fff;
     margin-bottom: 15px; /* Espace en dessous du titre de l'étape */
+  }
+
+  .career-step-item img {
+    width: 370px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    position: absolute; /* ⬅️ Required for top/left/right to work */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .career-step-item.left img {
+    left: 60vw; /* ⬅️ position from the left edge */
+  }
+
+  .career-step-item.right img {
+    right: 60vw; /* ⬅️ position from the right edge */
   }
 }
