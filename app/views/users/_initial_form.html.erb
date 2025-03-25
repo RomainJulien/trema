@@ -4,26 +4,29 @@
   <br>
   <br>
 
-    <%= f.fields_for :answers do |a|  %>
-      <% Answer::QUIZZ.each_with_index do |quizz, index| %>
-        <div  class="<%= 'd-none' if index != 0 %>"
-              id= "<%=index%>"
-              data-navigate-quizz-target="quizz"
-              data-action = "click->navigate-quizz#goNext">
-          <!-- Stocke le numéro de la question. Ici, question_number vaut 1 -->
-          <%#= f.hidden_field :question_number, value: index %>
-          <!-- Affichage de la question -->
-          <p class="text-center chillax-text-question"><%= quizz[:question] %></p>
-          <%# Parcours les options numérotées de 1 à 5 %>
-          <div class="chillax-text-answer custom-radio-buttons <%= index.even? ? 'custom-radio-buttons-left' : 'custom-radio-buttons-right' %>" id= "<%=index%>" >
-          <%=a.input "answer_#{index + 1}".to_sym,
-                      as: :radio_buttons,
-                      collection: quizz[:answers],
-                      legend_tag: false,
-                      require: true,
-                      wrapper_class: "" %>
-          </div>
-        </div>
-      <% end %>
-      <button type="submit" class="bubbly-button">Valider</button>
-    <% end %>
+<%= f.fields_for :answers do |a|  %>
+  <% Answer::QUIZZ.each_with_index do |quizz, index| %>
+    <div  class="<%= 'd-none' if index != 0 %>"
+          id= "<%=index%>"
+          data-navigate-quizz-target="quizz"
+          data-action = "click->navigate-quizz#goNext">
+      <p class="text-center chillax-text-question"><%= quizz[:question] %></p>
+      <div class="chillax-text-answer custom-radio-buttons <%= index.even? ? 'custom-radio-buttons-left' : 'custom-radio-buttons-right' %>"
+           id= "<%=index%>"
+           data-controller="radio-button">
+      <%= a.input "answer_#{index + 1}".to_sym,
+            as: :radio_buttons,
+            collection: quizz[:answers],
+            legend_tag: false,
+            require: true,
+            wrapper_class: "",
+            input_html: {
+              data: {
+                controller: "bubbly-button",
+                action: "click->bubbly-button#animateButton"
+              }
+            } %>
+      </div>
+    </div>
+  <% end %>
+<% end %>

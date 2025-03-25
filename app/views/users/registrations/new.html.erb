@@ -1,62 +1,53 @@
 
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+<div class= "quizz-container">
 <h2 class="quizz-title">Aide-nous à te connaître ! C'est pas long pour de vrai...</h2>
 
+  <div class=" card-quizz ">
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+                        html: {
+                          novalidate: false,
+                          data: {
+                            controller: "form-button",
+                            action: "submit->form-button#animateFormButton"
+                          }
+                        }) do |f| %>
+      <%= f.error_notification %>
 
+      <div class="quizzes" data-controller="navigate-quizz">
+        <%= render "users/initial_form", f: f %>
 
-<div class=" card-quizz ">
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html:{novalidate: false}) do |f| %>
-  <%= f.error_notification %>
-
-
-<div class="quizzes" data-controller="navigate-quizz">
-  <%= render "users/initial_form", f: f %>
-
-
-
-<!-- Ici les champs pour enregistrer l'user -->
-  <div class="d-none" data-navigate-quizz-target="quizz">
-
-    <div class="form-inputs">
-      <%= f.input :first_name,
-                  required: true,
-                  label: "Prénom"%>
-      <%= f.input :last_name,
-                  required: true,
-                  label: "Nom"%>
-      <%= f.input :address,
-                  required: true,
-                  label: "Adresse"%>
-      <%= f.input :email,
-                  required: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-<br>
-<br>
-  <div class="form-actions custom-radio-buttons">
-    <%= f.button :submit, "Poursuivre", class: "btn-primary" %>
+        <!-- Ici les champs pour enregistrer l'user -->
+        <div class="d-none" data-navigate-quizz-target="quizz">
+          <div class="form-inputs">
+            <%= f.input :first_name,
+                        required: true,
+                        label: "Prénom"%>
+            <%= f.input :last_name,
+                        required: true,
+                        label: "Nom"%>
+            <%= f.input :address,
+                        required: true,
+                        label: "Adresse"%>
+            <%= f.input :email,
+                        required: true,
+                        input_html: { autocomplete: "email" }%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+          </div>
+          <br>
+          <br>
+          <div class="form-actions custom-radio-buttons">
+            <%= f.button :submit, "Poursuivre", class: "bubbly-button" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>
-</div>
-<% end %>
-</div>
+ </div>
 
-<br>
-<br>
-<br>
-<br>
 <%#= render "devise/shared/links" %>

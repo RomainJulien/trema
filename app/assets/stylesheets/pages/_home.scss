@@ -111,8 +111,7 @@
 }
 
 /* === BOUTONS === */
-.home-page .bubbly-button,
-.home-btn2 {
+.home-page .bubbly-button {
   font-family: 'Chillax-Light', sans-serif;
   font-weight: 300; /* Utilisation de Chillax en version light */
   width: 500px;
@@ -126,12 +125,27 @@
 }
 
 .home-page .bubbly-button {
-  top: 52vh;
+  top: 58vh;
 }
 
 .home-btn2 {
-  top: calc(52vh + 120px);
+  font-family: 'Chillax-Light', sans-serif;
+  font-weight: 300; /* Utilisation de Chillax en version light */
+  width: 500px;
+  height: 100px;
+  line-height: 100px;
+  padding: 0;
+  text-align: center;
+  left: 12%;
+  z-index: 5;
+  position: relative;
   z-index: 6;
+  top: -3vh;
+  /* Force zero padding and margin */
+  padding: 0 !important;
+  margin: 0 !important;
+   /* Reset box-sizing */
+  box-sizing: border-box;
 }
 
 .home-page .bubbly-button:hover,

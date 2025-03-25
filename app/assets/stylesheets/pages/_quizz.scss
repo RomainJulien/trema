@@ -1,44 +1,84 @@
+
+.quizz-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px; /* Réduction du padding global */
+}
+
+
 .card-quizz {
   display: flex;
   justify-content: center;
+  flex-direction: column; /* Si tu veux empiler les éléments de manière verticale */
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  padding: 1rem;
+  margin: 1rem; /* Pour ajouter un peu d'espace autour de la carte */
+  word-wrap: break-word; /* Assure que le texte long soit bien contenu */
+  width: 600px;
+  max-width: 600px;
+  border-radius: 12px;
 }
 
 .quizz-title {
-  text-align: center; /* Centre le texte */
-  font-size: 2rem; /* Équivaut à fs-1 de Bootstrap */
-  margin: 2rem 0; /* Espacement autour */
-  padding: 1rem; /* Espacement intérieur */
-  font-family: 'Chillax', sans-serif; /* Utilise ta typo */
-  font-weight: 600; /* Semibold */
-  color: #F6F6F6; /* Couleur personnalisable */
-}
+  text-align: center;
+  font-size: 2rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-weight: 600;
+  color: #F6F6F6;
 
+}
 
 .custom-radio-buttons {
   position: relative;
   display: flex;
-  width: 70%;
-  /* align-items: center;*/
-  /* justify-content: center; */
+  width: 100%; /* Prendre toute la largeur de la carte */
   margin: 0 auto;
 }
 
 .custom-radio-buttons input[type="radio"] {
-  display: none; /* Cache les vrais boutons radio */
+  display: none;
 }
+
 .custom-radio-buttons label {
-  font-family: Chillax-Light;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
+  padding: 15px 20px;
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
   color: #F6F6F6;
-  /*  transition: background 0.3s;*/
   cursor: pointer;
   text-align: center;
   margin: 5px;
-  width: 100%;
+  width: 600px;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(126, 189, 194, 0.5);
+  border-radius: 12px;
+  border: 2px solid #F6F6F6;
 }
+
+.custom-radio-buttons label:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.custom-radio-buttons label.clicked,
+.custom-radio-buttons label:active {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #FF9F6F, #DB4367);
+  box-shadow: 0 2px 25px rgba(126, 189, 194, 0.2);
+}
+
+.custom-radio-buttons label.animate {
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
 .custom-radio-buttons-left label {
   justify-content: flex-start;
 }
@@ -47,26 +87,13 @@
   justify-content: flex-end;
 }
 
-.custom-radio-buttons label:hover {
-  transform: scale(1.05); /* Agrandissement léger */
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Effet d'ombre */
-}
-
-.custom-radio-buttons input[type="radio"]:checked + label {
-  background: #007bff;
-  color: white;
-  border-color: #007bff;
-  transform: scale(1.05); /* Effet léger au clic */
-  transform: translateX(30px);
-}
-
 .chillax-text-question {
-  font-family: 'Chillax', sans-serif;
+  font-family: 'Chillax-Semibold', sans-serif;
   font-weight: 600;
 }
 
 .chillax-text-answer {
-  font-family: 'Chillax', sans-serif;
+  font-family: 'Chillax-Light', sans-serif;
   font-weight: 300;
 }
 
@@ -82,7 +109,7 @@
 }
 
 .quizz-page .bubbly-button {
-  width: 300px; /* Ajuste selon le design */
+  width: 300px;
   height: 80px;
   padding: 15px 50px;
   display: block;
@@ -106,4 +133,35 @@
 .quizz-page .bubbly-button:active {
   transform: scale(0.9);
   background: linear-gradient(90deg, #FF9F6F, #DB4367);
+}
+
+button[type="submit"] {
+  display: none !important;
+}
+
+/* Animations keyframes */
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 110%, 75% 70%, 95% 60%, 70% 80%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 120%, 75% 80%, 95% 70%, 70% 90%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
