@@ -39,8 +39,9 @@
 }
 
 @font-face {
-  font-family: 'Chillax-Semibold';
-  src: url(asset-path('Chillax-Semibold.woff2')) format('woff2');
+  font-family: 'Chillax';
+  src: url(asset-path('Chillax-Semibold.woff2')) format('woff2'),
+       url(asset-path('Chillax-Semibold.woff')) format('woff');
   font-weight: 600;
   font-style: normal;
 }

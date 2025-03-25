@@ -124,34 +124,6 @@
   margin-left: -130px;
 }
 
-/* Bouton style */
-.home-btn {
-  padding: 20px 60px;
-  border-radius: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: none;
-  width: 400px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.home-btn.blue {
-  background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: black;
-}
-
-.home-btn.pink {
-  background: linear-gradient(45deg, #DA4167, #FE9F6F);
-  color: black;
-}
-
-.home-btn:hover {
-  transform: scale(1.05);
-}
 
 .home-smalltext {
   font-size: 1.2rem;
@@ -175,6 +147,51 @@
   width: 530px; // ↔️ largeur plus grande ici
   height: auto;
   z-index: 1;
+
+/* Buttons stacked in center under each other lower on the page */
+.home-page .bubbly-button {
+  width: 500px;
+  height: 100px;
+  padding: 20px 100px;
+  position: absolute;
+  top: 52vh;  /* Ajuste cette valeur pour qu'il soit juste au-dessus de .btn2 */
+  left: 12%;
+  z-index: 5;
+  padding: 0; /* Supprime les paddings qui pourraient décaler le texte */
+  line-height: 100px;
+  text-align: center;
+}
+
+.home-page .bubbly-button:hover {
+  transform: scale(1.02);
+}
+
+.home-page .bubbly-button:active {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #FF9F6F, #DB4367);
+}
+
+.home-btn2 {
+  width: 500px;
+  height: 100px;
+  padding: 20px 100px;  /* Suppression totale du padding */
+  position: absolute;
+  top: 52vh;
+  left: 12%;
+  z-index: 6;
+  padding: 0;
+  line-height: 100px;
+  text-align: center;
+}
+
+.home-btn2:hover {
+  transform: scale(1.02);
+}
+
+.home-btn2:active {
+  transform: scale(0.9);
+  background: linear-gradient(90deg, #FF9F6F, #DB4367);
+
 }
 
 // ➡️ SVG droite
@@ -185,4 +202,5 @@
   width: 850px; // ↔️ largeur plus grande ici aussi
   height: auto;
   z-index: 1;
+
 }

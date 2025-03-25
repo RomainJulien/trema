@@ -1,20 +1,22 @@
-import { Controller } from "@hotwired/stimulus"
+import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="bubbly-button"
 export default class extends Controller {
-  connect() {
-    console.log("premiercoucou")
-  }
-
   animateButton(e) {
-    console.log("coucouapres")
-    e.preventDefault;
-    //reset animation
-    e.target.classList.remove('animate');
+    e.preventDefault(); // Empêche la navigation immédiate
 
-    e.target.classList.add('animate');
-    setTimeout(function(){
-      e.target.classList.remove('animate');
-    },700);
+    const button = e.target.closest("a"); // Trouve le lien cliqué
+
+    if (!button) return; // Sécurité : si ce n'est pas un lien, on quitte
+
+    button.classList.add("clicked", "animate"); // Ajoute l'animation
+
+    const href = button.getAttribute("href"); // Récupère le lien
+
+    if (href) {
+      setTimeout(() => {
+        window.location.href = href; // Change la page après 700ms
+      }, 700);
+    }
   }
 }

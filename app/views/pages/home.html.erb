@@ -15,6 +15,7 @@
         <h1>La reconversion,<br>mais sans <span class="home-stress">stress</span>.</h1>
       </div>
 
+
       <!-- TEXTES -->
       <div class="home-texts">
         <p class="home-subtext">
@@ -26,11 +27,14 @@
         </p>
       </div>
 
-      <!-- BOUTONS -->
-      <div class="home-buttons">
-        <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "home-btn blue" %>
-        <%= link_to "Je fonce !", "#", class: "home-btn pink" %>
+      <div class="home-page">
+        <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "bubbly-button btn-home", data: { controller: "bubbly-button", action: "click->bubbly-button#animateButton" } %>
       </div>
+
+      <div>
+        <%= link_to "Je fonce!", "#", class: "bubbly-button home-btn2", data: { controller: "bubbly-button", action: "click->bubbly-button#animateButton" } %>
+      </div>
+
 
     </div> <!-- .home-content -->
   </div> <!-- .home-section -->
