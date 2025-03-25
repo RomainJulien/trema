@@ -1,40 +1,78 @@
-/* Global Styles */
-* {
-  font-family: $font-primary;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
 
-
-.background-wrapper {
+/* Wrapper & Section */
+.home-wrapper {
   position: relative;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
-.container {
+.home-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Rectangle gauche (centré verticalement) */
+.home-left .home-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 85vw;
+  height: 400px;
+  background: #FF9F6F;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 0;
+}
+
+/* Rectangle droit en bas qui remonte légèrement */
+.home-left::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: 0;
+  width: 85vw;
+  height: 400px;
+  background: #FFAB5B;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 0;
+}
+
+/* Contenu centré */
+.home-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 3;
+  justify-content: space-between; // 🔥 titre en haut, texte au centre, boutons en bas
+  gap: 40px;
+  padding: 40px 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-h1 {
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight: 900;
-  color: #1E1E1E;
-  line-height: 1.2;
-  margin-top: 20px;
-  position: relative;
-  z-index: 3;
+.home-texts {
+  margin-top: 60px; // ajuste ici
 }
 
-.stress {
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight: 900;
+.home-title h1 {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 600; // important !      // Semibold comme Figma
+  font-size: 80px;        // Taille exacte
+  line-height: 100%;
+  letter-spacing: 1.5px;
+  color: #231F20;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.home-stress {
   color: #7EBDC2;
   text-shadow:
     -2px -2px 0 #DA4167,
@@ -43,137 +81,108 @@ h1 {
      2px  2px 0 #DA4167;
 }
 
-/* Box 1 directly under title */
-.box1 {
-  position: absolute;
-  top: 20vh;
-  right: 30vw;
-  width: 80vw;
-  height: 45vh;
-  background: #FF9F6F;
-  border-radius: 15px;
-  z-index: 1;
-}
-
-/* Box 2 positioned at the bottom */
-.box2 {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 80vw;
-  height: 45vh;
-  background: #FFAB5B;
-  border-radius: 15px;
-  z-index: 1;
-}
-
-/* Text 1: Center to right, slightly lower than box1 */
-.text1 {
-  font-size: clamp(20px, 3vw, 30px);
+/* Texte sous-titre */
+.home-subtext {
   font-family: 'Chillax', sans-serif;
-  font-weight: bold;
-  color: #F6F6F6;
-  width: 120%;
-  max-width: 1100px;
-  text-align: right;
-  position: absolute;
-  top: 23vh;
-  left: 50%;
-  transform: translateX(-25%);
-  z-index: 3;
-}
-
-/* Text 2: Starts from 1/4 of the page to the center, slightly lower than text1 */
-.text2 {
-  font-size: clamp(20px, 3vw, 30px);
-  font-family: 'Chillax', sans-serif;
-  font-weight: 20;
-  color: #F6F6F6;
-  width: 110%;
-  max-width: 1000px;
+  font-weight: 600; // Semibold
+  font-size: 30px;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+  color: #FFFFFF;
   text-align: left;
-  position: absolute;
-  top: 38vh;
-  left:-5%;
-  transform: translateX(-10%);
-  z-index: 3;
+  margin-bottom: 20px;
 }
 
-/* Zenflow(1) on the left, 1/4 outside page, aligned with text1 */
-.znenflow1-img {
-  position: absolute;
-  width: 700px;
-  height: auto;
-  top: 23vh;
-  left: -85%; /* 1/4 outside the page */
-  object-fit: contain;
-  z-index: 2;
+
+.home-smalltext {
+  font-family: 'Chillax', sans-serif;
+  font-weight: 300; // Light
+  font-size: 22px;
+  line-height: 140%;
+  letter-spacing: -0.3px;
+  color: #FFFFFF;
+  text-align: left;
+  margin-bottom: 40px;
+  max-width: 600px; // Optionnel, pour contrôler la largeur
 }
 
-/* Buttons stacked in center under each other lower on the page */
-.btn1 {
+
+.home-align-left {
+  position: relative;
+  left: -240px; // 🔥 déplace vraiment le bloc vers la gauche
+  text-align: left;
+}
+
+
+/* Boutons alignés */
+.home-buttons {
+  display: flex;
+  flex-direction: column;      // 🔥 aligne verticalement
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 100px;
+  margin-left: -130px;
+}
+
+/* Bouton style */
+.home-btn {
+  padding: 20px 60px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  width: 400px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.home-btn.blue {
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #FFFFFF;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  padding: 20px 100px;
-  border-radius: 12px;
-  border: 2px solid #F0F0F6;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.6s ease-in-out, transform 0.3s ease-in-out;
-  width: 500px; /* Same width */
-  height: 100px; /* Same height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  position: absolute;
-  top: 60vh;
-  left: 30%;
-  transform: translateX(-50%);
-  z-index: 5;
+  color: black;
 }
 
-.btn1:hover {
-  background: linear-gradient(90deg, #FF9F6F, #7EBDC2);
-  transform: translateX(-50%) scale(1.02);
-}
-
-.btn2 {
+.home-btn.pink {
   background: linear-gradient(45deg, #DA4167, #FE9F6F);
-  color: #FFFFFF;
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  padding: 20px 100px; /* Increased size */
-  border-radius: 12px;
-  border: 2px solid #F0F0F6;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.6s ease-in-out, transform 0.3s ease-in-out;
-  width: 500px; /* Same width */
-  height: 100px; /* Same height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  position: absolute;
-  top: 75vh;
-  left: 30%;
-  transform: translateX(-50%);
-  z-index: 5;
+  color: black;
 }
 
-.btn2:hover {
-  background: linear-gradient(45deg, #FE9F6F, #DA4167);
-  transform: translateX(-50%) scale(1.02);
+.home-btn:hover {
+  transform: scale(1.05);
 }
 
-/* Zenflow image aligned with first button, 1/4 outside right */
-.zenflow-img {
+.home-smalltext {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 20px; // ⬅️ AJOUTE ou augmente cette valeur
+}
+
+.home-wave {
   position: absolute;
-  width: 700px;
+  z-index: 0;
   height: auto;
-  top: 60vh;
-  left: 110%;
-  object-fit: contain;
-  z-index: 2;
+  width: 65vw; // Ajuste ici pour plus large si tu veux
+  pointer-events: none; // évite les bugs de clic
+}
+
+// ⬅️ SVG gauche
+.home-wave.left {
+  position: absolute;
+  top: 40%;
+  left: 0; // colle au bord gauche
+  width: 530px; // ↔️ largeur plus grande ici
+  height: auto;
+  z-index: 1;
+}
+
+// ➡️ SVG droite
+.home-wave.right {
+  position: absolute;
+  bottom: 5%;
+  right: 0; // colle au bord droit
+  width: 850px; // ↔️ largeur plus grande ici aussi
+  height: auto;
+  z-index: 1;
 }

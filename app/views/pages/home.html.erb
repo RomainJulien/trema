@@ -1,45 +1,37 @@
-<div class="background-wrapper">
-  <div class="box1"></div>
-  <div class="box2"></div>
-  <div class="container">
-    <div class="description-container">
+<div class="home-wrapper">
+  <!-- ✅ SVG collés au bord de l’écran -->
+  <%= image_tag("Zenflow (1).png", class: "home-wave left") %>
+  <%= image_tag("Zenflow.png", class: "home-wave right") %>
 
-      <div>
-        <h1>La reconversion,<br> &nbsp;&nbsp;&nbsp;&nbsp;mais sans <span class="stress">stress</span>.</h1>
+  <div class="home-section home-left">
+    <!-- Rectangle gauche -->
+    <div class="home-bg"></div>
+
+    <!-- Contenu central -->
+    <div class="home-content">
+
+      <!-- TITRE -->
+      <div class="home-title">
+        <h1>La reconversion,<br>mais sans <span class="home-stress">stress</span>.</h1>
       </div>
 
-      <div>
-        <%= image_tag("Zenflow (1).png", class: "znenflow1-img") %>
-      </div>
+      <!-- TEXTES -->
+      <div class="home-texts">
+        <p class="home-subtext">
+          Tremä t’aide à trouver le métier qui te correspond et à franchir chaque étape, pas à pas.
+        </p>
 
-      <div>
-        <%= image_tag("Zenflow.png", class: "zenflow-img") %>
-      </div>
-
-      <div>
-      <p class="text1">
-        Trema t’aide à trouver le métier qui te correspond et à franchir chaque étape, pas à pas.
-      </p>
-      </div>
-
-      <div>
-      <p class="text2">
-        Que tu saches déjà où tu vas ou que tu sois complètement paumé, on est là pour te guider.
-      </p>
-      </div>
-
-      <div>
-      <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "btn1" %>
-      </div>
-
-      <div>
-        <p class="btn2">
-          Je fonce!
+        <p class="home-smalltext home-align-left">
+          Que tu saches déjà où tu vas ou que tu sois complètement paumé, on est là pour te guider.
         </p>
       </div>
 
+      <!-- BOUTONS -->
+      <div class="home-buttons">
+        <%= link_to "Aide-moi à trouver !", new_user_registration_path, class: "home-btn blue" %>
+        <%= link_to "Je fonce !", "#", class: "home-btn pink" %>
       </div>
 
-    </div>
-  </div>
-</div>
+    </div> <!-- .home-content -->
+  </div> <!-- .home-section -->
+</div> <!-- .home-wrapper -->
