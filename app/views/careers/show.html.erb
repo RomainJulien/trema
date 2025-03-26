@@ -4,9 +4,15 @@
 
 <h2 class="career-section-title">Ebéniste</h2>
 
+<!-- Bouton Ajouter une étape -->
+<div class="add-step-wrapper" id="add-step-trigger">
+  <%= image_tag "bouton_plus.png", alt: "Ajouter une étape", class: "plus-icon" %>
+  <span class="add-step-label">Ajouter une étape</span>
+</div>
+
 <div class="career-steps">
-  <!-- Ajout d'un conteneur pour englober toutes les étapes -->
-  <div class="steps-list">
+  <div class="steps-list" id="career-steps">
+
     <!-- Étape 1 -->
     <div class="career-step-item left">
       <div class="career-step-background"></div>
@@ -31,7 +37,7 @@
       <div class="career-step-content">
         <h3>Trouver sa formation</h3>
         <p>
-          Choisir un parcours adapté : CAP Ébéniste (formation de base indispensable), Bac pro Artisanat et métiers d’art, ou encore des formations spécialisées en marqueterie, sculpture ou restauration de meubles. Des formations sont disponibles en présentiel ou en ligne, selon le rythme souhaité.
+          Choisir un parcours adapté : CAP Ébéniste, Bac pro Artisanat et métiers d’art, formations spécialisées… disponibles en présentiel ou en ligne.
         </p>
       </div>
       <label class="career-step-toggle">
@@ -49,7 +55,7 @@
       <div class="career-step-content">
         <h3>Financer sa reconversion</h3>
         <p>
-          Utiliser son Compte Personnel de Formation (CPF), contacter Pôle emploi ou les chambres de métiers pour connaître les aides disponibles. Des dispositifs comme le Projet de Transition Professionnelle (PTP) ou les financements régionaux peuvent prendre en charge tout ou partie du coût.
+          CPF, aides Pôle Emploi, Projet de Transition Pro, aides régionales… plusieurs solutions existent pour prendre en charge tout ou partie du coût.
         </p>
       </div>
       <label class="career-step-toggle">
@@ -67,7 +73,7 @@
       <div class="career-step-content">
         <h3>Commencer son apprentissage</h3>
         <p>
-          Intégrer un centre de formation d’apprentis (CFA) ou une école spécialisée, et rechercher un maître d’apprentissage (atelier ou entreprise d’ébénisterie) pour apprendre en conditions réelles, tout en étant rémunéré.
+          CFA, écoles spécialisées, maître d’apprentissage… pour apprendre en conditions réelles, tout en étant rémunéré.
         </p>
       </div>
       <label class="career-step-toggle">
@@ -85,7 +91,7 @@
       <div class="career-step-content">
         <h3>Je travaille</h3>
         <p>
-          Il est possible de se former au métier d’ébéniste tout en travaillant : cours du soir, formation à distance, ou alternance adaptée. Le CPF de transition permet de suivre une formation qualifiante tout en gardant son emploi ou son revenu.
+          Formation tout en travaillant : cours du soir, à distance ou en alternance avec le CPF de transition.
         </p>
       </div>
       <label class="career-step-toggle">
@@ -93,22 +99,43 @@
         <span class="career-step-button" data-step="5">5</span>
       </label>
       <div class="career-step-image">
-        <!-- Image ou illustration de l'étape 5 (à ajouter si besoin) -->
         <%= image_tag "hired.jpg", alt: "apprentissage", class: "career-step-image" %>
       </div>
     </div>
+
   </div>
 </div>
 
+<!-- Liens bas de page -->
 <div class="btn-links-wrapper">
   <%= link_to "#", class: "haut-page-link" do %>
-  <%= image_tag "arrow-up.svg", alt: "flèche vers le haut" %>
-  <span>(haut de page)</span>
-<% end %>
-
+    <%= image_tag "arrow-up.svg", alt: "flèche vers le haut" %>
+    <span>(haut de page)</span>
+  <% end %>
 
   <%= link_to dashboard_path, class: "tableau-de-bord" do %>
     <%= image_tag "Logo.png", alt: "retour tableau de bord" %>
     <span>(tableau de bord)</span>
   <% end %>
 </div>
+
+<script>
+document.addEventListener("turbo:load", () => {
+  const trigger = document.getElementById("add-step-trigger");
+  const steps = document.querySelectorAll(".career-step-item");
+  let currentStep = 0;
+
+  if (!trigger) return;
+
+  trigger.addEventListener("click", () => {
+    if (currentStep < steps.length) {
+      steps[currentStep].classList.add("show"); // ✅ transition visible
+      currentStep++;
+
+      if (currentStep === steps.length) {
+        trigger.style.display = "none";
+      }
+    }
+  });
+});
+</script>
