@@ -12,18 +12,32 @@
           <h2 class="dashboard-section-title">Ma carrière</h2>
         </div>
         <% if @career %>
-          <%= link_to @career.job.title.capitalize, career_path(@career), class: "dashboard-btn dashboard-btn-primary" %>
           <%= link_to "J’accède à ma carrière", career_path(@career), class: "dashboard-btn dashboard-btn-secondary" %>
         <% else %>
-          <%= link_to "Commencer une carrière", careers_path, data: { turbo_method: :post }, class: "career-btn career-primary" %>
+          <%= link_to "Commencer une carrière", careers_path, data: { turbo_method: :post }, class: "dashboard-btn dashboard-btn-primary" %>
         <% end %>
       </div>
 
       <!-- 🔹 Mon profil de reconversion -->
       <div class="dashboard-profile">
         <h2 class="dashboard-section-title">Mon profil de reconversion</h2>
-        <p class="dashboard-profile-title"><%= @psy_profile.name %></p>
-        <%= link_to "Revoir les métiers", psy_profile_path(@psy_profile), class: "dashboard-quiz-btn" %>
+
+        <% if @psy_profile %>
+          <% logo_path = case @psy_profile.name
+            when "Organisé(e)" then asset_path("profile_logo/organisateur.png")
+            when "Pragmatique" then asset_path("profile_logo/pragmatique.png")
+            when "Social(e)" then asset_path("profile_logo/social.png")
+            when "Créatif(ve)" then asset_path("profile_logo/creatif.png")
+            else asset_path("profile_logo/entreprenant.png")
+          end %>
+
+          <div class="dashboard-profile-info">
+            <img src="<%= logo_path %>" alt="<%= @psy_profile.name %>" class="dashboard-profile-logo">
+            <span class="dashboard-profile-highlight"><%= @psy_profile.name %></span>
+          </div>
+        <% end %>
+
+        <%= link_to "Je recommence le quizz", psy_profile_path(@psy_profile), class: "dashboard-quiz-btn" %>
       </div>
 
       <!-- 🔹 Mon Profil -->
@@ -33,7 +47,7 @@
           <p><strong>Nom :</strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
           <p><strong>Email :</strong> <%= current_user.email %></p>
           <p><strong>Mot de passe :</strong> *******</p>
-          <%= button_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dashboard-logout-btn" %>
+          <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "dashboard-logout-btn", data: { turbo_method: :delete } %>
         <% else %>
           <p>Vous n'êtes pas connecté.</p>
           <%= link_to "Se connecter", new_user_session_path, class: "dashboard-login-btn" %>

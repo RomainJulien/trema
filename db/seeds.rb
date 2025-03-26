@@ -90,7 +90,7 @@ JOBS.each do |job|
 end
 
 users = User.all
-job = Job.find(25)
+job = Job.first
 
 User.all.each do |user|
   Career.create!(
