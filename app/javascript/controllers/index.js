@@ -2,22 +2,9 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import { application } from "controllers/application"
 
-import BubblyButtonController from "./bubbly_button_controller"
-application.register("bubbly-button", BubblyButtonController)
 
-import FormButtonController from "./form_button_controller"
-application.register("form-button", FormButtonController)
+import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
+eagerLoadControllersFrom("controllers", application)
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
-
-import LogosizeController from "./logosize_controller"
-application.register("logosize", LogosizeController)
-
-import NavigateQuizzController from "./navigate_quizz_controller"
-application.register("navigate-quizz", NavigateQuizzController)
-
-import JobController from "./job_controller";
-application.register("job", JobController);
