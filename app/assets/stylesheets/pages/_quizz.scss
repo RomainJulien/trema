@@ -98,14 +98,20 @@
 }
 
 .form-inputs {
+  position: relative;
+  top: 100px;
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 2px solid #F6F6F6;
   border-radius: 12px;
   outline: none;
   transition: border-color 0.3s ease-in-out;
+}
+
+.mb-3 {
+  margin-bottom: 0.5rem !important;
 }
 
 .quizz-page .custom-radio-buttons {

@@ -136,9 +136,7 @@
     <span>voir les métiers</span>
   <% end %>
 
-  <%= link_to dashboard_path, class: "btn-primary logo-link" do %>
-    Je démarre ma carrière
-  <% end %>
+  <%= link_to "Commencer une carrière", careers_path, data: { turbo_method: :post }, class: "btn-primary logo-link" %>
 
   <%= link_to dashboard_path, class: "fiche_enregistrement-link" do %>
     <%= image_tag "fich_enregistrement.svg", alt: "sauvegarder la fiche" %>
