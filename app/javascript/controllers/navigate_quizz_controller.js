@@ -8,12 +8,14 @@ export default class extends Controller {
     console.log(this.quizzTargets)
   }
   goNext(event){
-    this.quizzTargets.forEach((quizz) => {
-      quizz.classList.add("d-none")
-    })
-    console.log(event.target.closest("[data-navigate-quizz-target= 'quizz']"))
-    const currentQuizz = event.target.closest("[data-navigate-quizz-target= 'quizz']")
-    const nextQuizz = currentQuizz.nextElementSibling
-    nextQuizz.classList.remove("d-none")
+    event.target.classList.add("clicked", "animate")
+    setTimeout(() => {
+      this.quizzTargets.forEach((quizz) => {
+        quizz.classList.add("d-none")
+          console.log(event.target.closest("[data-navigate-quizz-target= 'quizz']"))
+          const currentQuizz = event.target.closest("[data-navigate-quizz-target= 'quizz']")
+          const nextQuizz = currentQuizz.nextElementSibling
+          nextQuizz.classList.remove("d-none")})
+        }, 700);
   }
 }

@@ -19,27 +19,15 @@
 }
 
 .trema-logo {
-  width: 120px;
+  width: 6em; /* taille initiale */
   height: auto;
   cursor: pointer;
-}
-
-.trema-logo.small {
-  width: 40px;
-  height: auto;
-  cursor: pointer
 }
 
 .company-logo {
-  width: 60px;
+  width: 2em; /* taille initiale */
   height: auto;
   cursor: pointer;
-}
-
-.company-logo.small {
-  width: 20px;
-  height: auto;
-  cursor: pointer
 }
 
 @media (max-width: 768px) {

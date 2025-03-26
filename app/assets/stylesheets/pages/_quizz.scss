@@ -98,17 +98,23 @@
 }
 
 .form-inputs {
+  position: relative;
+  top: 100px;
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 2px solid #F6F6F6;
+  border-radius: 12px;
   outline: none;
   transition: border-color 0.3s ease-in-out;
 }
 
-.quizz-page .bubbly-button {
+.mb-3 {
+  margin-bottom: 0.5rem !important;
+}
+
+.quizz-page .custom-radio-buttons {
   width: 300px;
   height: 80px;
   padding: 15px 50px;
@@ -126,11 +132,11 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.quizz-page .bubbly-button:hover {
+.quizz-page .custom-radio-buttons:hover {
   transform: scale(1.05);
 }
 
-.quizz-page .bubbly-button:active {
+.quizz-page .custom-radio-buttons:active {
   transform: scale(0.9);
   background: linear-gradient(90deg, #FF9F6F, #DB4367);
 }

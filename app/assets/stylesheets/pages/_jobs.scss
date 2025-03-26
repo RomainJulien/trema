@@ -226,25 +226,96 @@ p {
 /* Button */
 .btn-primary {
   display: inline-block;
-  padding: 15px 30px;
+  font-size: 1em;
+  padding: 1em 2em;
+  margin: 100px 0 60px; // Simplification de margin-top et margin-bottom
+  -webkit-appearance: none;
+  appearance: none;
+
+  /* Style du bouton */
+  background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
+  color: #FFFFFF;
   border-radius: 12px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
+  border: 2px solid #F6F6F6;
+  cursor: pointer;
+  position: relative;
+  top: -90px;
   text-decoration: none;
-  color: #fff;
-  background: linear-gradient(45deg, #7EBDC2, #FF9F6F);
-  border: 2px solid #f6f6f6;
-  transition: background 0.3s, transform 0.2s;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
 
+  /* Ombre et animation */
+  box-shadow: 0 2px 25px rgba(126, 189, 194, 0.5);
+  transition: transform 0.2s ease-in-out, box-shadow 0.25s ease-in-out;
 
-.btn-primary:hover {
-  transform: scale(1.05);
-  background: linear-gradient(45deg, #FF9F6F, #7EBDC2);
+  &:focus {
+    outline: none;
+  }
+
+  /* Effet bubble */
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    background-repeat: no-repeat;
+    display: none; // Masque par défaut
+  }
+
+  &:before {
+    top: -75%;
+    background-image:
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%),
+      radial-gradient(circle, transparent 15%, #DB4367 15%, transparent 20%),
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%),
+      radial-gradient(circle, #DB4367 15%, transparent 15%),
+      radial-gradient(circle, transparent 5%, #7EBDC2 10%, transparent 15%),
+      radial-gradient(circle, #DB4367 15%, transparent 15%),
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%),
+      radial-gradient(circle, #DB4367 15%, transparent 15%),
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%);
+    background-size: 5% 5%, 15% 15%, 10% 10%, 15% 15%, 13% 13%, 5% 5%, 10% 10%, 5% 5%, 13% 13%;
+  }
+
+  &:after {
+    bottom: -75%;
+    background-image:
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%),
+      radial-gradient(circle, #DB4367 15%, transparent 15%),
+      radial-gradient(circle, transparent 5%, #7EBDC2 10%, transparent 15%),
+      radial-gradient(circle, #DB4367 15%, transparent 15%),
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%),
+      radial-gradient(circle, #DB4367 15%, transparent 15%),
+      radial-gradient(circle, #FF9F6F 15%, transparent 15%);
+    background-size: 10% 10%, 15% 15%, 13% 13%, 15% 15%, 10% 10%, 5% 5%, 15% 15%;
+  }
+
+  /* États interactifs */
+  &:hover {
+    transform: scale(1.1); // Agrandit légèrement le bouton
+    box-shadow: 0 4px 30px rgba(126, 189, 194, 0.7);
+  }
+
+  &:active,
+  &.clicked {
+    transform: scale(0.95);
+    background: linear-gradient(90deg, #FF9F6F, #DB4367);
+    box-shadow: 0 2px 20px rgba(126, 189, 194, 0.3);
+  }
+
+  &.animate {
+    &:before {
+      display: block;
+      animation: topBubbles ease-in-out 0.75s forwards;
+    }
+    &:after {
+      display: block;
+      animation: bottomBubbles ease-in-out 0.75s forwards;
+    }
+  }
 }
 
 .voir-metiers-link,

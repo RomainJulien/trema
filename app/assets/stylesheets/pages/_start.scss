@@ -20,6 +20,7 @@ $start-font-primary: 'Chillax', sans-serif;
 
 .start-container {
   display: grid;
+  height: 100vh;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
   grid-column-gap: 0px;
@@ -34,19 +35,25 @@ $start-font-primary: 'Chillax', sans-serif;
 }
 
 .welcome-title {
-  grid-area: 4 / 1 / 4 / 6;
-  padding-left: 20px;
-  font-size: 3.5rem;
+  grid-area: 3 / 1 / 6 / 6;
+  padding-left: 120px;
   font-weight: 700;
   color: #231F20;
   text-shadow: -2px -2px 0 #DB4367, 2px -2px 0 #DB4367, -2px 2px 0 #DB4367, 2px 2px 0 #DB4367;
   z-index: 9;
+  display: block;
+  width: max-content;
+}
+
+.psytitleh1 {
+  font-size: 4rem;
 }
 
 
 .start-description-container {
   grid-area: 5 / 1 / 6 / 5;
-  padding-left: 20px;
+  padding-left: 120px;
+  padding-bottom: 40px;
   /*  max-width: 100%; */
   font-size: 1.4rem;
   font-weight: 400;
@@ -73,8 +80,9 @@ $start-font-primary: 'Chillax', sans-serif;
 }
 
 .start-zenflow {
-  grid-area: 8 / 4 / 8 / 7;
+  grid-area: 7 / 6 / 6 / 9;
   z-index: 3;
+  justify-self: end;
   /*  position: relative;*/
   /*  bottom: 30px;*/
   /*right: 30px;  */
