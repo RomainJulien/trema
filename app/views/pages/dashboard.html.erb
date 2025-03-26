@@ -43,12 +43,19 @@
 
     <!-- 🔹 Bloc DROIT -->
     <div class="dashboard-right">
-      <h2 class="dashboard-section-title">Mes métiers enregistrés</h2>
-      <div class="dashboard-jobs">
-        <div class="dashboard-job-featured">
-          <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-featured-image">
-          <p class="dashboard-job-title">Ébéniste</p>
-        </div>
+      <div class="dashboard-right-in">
+      <!-- Bloc principal sur 3 colonnes et 3 lignes -->
+          <div>
+            <h2 class="dashboard-right-section-title">Mes métiers enregistrés</h2>
+          </div>
+          <div class="dashboard-job-featured">
+              <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-featured-image">
+              <p class="dashboard-job-title">Ébéniste</p>
+          </div>
+          <!-- 3 blocs verticaux à droite -->
+          <div class="dashboard-sidebar-1"><img src="<%= asset_path('cuisinier.png') %>" alt="Ébéniste" class="dashboard-job-featured-image"></div>
+          <div class="dashboard-sidebar-2">Ajoute un nouveau métier + </div>
+          <div class="dashboard-sidebar-3">Ajoute un nouveau métier + </div>
       </div>
     </div>
   </div>
