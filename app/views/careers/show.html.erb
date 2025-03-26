@@ -1,12 +1,8 @@
 <div class="career-header">
-  <h1 class="career-title">Ebéniste</h1>
-  <h2 class="career-subtitle">
-    <%= image_tag "default_profile.png", alt: "Profil", class: "def_profile" %>
-    Manuel(le) et concret(e)
-  </h2>
+  <h1 class="career-title">Ma Carrière</h1>
 </div>
 
-<h2 class="career-section-title">Ma carrière</h2>
+<h2 class="career-section-title">Ebéniste</h2>
 
 <div class="career-steps">
   <!-- Ajout d'un conteneur pour englober toutes les étapes -->
@@ -98,7 +94,21 @@
       </label>
       <div class="career-step-image">
         <!-- Image ou illustration de l'étape 5 (à ajouter si besoin) -->
+        <%= image_tag "hired.jpg", alt: "apprentissage", class: "career-step-image" %>
       </div>
     </div>
   </div>
+</div>
+
+<div class="btn-links-wrapper">
+  <%= link_to "#", class: "haut-page-link" do %>
+  <%= image_tag "arrow-up.svg", alt: "flèche vers le haut" %>
+  <span>(haut de page)</span>
+<% end %>
+
+
+  <%= link_to dashboard_path, class: "tableau-de-bord" do %>
+    <%= image_tag "Logo.png", alt: "retour tableau de bord" %>
+    <span>(tableau de bord)</span>
+  <% end %>
 </div>
