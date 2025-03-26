@@ -1,15 +1,55 @@
-/* Job Description Wrapper */
-.job-description {
+.job-header-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;           /* space between button and image block */
+  margin-top: 80px;    /* same vertical spacing as job-description */
+  padding: 0 5vw;      /* optional horizontal spacing */
+}
+
+.fiche_enregistrement-link1 {
+  margin-top: 80px; /* or adjust to align better */
+  margin-left: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 50px 0;
+  color: #DB4467;
+  gap: 8px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  justify-content: center;
+  align-self: center;
+  transform: scale(1.2);
+}
+
+.fiche_enregistrement-link1 span {
   text-align: center;
-  position: relative; /* Ensure stacking context */
-  border-radius: 15px; /* Rounded corners for the container */
+}
+
+.fiche_enregistrement-link1 img {
+  height: 48px;              /* default was 36px */
+  width: auto;
+}
+
+.job-alignment-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1vw;
+  margin-left: 20%;
+}
+
+.job-description {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  border-radius: 15px;
   padding: 20px;
-  margin-top: 4%;
+  overflow: visible;
+  margin-top: 50px;
+  margin-bottom: -40px;
 }
 
 /* Image Container */
@@ -17,7 +57,7 @@
   position: relative;
   z-index: 3;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
   background: #7EBDC2; /* Ensures background covers the image */
   border-radius: 15px;
   display: flex;
@@ -25,79 +65,136 @@
   justify-content: center;
 }
 
-/* Title Styling */
 .job-title {
-  font-size: clamp(32px, 6vw, 64px);
+  font-size: clamp(46px, 10vw, 78px);
   font-weight: 900;
   color: #fff;
-  text-shadow:
-    -2px -2px 0 #DA4167,
-     2px -2px 0 #DA4167,
-    -2px  2px 0 #DA4167,
-     2px  2px 0 #DA4167;
   position: absolute;
-  top: -30px; /* Moves the title above the container */
-  left: 50%;
+  top: -30px;
+  left: 45%;
   transform: translateX(-50%);
   background: transparent;
   padding: 10px 20px;
   border-radius: 10px;
-  z-index: 5;
+  z-index: 12;
+  display: inline-flex;
+  gap: 8px;
 }
 
+/* Slightly raise "Deviens" */
+.deviens {
+  transform: translateY(-18px); /* or adjust as needed */
+  display: inline-block;
+}
+
+/* Already styled */
 .stress {
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight: 900;
+  font-size: inherit;
+  font-weight: inherit;
   color: #7EBDC2;
+  transform: translateY(8px);
+  display: inline-block;
   text-shadow:
     -2px -2px 0 #DA4167,
      2px -2px 0 #DA4167,
     -2px  2px 0 #DA4167,
      2px  2px 0 #DA4167;
-     z-index: 5;
+  z-index: 11;
 }
 
-/* Image Styling */
 .image_ebeniste {
-  width: 90%;
-  max-width: 700px;
+  width: 75vw;
+  max-width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 40px;
+  border-radius: 5px;
+  margin-top: 10px;
   position: relative;
-  z-index: 4;
+  z-index: 10;
 }
 
-/* Job Section Styling */
-.description, .compet, .format, .amour {
+/* Shared section style */
+.description,
+.compet,
+.format,
+.amour {
+  position: relative;
   display: flex;
-  flex-direction: column; /* Ensures title stays above text */
-  align-items: center; /* Centers title and text */
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 60px 5vw; /* Increased vertical padding to make sections larger */
-  min-height: 350px; /* Increased height */
-  width: 70%; /* Reduced width to make sections less wide */
+  padding: 60px 5vw;
+  min-height: 350px;
   text-align: center;
-  border-radius: 15px; /* Adds rounded corners */
-  margin: 0 auto; /* Centers the divs horizontally */
+  border-radius: 15px;
+  margin: 0 auto;
+  z-index: 5;
+  margin: -40px auto 0 auto;
 }
 
-/* Ensures the text does not align next to each other */
-.description p, .compet p, .format p, .amour p {
-  width: 80%; /* Restricts width to avoid text spreading horizontally */
-  text-align: justify;
+.description,
+.format {
+  text-align: left;
+  align-items: flex-start;
 }
 
-/* Alternating Sections */
-.description, .format {
+.compet,
+.amour {
+  text-align: left;
+  align-items: flex-end;
+}
+
+/* Paragraph styling */
+.description p,
+.compet p,
+.format p,
+.amour p {
+  text-align: inherit;
+  z-index: 2;
+  width: 60%;
+}
+
+/* Headings (optional) */
+.description h2,
+.compet h2,
+.format h2,
+.amour h2 {
+  z-index: 2;
+  width: 60%;
+}
+
+/* Background blocks using pseudo-elements */
+.description::before,
+.format::before,
+.compet::before,
+.amour::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  width: 100vw;
+  max-width: 65vw;
+  z-index: -1;
+  border-radius: 15px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Left-side background (starts from left) */
+.description::before,
+.format::before {
+  left: 0;
   background: #FF9F6F;
-  width: 70%;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
-.compet, .amour {
+/* Right-side background (starts from right) */
+.compet::before,
+.amour::before {
+  right: 0;
   background: #FFAB5B;
-  width: 70%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 /* Styling for Titles and Paragraphs */
@@ -110,6 +207,10 @@ h2 {
 p {
   color: #fff;
   margin: 10px 0;
+}
+
+.amour {
+  padding-bottom: 40px;
 }
 
 .btn-links-wrapper {
@@ -185,6 +286,7 @@ p {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border: 3px solid #ffb6b9;
   background-color: #fefefe;
+  z-index: -2;
 }
 
 #map {
