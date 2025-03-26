@@ -1,12 +1,19 @@
-<div class="job-description">
-  <div class="job-title">
-      Deviens <span class="stress">Ébéniste</span>
+<div class="job-header-wrapper">
+  <%= link_to dashboard_path, class: "fiche_enregistrement-link1" do %>
+    <%= image_tag "fich_enregistrement.svg", alt: "sauvegarder la fiche1" %>
+    <span>sauvegarder la fiche</span>
+  <% end %>
+  <div class="job-alignment-wrapper">
+  <div class="job-description">
+    <div class="job-title">
+      <span class="deviens">Deviens</span> <span class="stress">Ébéniste</span>
     </div>
-  <div class="job-image-container">
-    <%= image_tag "ebeniste.png", alt: "ebeniste", class: "image_ebeniste" %>
+    <div class="job-image-container">
+      <%= image_tag "ébéniste.jpg", alt: "ebeniste", class: "image_ebeniste" %>
+    </div>
+    </div>
   </div>
 </div>
-
 
 <div class="description">
   <h2>Description du métier</h2>
