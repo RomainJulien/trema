@@ -18,3 +18,6 @@ application.register("logosize", LogosizeController)
 
 import NavigateQuizzController from "./navigate_quizz_controller"
 application.register("navigate-quizz", NavigateQuizzController)
+
+import JobController from "./job_controller";
+application.register("job", JobController);

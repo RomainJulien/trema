@@ -128,7 +128,7 @@
 
 /* Bouton pastel (ex: Menuisier) */
 .dashboard-btn-primary {
-  background: linear-gradient(to right, #DA4167, #FFBFBF);
+  background: linear-gradient(to right, #FE9F6F, #DA4167);
   color: #333;
   border: 2px solid #231F20;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -211,7 +211,7 @@
 
 
 .dashboard-logout-btn {
-  background: linear-gradient(to right, #DA4167, #FFBFBF);
+  background: linear-gradient(to left, #FE9F6F, #DA4167);
   color: #333;
   border: 2px solid #231F20;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -244,7 +244,6 @@
   gap: 20px;
   align-items: stretch;
   width: 70%;
-  height: 558px;
   background: #FF9F6F;
   padding: 20px;
   border-radius: 12px;
@@ -255,7 +254,7 @@
 .dashboard-right-in {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 3 colonnes à gauche, 1 colonne à droite */
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
 
@@ -292,24 +291,47 @@
   background-color: #ffcc80;
   padding: 10px;
   text-align: center;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .dashboard-sidebar-2 {
   grid-area: 3 / 4 / 4 / 5;
   background-color: #ffcc80;
   padding: 10px;
   text-align: center;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 .dashboard-sidebar-3 {
   grid-area: 4 / 4 / 5 / 5;
   background-color: #ffcc80;
   padding: 10px;
   text-align: center;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
+.dashboard-sidebar-1:hover, .dashboard-sidebar-2:hover, .dashboard-sidebar-3:hover {
+transform: scale(1.04); /* Effet d'agrandissement */
+transition: 0.3s ease-in-out;
+}
 
 /* 🔹 Carte métier */
 .dashboard-job-featured {
   grid-area: 2 / 1 / 5 / 4;
+  grid-column: span 3; /* Étale la card sur 3 colonnes */
+  justify-self: stretch; /* Permet d'occuper toute la largeur */
   /* display: flex;
   flex-direction: column;
   align-items: center; */
@@ -317,18 +339,25 @@
   padding: 20px;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
+
   text-align: center;
   overflow: hidden;
 }
 
 .dashboard-job-featured-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
 }
+
+.dashboard-job-featured:hover {
+  transform: scale(1.01); /* Effet d'agrandissement */
+  }
+
+
 
 .dashboard-job-title {
   font-size: 1.8rem;
@@ -396,4 +425,22 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+.dashboard-sidebar-btn {
+  display: block; /* Fait passer le bouton à la ligne suivante */
+  width: 30px; /* Largeur du bouton */
+  height: 30px; /* Hauteur égale à la largeur pour un cercle parfait */
+  border-radius: 50%; /* Rend le bouton complètement rond */
+  background: linear-gradient(to right, #7EBDC2, #FF8F6F);; /* Couleur de fond */
+  color: black; /* Couleur du texte */
+  border: none; /* Supprime la bordure */
+  cursor: pointer; /* Curseur pointer */
+  font-size: 16px; /* Taille du texte */
+  margin-top: 10px; /* Ajoute un espace entre le texte et le bouton */
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
+  transition: all 0.3s ease-in-out; /* Animation fluide */
 }
