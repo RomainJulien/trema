@@ -9,6 +9,12 @@ class PagesController < ApplicationController
       { title: "Technicien", image_url: "technicien.png" }
     ]
 
-    @profile = { name: "Explorateur(trice)", description: "Habilité technique, pragmatisme et précision..." }
+    @profile = {
+      name: "Explorateur(trice)",
+      description: "Habilité technique, pragmatisme et précision..."
+    }
+  end
+
+  def home
   end
 end
