@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @career = current_user.career
     @psy_profile = current_user.psy_profile
     @job_psy = [
-      { title: "Ébéniste", image_url: "ebeniste.png" },
+      { title: "Ébéniste", image_url: "ébéniste.jpg" },
       { title: "Cuisinier", image_url: "cuisinier.png" },
       { title: "Mécanicien", image_url: "mecanicien.png" },
       { title: "Technicien", image_url: "technicien.png" }
