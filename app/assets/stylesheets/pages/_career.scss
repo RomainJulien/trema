@@ -2,7 +2,7 @@
 
 /* En-tête */
 .career-title {
-  font-size: clamp(40px, 8vw, 72px);
+  font-size: clamp(50px, 10vw, 80px);
   font-weight: 900;
   color: #fff;
   position: relative;
@@ -12,27 +12,6 @@
   border-radius: 10px;
   z-index: 5;
   margin-top: 40px;
-}
-
-/* Sous-titre positionné juste en dessous du titre */
-.career-subtitle {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  color: #DB4467;
-  gap: 10px;
-  font-size: 1rem;
-  margin-top: 10px; /* petit écart avec le titre */
-  margin-bottom: 40px; /* espace avec le reste */
-}
-
-/* Avatar */
-.def_profile {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
 }
 
 /* Titre de section déplacé visuellement à droite */
@@ -47,8 +26,8 @@
      2px  2px 0 #DA4167;
   z-index: 5;
   width: fit-content;
-  margin: 0 0 20px auto; /* aligné à droite */
-  padding-right: 5%;
+  margin: 0 0 10px 55%;
+  padding-left: 0;
 }
 
 
@@ -70,6 +49,7 @@
     width: 100%;
     min-height: 280px;
     padding: 0;
+    overflow: visible;
   }
 
   .career-step-item.left {
@@ -128,56 +108,49 @@
       display: none;
     }
 
-    .career-step-button {
-      width: 60px;
-      height: 60px;
-      color: white;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      position: relative;
-      margin: 15px;
-    }
+/* Default button style */
+.career-step-button {
+  width: 60px;
+  height: 60px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  margin: 15px;
+  background-color: #D84369;
+}
 
-    .career-step-button[data-step="1"],
-    .career-step-button[data-step="2"] {
-      background-color: #7EBDC2 !important;
-    }
+/* When checkbox is checked */
+.career-step-checkbox:checked + .career-step-button {
+  background-color: #33c72e;
+  color: transparent; /* hide number */
+}
 
-    .career-step-button[data-step="3"] {
-      background-color: #FFB74D !important;
-    }
+.career-step-button::before {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
 
-    .career-step-button[data-step="4"],
-    .career-step-button[data-step="5"] {
-      background-color: #D84369 !important;
-    }
+/* Show ✓ instead of number */
+.career-step-checkbox:checked + .career-step-button::before {
+  content: "✓";
+  font-size: 1.5rem;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
 
-    // État coché
-    .career-step-checkbox:checked + .career-step-button {
-      color: transparent;
-    }
-
-    .career-step-checkbox:checked + .career-step-button::before {
-      content: "";
-      background-image: url('/assets/images/tick.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      width: 24px;  /* or adjust as needed */
-      height: 24px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
 
 
   .career-step-content h3 {
@@ -203,4 +176,43 @@
   .career-step-item.right img {
     right: 60vw; /* ⬅️ position from the right edge */
   }
+}
+
+.btn-links-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  max-width: 300px;
+}
+
+.haut-page-link,
+.tableau-de-bord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #DB4467;
+  gap: 8px;
+  font-size: 1rem;
+  text-decoration: none;
+  justify-content: center;
+}
+
+.haut-page-link span,
+.tableau-de-bord span {
+  margin-top: 5px;
+}
+
+.haut-page-link img,
+.tableau-de-bord img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+.haut-page-link:hover,
+.tableau-de-bord:hover {
+  text-decoration: underline;
+  height: 36px;
 }
