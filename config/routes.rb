@@ -3,10 +3,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  root to: "pages#home"
 
-  root to: "pages#loading"
-  get "/loading", to: "pages#loading"
-  get "/home", to: "pages#home"
   get "/dashboard", to: "pages#dashboard"
 
   resources :psy_profiles, only: [:show] do
@@ -14,9 +12,11 @@ Rails.application.routes.draw do
       get :start
     end
   end
+
   resources :jobs, only: [:show] do
     resources :favorites, only: [:create]
   end
+
   resources :answers, only: [:new, :create]
   resources :careers, only: [:show, :create]
   resources :steps, only: [] do
@@ -24,11 +24,4 @@ Rails.application.routes.draw do
       patch :completed
     end
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  #get "up" => "rails/health#show", as: :rails_health_check
-  # Defines the root path route ("/")
-  # root "posts#index"
-  #
 end
