@@ -1,7 +1,7 @@
 <div class="job-header-wrapper">
   <%= link_to dashboard_path, class: "fiche_enregistrement-link1" do %>
-    <%= image_tag "fich_enregistrement.svg", alt: "sauvegarder la fiche1" %>
-    <span>sauvegarder la fiche</span>
+    <%= image_tag "fich_enregistrementviolet.svg", alt: "sauvegarder la fiche1" %>
+    <span>Sauvegarder</span>
   <% end %>
   <div class="job-alignment-wrapper">
   <div class="job-description">
@@ -28,12 +28,14 @@
 <div class="compet">
   <h2>Compétences clés</h2>
   <p>
-    Techniques artisanales : sculpture, marqueterie, vernissage, assemblage.<br>
-    Lecture de plans & conception : savoir lire des plans techniques et réaliser des croquis.<br>
-    Maîtrise des matériaux : connaître les essences de bois, leurs propriétés et leur travail.<br>
-    Utilisation d’outils traditionnels et modernes : scie, ciseau à bois, rabot, machines à commande numérique.<br>
-    Rigueur et précision : chaque millimètre compte.<br>
-    Patience et minutie : un meuble d’ébéniste peut nécessiter des dizaines d’heures de travail.
+  <ul>
+    <li><strong>Techniques artisanales</strong> : sculpture, marqueterie, vernissage, assemblage</li>
+    <li><strong>Lecture de plans & conception</strong> : savoir lire des plans techniques et réaliser des croquis</li>
+    <li><strong>Maîtrise des matériaux</strong> : connaître les essences de bois, leurs propriétés et leur travail</li>
+    <li><strong>Utilisation d’outils traditionnels et modernes</strong> : scie, ciseau à bois, rabot, machines à commande numérique</li>
+    <li><strong>Rigueur et précision</strong> : chaque millimètre compte</li>
+    <li><strong>Patience et minutie</strong> : un meuble d’ébéniste peut nécessiter des dizaines d’heures de travail</li>
+  </ul>
   </p>
 </div>
 
@@ -41,24 +43,26 @@
   <h2>Formation & Accès au métier</h2>
   <p>
     Formations disponibles :<br>
-    - CAP Ébéniste<br>
-    - Bac pro Artisanat et métiers d’art, option ébénisterie<br>
-    - Brevet des métiers d’art (BMA)<br>
-    - Diplôme des métiers d’art (DMA)
-  </p>
-  <p>
-    Beaucoup d’ébénistes se forment sur le terrain, en apprentissage auprès d’un artisan expérimenté.
+    <ul>
+  <li><strong>CAP Ébéniste</strong> : une formation essentielle pour acquérir les bases du métier et les premiers gestes techniques en atelier.</li>
+  <li><strong>Bac pro Artisanat et métiers d’art, option ébénisterie</strong> : un cursus approfondi qui allie savoir-faire manuel et culture artistique.</li>
+  <li><strong>Brevet des métiers d’art (BMA)</strong> : une spécialisation permettant de perfectionner sa maîtrise des techniques traditionnelles et contemporaines.</li>
+  <li><strong>Diplôme des métiers d’art (DMA)</strong> : un diplôme de haut niveau axé sur la création, la conception et l’innovation dans l’artisanat du bois.</li>
+  <li>De nombreux ébénistes se forment également <strong>sur le terrain</strong>, grâce à l’<strong>apprentissage auprès d’un artisan expérimenté</strong>, ce qui leur permet de développer un savoir-faire concret et professionnel.</li>
+</ul>
   </p>
 </div>
 
 <div class="amour">
   <h2>Ce métier conviendra aux personnes qui aiment :</h2>
   <p>
-    - Travailler avec leurs mains et voir le résultat concret de leur travail.<br>
-    - Concevoir des objets uniques, du croquis à la finition.<br>
-    - Mélanger tradition et innovation.<br>
-    - Être autonome et gérer des projets de A à Z.
-  </p>
+    <ul>
+  <li><strong>Travailler de leurs mains</strong> et voir le résultat <strong>concret</strong>, tangible et valorisant de leur travail.</li>
+  <li><strong>Concevoir des objets uniques</strong>, en assurant chaque étape du processus : du <strong>croquis</strong> initial à la <strong>finition</strong> détaillée.</li>
+  <li><strong>Mélanger tradition et innovation</strong>, en combinant <strong>savoir-faire artisanal</strong> et techniques modernes.</li>
+  <li>Être <strong>autonome</strong> dans leur travail, en menant des projets complets <strong>de A à Z</strong> avec <strong>créativité</strong> et rigueur.</li>
+</ul>
+</p>
 </div>
 
 <!-- Carte -->
@@ -139,14 +143,14 @@
 
 <div class="btn-links-wrapper">
   <%= link_to psy_profile_path(current_user.psy_profile.id), class: "voir-metiers-link" do %>
-    <%= image_tag "arrow-right.svg", alt: "flèche vers la droite" %>
+    <%= image_tag "arrow-rightviolet.svg", alt: "flèche vers la droite" %>
     <span>voir les métiers</span>
   <% end %>
 
   <%= link_to "Commencer une carrière", careers_path, data: { turbo_method: :post }, class: "btn-primary logo-link" %>
 
   <%= link_to dashboard_path, class: "fiche_enregistrement-link" do %>
-    <%= image_tag "fich_enregistrement.svg", alt: "sauvegarder la fiche" %>
-    <span>sauvegarder la fiche</span>
+    <%= image_tag "fich_enregistrementviolet.svg", alt: "sauvegarder la fiche" %>
+    <span>Sauvegarder</span>
   <% end %>
 </div>

@@ -13,21 +13,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #DB4467;
+  color: #2A1E5C;
   gap: 8px;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-decoration: none;
   justify-content: center;
   align-self: center;
-  transform: scale(1.2);
+  transform: scale(1.8);
 }
 
 .fiche_enregistrement-link1 span {
   text-align: center;
+  font-family: 'Chillax-Regular';
+  font-size: 1.5rem;
 }
 
 .fiche_enregistrement-link1 img {
-  height: 48px;              /* default was 36px */
+  height: 72px;              /* default was 36px */
   width: auto;
 }
 
@@ -66,12 +68,12 @@
 }
 
 .job-title {
-  font-size: clamp(46px, 10vw, 78px);
-  font-weight: 900;
-  color: #fff;
+  font-family: 'Chillax-Semibold';
+  font-size: clamp(85px, 16.56vw, 150px);
+  font-weight: 800;
   position: absolute;
-  top: -30px;
-  left: 45%;
+  top: -90px;
+  left: 30%;
   transform: translateX(-50%);
   background: transparent;
   padding: 10px 20px;
@@ -83,22 +85,25 @@
 
 /* Slightly raise "Deviens" */
 .deviens {
-  transform: translateY(-18px); /* or adjust as needed */
+  font-family: 'Chillax-Semibold';
+  transform: translateY(-50px);
   display: inline-block;
+  color: #2A1E5C;
 }
 
 /* Already styled */
 .stress {
+  font-family: 'Chillax-Semibold';
   font-size: inherit;
   font-weight: inherit;
-  color: #7EBDC2;
-  transform: translateY(8px);
+  color: #DA4167;
+  transform: translateY(10px);
   display: inline-block;
   text-shadow:
-    -2px -2px 0 #DA4167,
-     2px -2px 0 #DA4167,
-    -2px  2px 0 #DA4167,
-     2px  2px 0 #DA4167;
+    -2px -2px 0 #2A1E5C,
+     2px -2px 0 #2A1E5C,
+    -2px  2px 0 #2A1E5C,
+     2px  2px 0 #2A1E5C;
   z-index: 11;
 }
 
@@ -112,7 +117,6 @@
   z-index: 10;
 }
 
-/* Shared section style */
 .description,
 .compet,
 .format,
@@ -120,49 +124,88 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;  // ✅ Aligne le contenu à gauche dans la div
   justify-content: center;
   padding: 60px 5vw;
   min-height: 350px;
-  text-align: center;
+  text-align: left;         // ✅ Aligne le texte à gauche
   border-radius: 15px;
-  margin: 0 auto;
-  z-index: 5;
   margin: -40px auto 0 auto;
+  z-index: 5;
 }
 
-.description,
-.format {
+/* Titres */
+.description h2,
+.compet h2,
+.format h2,
+.amour h2 {
+  width: 60%;
+  color: #2A1E5C;
+  font-size: 2.6rem;
+  margin-bottom: 15px;
+  z-index: 2;
   text-align: left;
-  align-items: flex-start;
+  margin-bottom: 15px;
+  font-weight: 800;
+  font-family: 'Chillax-Semibold';
 }
 
+/* Paragraphes */
+.description p,
+.compet p,
+.format p,
+.amour p {
+  font-family: 'Chillax-Regular';
+  font-size: 1.6rem;
+  line-height: 1.6;
+  width: 60%;
+  color: #2A1E5C;
+  margin: 10px 0;
+  z-index: 2;
+  text-align: left;
+  margin: 10px 0;
+  padding-left: 2vw;
+}
+
+/* Listes */
+.description ul,
+.compet ul,
+.format ul,
+.amour ul {
+  font-family: 'Chillax-Regular';
+  font-size: 1.6rem;
+  width: 60%;
+  padding-left: 20px;
+  z-index: 2;
+  padding-left: 2vw;
+}
+
+.description li,
+.compet li,
+.format li,
+.amour li {
+  font-family: 'Chillax-Regular';
+  font-size: 1.6rem;
+  color: #2A1E5C;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* COMPET ET AMOUR - alignement du contenu */
 .compet,
 .amour {
   text-align: left;
   align-items: flex-end;
 }
 
-/* Paragraph styling */
-.description p,
-.compet p,
-.format p,
-.amour p {
-  text-align: inherit;
-  z-index: 2;
-  width: 60%;
+.compet ul,
+.amour ul {
+  padding-right: 5vw;
 }
 
-/* Headings (optional) */
-.description h2,
-.compet h2,
-.format h2,
-.amour h2 {
-  z-index: 2;
-  width: 60%;
-}
-
-/* Background blocks using pseudo-elements */
+/* Arrière-plans décoratifs */
 .description::before,
 .format::before,
 .compet::before,
@@ -179,7 +222,7 @@
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* Left-side background (starts from left) */
+/* Fond orange à gauche */
 .description::before,
 .format::before {
   left: 0;
@@ -188,7 +231,7 @@
   border-bottom-right-radius: 15px;
 }
 
-/* Right-side background (starts from right) */
+/* Fond jaune à droite */
 .compet::before,
 .amour::before {
   right: 0;
@@ -197,28 +240,13 @@
   border-bottom-left-radius: 15px;
 }
 
-/* Styling for Titles and Paragraphs */
-h2 {
-  font-size: 1.8rem;
-  color: #fff;
-  margin-bottom: 15px; /* Adds spacing below title */
-}
-
-p {
-  color: #2A1E5C;
-  margin: 10px 0;
-}
-
-.amour {
-  padding-bottom: 40px;
-}
-
 .btn-links-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
+  gap: 80px; // augmentez ici l'espacement horizontal entre les boutons
   margin: 80px auto 50px;
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   text-align: center;
 }
@@ -226,21 +254,23 @@ p {
 /* Button */
 .btn-primary {
   display: inline-block;
-  font-size: 1em;
+  font-size: 1.8em;
   padding: 1em 2em;
-  margin: 100px 0 60px; // Simplification de margin-top et margin-bottom
+  margin: 100px 0 60px;
   -webkit-appearance: none;
   appearance: none;
 
+
   /* Style du bouton */
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #FFFFFF;
+  color: #2A1E5C;
   border-radius: 12px;
-  border: 2px solid #F6F6F6;
+  border: 2px solid #2A1E5C;
   cursor: pointer;
   position: relative;
   top: -90px;
   text-decoration: none;
+  font-family: 'Chillax-Regular';
 
   /* Ombre et animation */
   box-shadow: 0 2px 25px rgba(126, 189, 194, 0.5);
@@ -323,7 +353,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #DB4467;
+  color: #2A1E5C;
   gap: 8px;
   font-size: 1rem;
   text-decoration: none;
@@ -333,11 +363,13 @@ p {
 .voir-metiers-link span,
 .fiche_enregistrement-link span {
   margin-top: 5px;
+  font-family: 'Chillax-Regular';
+  font-size: 1.8rem;
 }
 
 .voir-metiers-link img,
 .fiche_enregistrement-link img {
-  height: 36px;
+  height: 72px;
   width: auto;
   display: block;
 }
@@ -345,13 +377,13 @@ p {
 .voir-metiers-link:hover,
 .fiche_enregistrement-link:hover {
   text-decoration: underline;
-  height: 36px;
+  height: 72px;
 }
 
 .map-container {
-  width: 80%;
-  max-width: 1000px;
-  margin: 2rem auto;
+  width: 90%;
+  max-width: 1600px;
+  margin: 4rem auto;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -361,6 +393,6 @@ p {
 }
 
 #map {
-  height: 400px;
+  height: 600px;
   width: 100%;
 }
