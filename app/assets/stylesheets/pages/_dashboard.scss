@@ -58,7 +58,7 @@
   background: #FFAB5B;
   padding: 20px;
   border-radius: 12px;
-  text-align: center;
+  text-align: right;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
 
@@ -251,6 +251,7 @@
   border-radius: 12px;
   text-align: center;
   margin-bottom: 5%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-right-in {
@@ -297,6 +298,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-sidebar-2 {
@@ -310,6 +312,7 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 .dashboard-sidebar-3 {
   grid-area: 4 / 4 / 5 / 5;
@@ -322,6 +325,7 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
  .dashboard-sidebar-1:hover, .dashboard-sidebar-2:hover, .dashboard-job-feature:hover, .dashboard-sidebar-3:hover {
@@ -346,6 +350,7 @@
 
   text-align: center;
   overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-job-featured-image {
