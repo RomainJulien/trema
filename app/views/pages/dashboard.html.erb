@@ -1,18 +1,13 @@
-
-
 <div class="dashboard-container">
-  <!-- 🔹 En-tête -->
   <h1 class="dashboard-title">Tableau de bord</h1>
 
-  <div class="dashboard-main" data-controller="job" >
-    <!-- 🔹 Bloc GAUCHE -->
+  <div class="dashboard-main" data-controller="job">
     <div class="dashboard-left">
-      <!-- 🔹 Ma carrière -->
       <div class="dashboard-career">
-        <div  >
+        <div>
           <div class="dashboard-career-header">
             <h2 data-job-target="careerTitle" class="dashboard-section-title">Ma carrière</h2>
-           </div>
+          </div>
         </div>
         <div>
           <% if @career %>
@@ -23,10 +18,8 @@
         </div>
       </div>
 
-      <!-- 🔹 Mon profil de reconversion -->
       <div class="dashboard-profile">
         <h2 class="dashboard-section-title">Mon profil de reconversion</h2>
-
         <% if @psy_profile %>
           <% logo_path = case @psy_profile.name
             when "Organisé(e)" then asset_path("profile_logo/organisateur.png")
@@ -41,11 +34,9 @@
             <span class="dashboard-profile-highlight"><%= @psy_profile.name %></span>
           </div>
         <% end %>
-
         <%= link_to "Les métiers du profil", psy_profile_path(@psy_profile), class: "dashboard-quiz-btn" %>
       </div>
 
-      <!-- 🔹 Mon Profil -->
       <div class="dashboard-user">
         <h2 class="dashboard-section-title">Mon Profil</h2>
         <% if current_user %>
@@ -60,43 +51,37 @@
       </div>
     </div>
 
-    <!-- 🔹 Bloc DROIT -->
     <div class="dashboard-right">
-
       <div class="dashboard-right-in">
-      <!-- Bloc principal sur 3 colonnes et 3 lignes -->
-          <div>
-            <h2 class="dashboard-right-section-title">Mes métiers enregistrés</h2>
-          </div>
-          <div class="dashboard-job-featured">
-            <div id="job-featured">
-                <a href="/jobs/25" style="text-decoration: none;">
-                  <img src="<%= asset_path('ébéniste.jpg') %>" alt="Ébéniste" class="dashboard-job-featured-image">
-                <p class="dashboard-job-title">Ébéniste</p>
-                <span class="dashboard-description-right"> L’ébéniste est un artisan du bois spécialisé dans la conception, la fabrication et la restauration de meubles et d’éléments décoratifs. </span>
-                </a>
-                <br>
-                <div class="text-btn-container">
-                  <button class="dashboard-sidebar-btn" data-action= "click->job#selectJob"> + </button>
-                  <p> Ajouter à ma carrière </p>
-                </div>
+        <div>
+          <h2 class="dashboard-right-section-title">Mes métiers enregistrés</h2>
+        </div>
+        <div class="dashboard-job-featured">
+          <div id="job-featured">
+            <a href="/jobs/25" style="text-decoration: none;">
+              <img src="<%= asset_path('ébéniste.jpg') %>" alt="Ébéniste" class="dashboard-job-featured-image">
+              <p class="dashboard-job-title">Ébéniste</p>
+              <span class="dashboard-description-right">L’ébéniste est un artisan du bois spécialisé dans la conception, la fabrication et la restauration de meubles et d’éléments décoratifs.</span>
+            </a>
+            <br>
+            <div class="text-btn-container">
+              <button class="dashboard-sidebar-btn" data-action="click->job#selectJob">+</button>
+              <p>Ajouter à ma carrière</p>
             </div>
           </div>
-          <!-- 3 blocs verticaux à droite -->
-          <div class="dashboard-sidebar-1"><img src="<%= asset_path('cuisinier.png') %>" alt="Cuisinier" class="dashboard-job-featured-image"></div>
-          <div class="dashboard-sidebar-2">
-
-            <p style="color: #2A1E5C;">Ajoute un nouveau métier</p>
-            <button onclick="window.location='<%= psy_profile_path(@psy_profile) %>'" class="dashboard-sidebar-btn">
-            +
-            </button>
-          </div>
-          <div class="dashboard-sidebar-3">
-            <p style="color: #2A1E5C;">Ajoute un nouveau métier</p>
-            <button onclick="window.location='<%= psy_profile_path(@psy_profile) %>'" class="dashboard-sidebar-btn">
-            +
-            </button>
-          </div>
+        </div>
+        <div class="dashboard-sidebar-1">
+          <img src="<%= asset_path('cuisinier.png') %>" alt="Cuisinier" class="dashboard-job-featured-image">
+        </div>
+        <div class="dashboard-sidebar-2">
+          <p style="color: #2A1E5C;">Ajoute un nouveau métier</p>
+          <button onclick="window.location='<%= psy_profile_path(@psy_profile) %>'" class="dashboard-sidebar-btn">+</button>
+        </div>
+        <div class="dashboard-sidebar-3">
+          <p style="color: #2A1E5C;">Ajoute un nouveau métier</p>
+          <button onclick="window.location='<%= psy_profile_path(@psy_profile) %>'" class="dashboard-sidebar-btn">+</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>

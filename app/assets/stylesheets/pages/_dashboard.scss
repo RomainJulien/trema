@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  font-family: 'Chillax-Regular', sans-serif;
   background: linear-gradient(to bottom, #f7c27d, #f8a055);
 }
 
@@ -15,42 +16,35 @@
   width: 100%;
 }
 
-/* 🔹 TITRE PRINCIPAL */
 .dashboard-title {
-  font-size: 3rem;
-  font-weight: bold;
+
+  font-size: 4rem;
+  font-weight: 600;
   text-align: center;
   width: 100%;
   margin-top: 30px;
+  color: #DA4167;
 
-  color: #7EBDC2;
   position: relative;
-  font-family: 'dashboard H1', sans-serif; // ou équivalent dispo
-
-  // Contour rose autour du texte
+  font-family: 'Chillax-Semibold', sans-serif;
   text-shadow:
-    -1px -1px 0 #DA4167,
-     1px -1px 0 #DA4167,
-    -1px  1px 0 #DA4167,
-     1px  1px 0 #DA4167;
 
-  // Optionnel : effet d'ombre intérieure douce
+    -1px -1px 0 #2A1E5C,
+     1px -1px 0 #2A1E5C,
+    -1px  1px 0 #2A1E5C,
+     1px  1px 0 #2A1E5C;
+
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
 }
 
-
-
-/* 🔹 BLOC GAUCHE */
 .dashboard-left {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   width: 30%;
   align-items: stretch;
   margin-bottom: 5%;
 }
 
-/* 🔹 Cartes à gauche */
 .dashboard-career,
 .dashboard-profile,
 .dashboard-user {
@@ -63,29 +57,33 @@
 
   p {
     color: #333;
+    font-family: "Chillax-Regular" sans-serif;
+    font-weight: 400;
     font-size: 1.2rem;
     margin: 10px 0;
-    text-align: right; // ✅ alignement à droite
+    text-align: right;
   }
 
   strong {
-    font-weight: bold;
+    font-weight: 600;
+    font-family: "Chillax-Semibold" sans-serif !important;
     font-size: 1.5rem;
-    color: white; // ✅ couleur blanche pour les labels
+
+    color: #2A1E5C;
   }
 }
 
-
-/* 🔹 TITRES DE SECTION */
 .dashboard-section-title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+
+  color: #2A1E5C;
+  font-family: "Chillax-Semibold" sans-serif !important;
+  font-weight: 600;
   margin-bottom: 10px;
   text-align: right;
 }
 
-/* 🔹 TITRE MÉTIER façon Figma (bouton style) */
 .dashboard-career-title {
   display: inline-block;
   width: 100%;
@@ -101,14 +99,12 @@
   cursor: default;
 }
 
-/* 🔹 Groupe de boutons de carrière */
 .dashboard-career-btn-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-/* 🔹 Boutons */
 .dashboard-btn,
 .dashboard-career-btn,
 .dashboard-quiz-btn,
@@ -126,118 +122,76 @@
   text-decoration: none;
 }
 
-/* Bouton pastel (ex: Menuisier) */
-.dashboard-btn-primary {
-  background: linear-gradient(to right, #FE9F6F, #DA4167);
-  color: #333;
-  border: 2px solid #231F20;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
-  font-weight: bold;
-  text-align: center;
-  padding: 12px 16px;
-
-  width: 480px;     // ⚡️ largeur exacte repérée dans Figma
-  height: 70px;    // même hauteur que secondary
+.dashboard-btn-primary,
+.dashboard-btn-secondary,
+.dashboard-quiz-btn,
+.dashboard-logout-btn,
+.dashboard-login-btn {
+  width: 480px;
+  height: 70px;
   margin-left: auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   text-decoration: none;
-}
 
-.dashboard-btn-primary:hover {
-  opacity: 0.95;
-  transform: scale(1.01);
-  transition: all 0.2s ease-in-out;
-}
-
-/* Bouton accès carrière style figma */
-.dashboard-btn-secondary {
-  background: linear-gradient(to right, #7EBDC2, #FF8F6F);
-  color: white;
-  border: 2px solid #F6F6F6;
+  cursor: pointer;
+  padding: 12px 16px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   font-weight: bold;
   text-align: center;
-  padding: 12px 16px;
-
-  width: 480px;     // ⚡️ largeur exacte repérée dans Figma
-  height: 70px;     // ⚡️ hauteur exacte repérée dans Figma
-  margin-left: auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  cursor: pointer;
+  border: 2px solid #2A1E5C;
 }
 
-.dashboard-btn-secondary:hover {
-  opacity: 0.95;
-  transform: scale(1.01);
-  transition: all 0.2s ease-in-out;
+.dashboard-btn-primary {
+  background: linear-gradient(to right, #FE9F6F, #DA4167);
+  color: #333;
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
+  border: 2px solid #231F20;
+  border-radius: 12px;
+}
+
+.dashboard-btn-secondary {
+  background: linear-gradient(to right, #7EBDC2, #FF8F6F);
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
+  color: #2A1E5C;
 }
 
 .dashboard-quiz-btn {
   background: linear-gradient(to right, #7EBDC2, #FF8F6F);
-  color: white;
-  border: 2px solid #F6F6F6;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  font-weight: bold;
-  text-align: center;
-  padding: 12px 16px;
-
-  width: 480px;     // ⚡️ largeur exacte repérée dans Figma
-  height: 70px;     // ⚡️ hauteur exacte repérée dans Figma
-  margin-left: auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  cursor: pointer;
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
+  color: #2A1E5C;
 }
-
-.dashboard-quiz-btn:hover {
-  opacity: 0.95;
-  transform: scale(1.01);
-  transition: all 0.2s ease-in-out;
-}
-
 
 .dashboard-logout-btn {
   background: linear-gradient(to left, #FE9F6F, #DA4167);
   color: #333;
   border: 2px solid #231F20;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
   border-radius: 12px;
-  font-weight: bold;
-  text-align: center;
-  padding: 12px 16px;
-
-  width: 480px;     // ⚡️ largeur exacte repérée dans Figma
-  height: 70px;    // même hauteur que secondary
-  margin-left: auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-decoration: none;
 }
 
-.dashboard-logout-btn:hover {
+
+.dashboard-login-btn {
+  background: linear-gradient(to right, #7EBDC2, #FF8F6F);
+  color: white;
+}
+
+.dashboard-btn-primary:hover,
+.dashboard-btn-secondary:hover,
+.dashboard-quiz-btn:hover,
+.dashboard-logout-btn:hover,
+.dashboard-login-btn:hover {
   opacity: 0.95;
   transform: scale(1.01);
   transition: all 0.2s ease-in-out;
 }
 
-/* 🔹 Bloc DROIT */
 .dashboard-right {
   display: flex;
   flex-direction: column;
@@ -253,14 +207,11 @@
 
 .dashboard-right-in {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 3 colonnes à gauche, 1 colonne à droite */
-  grid-template-rows: auto 1fr 1fr 1fr;;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-
 }
-
-/* 🔹 Liste métiers */
 
 .dashboard-right-section-title {
   grid-area: 1 / 1 / 2 / 4;
@@ -268,79 +219,50 @@
   font-weight: bold;
   color: white;
   text-align: center;
-  /* margin-bottom: 10px;
-  border-radius: 12px; */
 }
-
 
 .dashboard-jobs {
   background-color: lightblue;
-  /* grid-column: 1 / 2;
-  grid-row: 1 / 4; */
   padding: 20px;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto; */
 }
 
-.dashboard-sidebar-1 {
-  grid-area: 2 / 4 / 3 / 5;
-  background-color: #ffcc80;
-  padding: 10px;
-  text-align: center;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.dashboard-sidebar-2 {
-  grid-area: 3 / 4 / 4 / 5;
-  background-color: #ffcc80;
-  padding: 10px;
-  text-align: center;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-}
+.dashboard-sidebar-1,
+.dashboard-sidebar-2,
 .dashboard-sidebar-3 {
-  grid-area: 4 / 4 / 5 / 5;
   background-color: #ffcc80;
   padding: 10px;
   text-align: center;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
   align-items: center;
   justify-content: center;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  gap: 10px;
 }
 
-.dashboard-sidebar-1:hover, .dashboard-sidebar-2:hover, .dashboard-sidebar-3:hover {
-transform: scale(1.04); /* Effet d'agrandissement */
-transition: 0.3s ease-in-out;
+.dashboard-sidebar-1 { grid-area: 2 / 4 / 3 / 5; }
+.dashboard-sidebar-2 { grid-area: 3 / 4 / 4 / 5; }
+.dashboard-sidebar-3 { grid-area: 4 / 4 / 5 / 5; }
+
+.dashboard-sidebar-1:hover,
+.dashboard-sidebar-2:hover,
+.dashboard-job-feature:hover,
+.dashboard-sidebar-3:hover {
+  transform: scale(1.04);
+  transition: 0.3s ease-in-out;
 }
 
-/* 🔹 Carte métier */
 .dashboard-job-featured {
   grid-area: 2 / 1 / 5 / 4;
-  grid-column: span 3; /* Étale la card sur 3 colonnes */
-  justify-self: stretch; /* Permet d'occuper toute la largeur */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  grid-column: span 3;
+  justify-self: stretch;
+  color: #2A1E5C;
   background: #ffcc80;
   padding: 20px;
   border-radius: 10px;
   width: 100%;
   max-width: 800px;
-
   text-align: center;
   overflow: hidden;
 }
@@ -353,50 +275,31 @@ transition: 0.3s ease-in-out;
   object-fit: cover;
 }
 
-.dashboard-job-featured:hover {
-  transform: scale(1.01); /* Effet d'agrandissement */
-  }
+.dashboard-job-featured-image:hover,
+.dashboard-description-right:hover,
+.dashboard-job-title:hover {
+  transform: scale(1.01);
+  transition: 0.3s ease-in-out;
+}
 
+.dashboard-description-right {
+  color: #2A1E5C;
+  font-family: 'Chillax-Medium', sans-serif
+}
 
 
 .dashboard-job-title {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #333;
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-weight: 600;
+  color: #2A1E5C;
   margin-top: 10px;
-}
-
-/* 🔹 Bouton fallback "Se connecter" */
-.dashboard-login-btn {
-  background: linear-gradient(to right, #7EBDC2, #FF8F6F);
-  color: white;
-  border: 2px solid #F6F6F6;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  font-weight: bold;
-  text-align: center;
-  padding: 12px 16px;
-
-  width: 480px;     // ⚡️ largeur exacte repérée dans Figma
-  height: 70px;     // ⚡️ hauteur exacte repérée dans Figma
-  margin-left: auto;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
-  cursor: pointer;
-}
-
-.dashboard-login-btn:hover {
-  opacity: 0.95;
-  transform: scale(1.01);
-  transition: all 0.2s ease-in-out;
 }
 
 .dashboard-profile-info {
   display: flex;
-  flex-direction: row; // 👉 logo à gauche, texte à droite
+  flex-direction: row;
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
@@ -410,15 +313,13 @@ transition: 0.3s ease-in-out;
 }
 
 .dashboard-profile-highlight {
-  font-family: 'Chillax', sans-serif; // Police utilisée
-  font-size: 40px;                    // Taille exacte depuis Figma
-  font-weight: 600;                   // Semibold
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-size: 40px;
+  font-weight: 600;
   line-height: 140%;
   letter-spacing: 0.2px;
   color: #DA4167;
   text-align: right;
-
-  // Bonus: si tu veux ajouter une animation subtile à l’apparition
   animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -427,20 +328,35 @@ transition: 0.3s ease-in-out;
   to { opacity: 1; transform: translateY(0); }
 }
 
-
 .dashboard-sidebar-btn {
-  display: block; /* Fait passer le bouton à la ligne suivante */
-  width: 30px; /* Largeur du bouton */
-  height: 30px; /* Hauteur égale à la largeur pour un cercle parfait */
-  border-radius: 50%; /* Rend le bouton complètement rond */
-  background: linear-gradient(to right, #7EBDC2, #FF8F6F);; /* Couleur de fond */
-  color: black; /* Couleur du texte */
-  border: none; /* Supprime la bordure */
-  cursor: pointer; /* Curseur pointer */
-  font-size: 16px; /* Taille du texte */
-  margin-top: 10px; /* Ajoute un espace entre le texte et le bouton */
-  align-items: center; /* Centrage vertical */
-  justify-content: center; /* Centrage horizontal */
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Ombre douce */
-  transition: all 0.3s ease-in-out; /* Animation fluide */
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #7EBDC2, #FF8F6F);
+  color: black;
+  text-decoration: none;
+  border-color: #2A1E5C;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
+
+.dashboard-sidebar-btn:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease-in-out;
+}
+
+.text-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 30px;
+}
+
