@@ -1,6 +1,7 @@
 
 <div class= "quizz-container">
-<h2 class="quizz-title">Aide-nous à te connaître ! C'est pas long pour de vrai...</h2>
+<h2 class="quizz-title">Aide-nous à te connaître !</h2>
+<h3 class="quizz-sous-title"><%= "(c'est pas long en vrai)"%></h3>
 
   <div class=" card-quizz ">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
@@ -18,7 +19,7 @@
 
         <!-- Ici les champs pour enregistrer l'user -->
         <div class="d-none" data-navigate-quizz-target="quizz">
-          <div class="form-inputs">
+          <div class="form-inputs box-form-devise">
             <%= f.input :first_name,
                         required: true,
                         label: "Prénom"%>
@@ -33,16 +34,12 @@
                         input_html: { autocomplete: "email" }%>
             <%= f.input :password,
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password" } %>
-            <%= f.input :password_confirmation,
-                        required: true,
-                        input_html: { autocomplete: "new-password" } %>
+                        label: "Mot de passe",
+                        hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "mot de passe" } %>
           </div>
-          <br>
-          <br>
           <div class="form-actions custom-radio-buttons">
-            <%= f.button :submit, "Poursuivre", class: "bubbly-button" %>
+            <%= f.button :submit, "Poursuivre", class: "bubbly-button mt-4" %>
           </div>
         </div>
       </div>
