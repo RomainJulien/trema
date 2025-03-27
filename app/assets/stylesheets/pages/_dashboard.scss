@@ -142,17 +142,23 @@
 .dashboard-btn-primary {
   background: linear-gradient(to right, #FE9F6F, #DA4167);
   color: #333;
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
   border: 2px solid #231F20;
   border-radius: 12px;
 }
 
 .dashboard-btn-secondary {
   background: linear-gradient(to right, #7EBDC2, #FF8F6F);
-  color: white;
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
+  color: #2A1E5C;
 }
 
 .dashboard-quiz-btn {
   background: linear-gradient(to right, #7EBDC2, #FF8F6F);
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
   color: #2A1E5C;
 }
 
@@ -160,6 +166,8 @@
   background: linear-gradient(to left, #FE9F6F, #DA4167);
   color: #333;
   border: 2px solid #231F20;
+  font-family: "Chillax-Light" sans-serif;
+  font-weight: 300;
   border-radius: 12px;
 }
 

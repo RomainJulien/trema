@@ -2,13 +2,25 @@
 <html>
   <head>
     <title>Trema</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
+    <meta name="description" content="Construis ta reconversion professionnelle pas à pas grâce à une application claire, personnalisée et intuitive.">
+    <meta name="keywords" content="reconversion, formation, artisanat, métier, carrière, CPF, ébéniste, transition professionnelle">
+    <meta name="author" content="Trema Corp">
+
+    <meta property="og:title" content="Trema - Construis ton avenir">
+    <meta property="og:description" content="Visualise ton parcours pro étape par étape. Simple, ludique, et efficace.">
+    <meta property="og:image" content="<%= asset_url('back.png') %>">
+    <meta property="og:url" content="https://www.trema1918.xyz/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Trema - Construis ton avenir">
+    <meta name="twitter:description" content="Visualise ton parcours pro étape par étape. Simple, ludique, et efficace.">
+    <meta name="twitter:image" content="<%= asset_url('back.png') %>">
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" %>
-
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
-
     <link href="https://fonts.googleapis.com/css2?family=Chillax:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <%= javascript_include_tag "https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js" %>
     <%= javascript_importmap_tags %>
