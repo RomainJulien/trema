@@ -4,8 +4,8 @@
   .psy-profile-list {
     display: flex;
     flex-direction: column;
-    gap: 50px;
-    padding: 100px 0 50px; /* Ajusté pour retirer le padding latéral */
+    gap: 40px;
+    padding: 50px 0 30px; /* Ajusté pour retirer le padding latéral */
     width: 100%;
   }
 
@@ -30,6 +30,7 @@
 
   /* Rectangle de fond */
   .psy-profile-bg {
+    font-family: 'Chillax', sans-serif;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -69,8 +70,8 @@
 
 .psy-profile-content {
   flex: 1;
-  text-align: justify;
   padding: 80px;
+  color: #2A1E5C;
   z-index: 1;
 }
 
@@ -88,8 +89,8 @@
 
 /* Ajustement des images pour qu'elles restent à l'intérieur des rectangles */
 .psy-profile-image {
-  width: 500px; /* Taille contrôlée */
-  height: 300px; /* Taille fixe */
+  width: 550px; /* Taille contrôlée */
+  height: 330px; /* Taille fixe */
   object-fit: cover; /* Ajuste sans déformer */
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -102,7 +103,7 @@
   justify-content: space-between;
   width: 100%;
   min-height: 250px;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -119,19 +120,24 @@
 
 /* Style des textes */
 h3 {
-  font-size: 1.8rem;
-  color: #f6f6f6;
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-size: 2.8rem;
+  color: #2A1E5C;
+  margin-top: 20px;
 }
 
 p {
-  color: #f6f6f6;
+  font-family: 'Chillax-Light', sans-serif;
+  font-size: 2rem;
+  color: #2A1E5C;
   margin: 10px 0;
 }
 
 /* Bouton */
 .psy-btn-primary {
   display: inline-block;
-  font-size: 1em;
+  font-family: 'Chillax-Light', sans-serif;
+  font-size: 1.8em;
   padding: 1em 2em;
   margin: 100px 0 60px; // Simplification de margin-top et margin-bottom
   -webkit-appearance: none;
@@ -139,9 +145,9 @@ p {
 
   /* Style du bouton */
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #FFFFFF;
+  color: #2A1E5C;
   border-radius: 12px;
-  border: 2px solid #F6F6F6;
+  border: 2px solid #2A1E5C;
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -262,7 +268,7 @@ p {
 .psy-profile-header .psy-profile-content {
   flex: 2;
   text-align: left;
-  color: white;
+  color: #2A1E5C;
   padding: 20px;
   padding-left: 50px; /* Décalage du texte pour ne pas toucher le bord */
   z-index: 1; /* Devant le rectangle */
@@ -271,6 +277,7 @@ p {
 .psy-profile-header h2 {
   font-size: 2.5rem;
   font-weight: bold;
+  color: #2A1E5C;
 }
 
 .psy-profile-header p {
@@ -289,6 +296,23 @@ p {
 }
 
 .psy-profile-header .psy-profile-logo img {
-  max-height: 100px;
+  max-width: 75px;
   transform: scale(0.5);
+}
+
+.psy-logo img {
+  max-width: 70px;
+  height: auto;
+}
+
+.highlight {
+  color: #DA4167;
+  font-size: 70px;
+  font-family: 'Chillax-Bold', sans-serif;
+  text-shadow:
+    -1px -1px 0 #2A1E5C,
+     1px -1px 0 #2A1E5C,
+    -1px  1px 0 #2A1E5C,
+     1px  1px 0 #2A1E5C;
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.1));
 }

@@ -5,8 +5,8 @@
 
     <div class="psy-profile-bg">
       <div class="psy-profile-content">
-        <h2>Tu es <span class="highlight"><%= @psy_profile.name %></span> !</h2>
-        <p><%= @psy_profile.description %></p>
+        <h2><span class="highlight"><%= @psy_profile.name %></span> !</h2>
+        <p style= "font-size: 1.8em"><%= @psy_profile.description %></p>
       </div>
     </div>
 
@@ -22,8 +22,9 @@
       <div class="psy-profile-item <%= index.even? ? 'left' : 'right' %>">
         <div class="psy-profile-bg"></div>
           <div class="psy-profile-content">
-
-            <%= image_tag("psy_profiles_logo/#{job[:title].parameterize}.png", alt: job[:title]) %>
+            <div class ="psy-logo">
+              <%= image_tag("psy_profiles_logo/#{job[:title].parameterize}.png", alt: job[:title]) %>
+            </div>
             <h3><%= job[:title] %></h3> <%# Affichage du titre du métier %>
             <p><%= job[:description] %></p>
             <a href="<%= job_path(25) %>" class="psy-btn-primary">Regardez ce métier</a>
