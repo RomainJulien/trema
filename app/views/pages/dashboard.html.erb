@@ -42,7 +42,7 @@
           </div>
         <% end %>
 
-        <%= link_to "Je recommence le quizz", psy_profile_path(@psy_profile), class: "dashboard-quiz-btn" %>
+        <%= link_to "Les métiers du profil", psy_profile_path(@psy_profile), class: "dashboard-quiz-btn" %>
       </div>
 
       <!-- 🔹 Mon Profil -->
@@ -69,20 +69,33 @@
             <h2 class="dashboard-right-section-title">Mes métiers enregistrés</h2>
           </div>
           <div class="dashboard-job-featured">
-            <div id="job-featured"  data-action= "click->job#selectJob" >
-                <img src="<%= asset_path('ebeniste.png') %>" alt="Ébéniste" class="dashboard-job-featured-image">
+            <div id="job-featured">
+                <a href="/jobs/25" style="text-decoration: none;">
+                  <img src="<%= asset_path('ébéniste.jpg') %>" alt="Ébéniste" class="dashboard-job-featured-image">
                 <p class="dashboard-job-title">Ébéniste</p>
+                <span class="dashboard-description-right"> L’ébéniste est un artisan du bois spécialisé dans la conception, la fabrication et la restauration de meubles et d’éléments décoratifs. </span>
+                </a>
+                <br>
+                <div class="text-btn-container">
+                  <button class="dashboard-sidebar-btn" data-action= "click->job#selectJob"> + </button>
+                  <p> Ajouter à ma carrière </p>
+                </div>
             </div>
           </div>
           <!-- 3 blocs verticaux à droite -->
           <div class="dashboard-sidebar-1"><img src="<%= asset_path('cuisinier.png') %>" alt="Cuisinier" class="dashboard-job-featured-image"></div>
           <div class="dashboard-sidebar-2">
-            <p style="color: black;">Ajoute un nouveau métier</p>
-            <button class="dashboard-sidebar-btn"> + </button>
+
+            <p style="color: #2A1E5C;">Ajoute un nouveau métier</p>
+            <button onclick="window.location='<%= psy_profile_path(@psy_profile) %>'" class="dashboard-sidebar-btn">
+            +
+            </button>
           </div>
           <div class="dashboard-sidebar-3">
-            <p style="color: black;">Ajoute un nouveau métier</p>
-            <button class="dashboard-sidebar-btn"> + </button>
+            <p style="color: #2A1E5C;">Ajoute un nouveau métier</p>
+            <button onclick="window.location='<%= psy_profile_path(@psy_profile) %>'" class="dashboard-sidebar-btn">
+            +
+            </button>
           </div>
     </div>
   </div>

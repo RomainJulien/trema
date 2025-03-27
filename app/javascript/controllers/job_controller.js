@@ -10,11 +10,12 @@ export default class extends Controller {
     console.log("Sélection du métier déclenchée !");
     console.log("Cible trouvée :", this.careerTitleTarget); // Log de la cible
 
+    event.target.disabled = true; // Désactive le bouton
+
     if (!document.getElementById("selected-job")) {
       let newTextDiv = document.querySelector(".dashboard-career-header");
 
-      newTextDiv.insertAdjacentHTML("beforeend", "<span class= dashboard-profile-highlight> Ébéniste </span>");
-
+      newTextDiv.insertAdjacentHTML("beforeend", '<img src="/assets/psy_profiles_logo/ebeniste.png" class="dashboard-profile-logo"><span class="dashboard-profile-highlight"> Ébéniste </span>');
       /* newText.style.fontSize = "2em";
       newText.style.fontsize= 40px;// Taille exacte depuis Figma
       newText.style.fontWeight = "bold";
