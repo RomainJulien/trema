@@ -67,8 +67,9 @@
   color: #2A1E5C;
   cursor: pointer;
   text-align: center;
+  font-size: 25px;
   margin: 5px;
-  width: 600px;
+  width: 800px;
   position: relative;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
   box-shadow: 0 2px 25px rgba(126, 189, 194, 0.5);
@@ -109,10 +110,12 @@
 }
 
 .form-inputs {
-  position: relative;
-  top: 100px;
+  display: flex;
+  flex-direction: column;
+  bottom: 120px; /* Décale vers le bas */
+  right: 120px; /* Décale vers la droite */
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  width: 100%;
+  width: 30%;
   padding: 10px;
   font-size: 16px;
   border: 2px solid #2A1E5C;
@@ -121,8 +124,28 @@
   transition: border-color 0.3s ease-in-out;
 }
 
+.box-form-devise {
+  margin: 0 auto;
+    // margin-top: 12rem;
+}
+
+.data-navigate-quizz-target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .mb-3 {
-  margin-bottom: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quizz-page .custom-radio-buttons {

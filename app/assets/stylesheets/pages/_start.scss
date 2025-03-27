@@ -3,7 +3,6 @@ $start-text-color: #000000;
 $start-highlight-color: #52C8E9;
 $start-button-bg: #52C8E9;
 $start-button-hover-bg: #41A7C7;
-$start-font-primary: 'Chillax', sans-serif;
 
 .start-background-wrapper {
   position: relative;
@@ -35,30 +34,36 @@ $start-font-primary: 'Chillax', sans-serif;
 }
 
 .welcome-title {
+  font-family: 'Chillax-Semibold';
+  font-weight: 600;
   grid-area: 3 / 1 / 6 / 6;
   padding-left: 120px;
   font-weight: 700;
-  color: #231F20;
-  text-shadow: -2px -2px 0 #DB4367, 2px -2px 0 #DB4367, -2px 2px 0 #DB4367, 2px 2px 0 #DB4367;
+  color: #2A1E5C;
   z-index: 9;
   display: block;
   width: max-content;
 }
 
 .psytitleh1 {
-  font-size: 4rem;
+  font-family: 'Chillax-Semibold';
+  font-size: 8rem;
 }
 
 
 .start-description-container {
-  grid-area: 5 / 1 / 6 / 5;
-  padding-left: 120px;
-  padding-bottom: 40px;
+  grid-area: 5 / 2 / 6 / 6;
+  padding-left: 200px;
+  padding-bottom: -20px;
+  margin-left: 100px;
   /*  max-width: 100%; */
   font-size: 1.4rem;
-  font-weight: 400;
-  color: #2A1E5C;
   z-index: 3;
+}
+
+.start-description {
+  color: #2A1E5C;
+  font-size: 2em;
 }
 
 .start-logo-container {
@@ -71,7 +76,9 @@ $start-font-primary: 'Chillax', sans-serif;
 }
 
 .start-cta-container {
-  grid-area: 6 / 4 / 6 / 7;
+  grid-area: 6 / 2 / 6 / 6;
+  margin-left: -20px;
+  transform: translateY(-40px);
   z-index: 3;
   /*  width: 300px */
   /*  position: relative;*/
@@ -80,19 +87,20 @@ $start-font-primary: 'Chillax', sans-serif;
 }
 
 .start-zenflow {
-  grid-area: 7 / 6 / 6 / 9;
+  grid-area: 6 / 5 / 7 / 9;
   z-index: 3;
   justify-self: end;
   /*  position: relative;*/
   /*  bottom: 30px;*/
   /*right: 30px;  */
-
 }
 
 
 .start-highlight {
-  color: #7EBDC2;
-  font-weight: 700;
+  font-family: 'Chillax-Semibold';
+  color: #DB4367;
+  font-weight: 600;
+  text-shadow: -2px -2px 0 #2A1E5C, 2px -2px 0 #2A1E5C, -2px 2px 0 #2A1E5C, 2px 2px 0 #2A1E5C;
 }
 
 .start-cta-text {
@@ -103,7 +111,7 @@ $start-font-primary: 'Chillax', sans-serif;
 
 .bubbly-button {
   display: inline-block;
-  font-size: 1em;
+  font-size: 2em;
   padding: 1em 2em;
   margin-top: 100px;
   margin-bottom: 60px;

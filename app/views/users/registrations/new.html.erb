@@ -19,7 +19,7 @@
 
         <!-- Ici les champs pour enregistrer l'user -->
         <div class="d-none" data-navigate-quizz-target="quizz">
-          <div class="form-inputs">
+          <div class="form-inputs box-form-devise">
             <%= f.input :first_name,
                         required: true,
                         label: "Prénom"%>
@@ -34,13 +34,12 @@
                         input_html: { autocomplete: "email" }%>
             <%= f.input :password,
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        label: "Mot de passe",
+                        hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                         input_html: { autocomplete: "mot de passe" } %>
           </div>
-          <br>
-          <br>
           <div class="form-actions custom-radio-buttons">
-            <%= f.button :submit, "Poursuivre", class: "bubbly-button" %>
+            <%= f.button :submit, "Poursuivre", class: "bubbly-button mt-4" %>
           </div>
         </div>
       </div>
