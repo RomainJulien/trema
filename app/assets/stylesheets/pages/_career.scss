@@ -1,28 +1,32 @@
-/* 🔹 Styles spécifiques à la page career#show */
-
-/* En-tête */
 .career-title {
-  font-size: clamp(50px, 10vw, 80px);
-  font-weight: 900;
-  color: #fff;
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-weight: 600;
+  font-size: 96px;
+  line-height: 120%;
+  letter-spacing: 0.2px;
+  color: #DB4367;
   text-align: center;
+  position: relative;
   margin-top: 40px;
+  text-shadow:
+    -1px -1px 0 #2A1E5C,
+     1px -1px 0 #2A1E5C,
+    -1px  1px 0 #2A1E5C,
+     1px  1px 0 #2A1E5C;
+  filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.2));
 }
 
 .career-section-title {
-  font-size: clamp(32px, 6vw, 64px);
-  font-weight: 900;
-  color: #7EBDC2;
-  text-shadow:
-    -2px -2px 0 #DA4167,
-     2px -2px 0 #DA4167,
-    -2px  2px 0 #DA4167,
-     2px  2px 0 #DA4167;
+  font-family: 'Chillax-Semibold', sans-serif;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 120%;
+  letter-spacing: 0.2px;
+  color: #2A1E5C;
   margin: 0 0 10px 55%;
   width: fit-content;
 }
 
-/* Étapes */
 .career-steps {
   .steps-list {
     display: flex;
@@ -33,6 +37,7 @@
   }
 
   .career-step-item {
+    display: none;
     position: relative;
     align-items: center;
     justify-content: space-between;
@@ -41,23 +46,20 @@
     padding: 0;
     overflow: visible;
     opacity: 0;
-    visibility: hidden;
     transform: translateY(20px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 
     &.left {
-      display: flex;
       flex-direction: row;
     }
 
     &.right {
-      display: flex;
       flex-direction: row-reverse;
     }
 
     &.show {
+      display: flex;
       opacity: 1;
-      visibility: visible;
       transform: translateY(0);
     }
 
@@ -91,13 +93,27 @@
 
     .career-step-content {
       max-width: 700px;
+      margin-left: 30px;
       padding: 20px;
       z-index: 1;
 
       h3 {
-        font-size: 1.8rem;
-        color: #fff;
-        margin-bottom: 15px;
+        font-family: 'Chillax-Semibold', sans-serif;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        color: #2A1E5C;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-family: 'Chillax-Regular', sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        color: #2A1E5C;
       }
     }
 
@@ -112,15 +128,14 @@
       }
 
       .career-step-button {
-        width: 60px;
-        height: 60px;
-        background-color: #DA4167;
-        color: white;
-        font-size: 1.2rem;
-        font-weight: bold;
+        width: 70px;
+        height: 70px;
+        background-image: image-url("btn-step-r.png");
+        background-color: transparent;
+        background-size: cover;
+        background-position: center;
         border: none;
         border-radius: 12px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -128,16 +143,12 @@
         transition: all 0.3s ease;
         position: relative;
         margin: 15px;
-
-        &::before {
-          transition: opacity 0.3s ease;
-          opacity: 0;
-        }
-      }
-
-      .career-step-checkbox:checked + .career-step-button {
-        background-color: #7EBDC2;
-        color: transparent;
+        font-family: 'Chillax-Medium', sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 140%;
+        letter-spacing: 0.2px;
+        color: #2A1E5C;
 
         &::before {
           content: "✓";
@@ -147,8 +158,19 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+      }
+
+      .career-step-checkbox:checked + .career-step-button {
+        background-image: image-url("btn-step.png");
+
+        &::before {
           opacity: 1;
         }
+
+        color: transparent;
       }
     }
 
@@ -173,48 +195,44 @@
   }
 }
 
-/* Boutons bas de page */
-.btn-links-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  margin-top: 30px;
-  max-width: 300px;
-}
-
-.haut-page-link,
-.tableau-de-bord {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #DB4467;
-  gap: 8px;
-  font-size: 1rem;
-  text-decoration: none;
-  justify-content: center;
-
-  span {
-    margin-top: 5px;
-  }
-
-  img {
-    height: 36px;
-    width: auto;
-    display: block;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-/* Bouton ajouter une étape */
 .add-step-wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 40px 0;
+  min-width: 220px;
+  z-index: 2;
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    filter 0.25s ease;
+
+  &:hover {
+    transform: translateY(-54%);
+    opacity: 0.95;
+    filter: brightness(1.05);
+  }
+
+  &:active {
+    transform: translateY(-48%);
+    filter: brightness(0.97);
+  }
+
+  &.left {
+    left: 0;
+    flex-direction: row;
+    margin-left: 30px;
+    justify-content: flex-start;
+  }
+
+  &.right {
+    right: 0;
+    margin-right: 30px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
 }
 
 .plus-icon {
@@ -226,10 +244,84 @@
 }
 
 .add-step-label {
-  font-family: 'Chillax', sans-serif;
+  font-family: 'Chillax-Medium', sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 140%;
   letter-spacing: 0.2px;
-  color: #F6F6F6;
+  color: #2A1E5C;
+}
+
+.step-row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 280px;
+
+  .career-step-item {
+    flex-grow: 1;
+  }
+}
+
+.btn-links-wrapper-x {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  margin: 40px auto 0 auto;
+  width: fit-content;
+  position: relative;
+  bottom: 0;
+}
+
+.haut-page-link,
+.tableau-de-bord {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    filter 0.25s ease;
+
+  span {
+    font-family: 'Chillax-Regular', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+    letter-spacing: 0.2px;
+    color: #2A1E5C;
+  }
+
+  img {
+    height: 36px;
+    width: auto;
+    display: block;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+    text-decoration: none;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    filter: brightness(0.95);
+  }
+}
+
+.step-row:not(:first-child) {
+  display: none;
+}
+
+.career-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

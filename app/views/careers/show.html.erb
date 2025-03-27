@@ -1,122 +1,114 @@
-<div class="career-header">
-  <h1 class="career-title">Ma Carrière</h1>
-</div>
-
-<h2 class="career-section-title">Ebéniste</h2>
-
-<!-- Bouton Ajouter une étape -->
-<div class="add-step-wrapper" id="add-step-trigger">
-  <%= image_tag "bouton_plus.png", alt: "Ajouter une étape", class: "plus-icon" %>
-  <span class="add-step-label">Ajouter une étape</span>
-</div>
-
-<div class="career-steps">
-  <div class="steps-list" id="career-steps">
-
-    <!-- Étape 1 -->
-    <div class="career-step-item left">
-      <div class="career-step-background"></div>
-      <div class="career-step-content">
-        <h3>Construire son plan d'action</h3>
-        <p>
-          Réfléchir à son projet : pourquoi devenir ébéniste ? Est-ce une passion, une envie de travailler le bois, de créer de ses mains ? Faire un bilan de compétences pour identifier ses atouts et les savoir-faire à acquérir dans l’artisanat.
-        </p>
-      </div>
-      <label class="career-step-toggle">
-        <input type="checkbox" class="career-step-checkbox" />
-        <span class="career-step-button" data-step="1">1</span>
-      </label>
-      <div class="career-step-image">
-        <%= image_tag "construire-plan-action.jpg", alt: "action_plan", class: "career-step-image" %>
-      </div>
-    </div>
-
-    <!-- Étape 2 -->
-    <div class="career-step-item right">
-      <div class="career-step-background"></div>
-      <div class="career-step-content">
-        <h3>Trouver sa formation</h3>
-        <p>
-          Choisir un parcours adapté : CAP Ébéniste, Bac pro Artisanat et métiers d’art, formations spécialisées… disponibles en présentiel ou en ligne.
-        </p>
-      </div>
-      <label class="career-step-toggle">
-        <input type="checkbox" class="career-step-checkbox" />
-        <span class="career-step-button" data-step="2">2</span>
-      </label>
-      <div class="career-step-image">
-        <%= image_tag "formation.jpeg", alt: "formation", class: "career-step-image" %>
-      </div>
-    </div>
-
-    <!-- Étape 3 -->
-    <div class="career-step-item left">
-      <div class="career-step-background"></div>
-      <div class="career-step-content">
-        <h3>Financer sa reconversion</h3>
-        <p>
-          CPF, aides Pôle Emploi, Projet de Transition Pro, aides régionales… plusieurs solutions existent pour prendre en charge tout ou partie du coût.
-        </p>
-      </div>
-      <label class="career-step-toggle">
-        <input type="checkbox" class="career-step-checkbox" />
-        <span class="career-step-button" data-step="3">3</span>
-      </label>
-      <div class="career-step-image">
-        <%= image_tag "financement_reconversion.png", alt: "fin_rec", class: "career-step-image" %>
-      </div>
-    </div>
-
-    <!-- Étape 4 -->
-    <div class="career-step-item right">
-      <div class="career-step-background"></div>
-      <div class="career-step-content">
-        <h3>Commencer son apprentissage</h3>
-        <p>
-          CFA, écoles spécialisées, maître d’apprentissage… pour apprendre en conditions réelles, tout en étant rémunéré.
-        </p>
-      </div>
-      <label class="career-step-toggle">
-        <input type="checkbox" class="career-step-checkbox" />
-        <span class="career-step-button" data-step="4">4</span>
-      </label>
-      <div class="career-step-image">
-        <%= image_tag "ebeniste.jpg", alt: "apprentissage", class: "career-step-image" %>
-      </div>
-    </div>
-
-    <!-- Étape 5 -->
-    <div class="career-step-item left">
-      <div class="career-step-background"></div>
-      <div class="career-step-content">
-        <h3>Je travaille</h3>
-        <p>
-          Formation tout en travaillant : cours du soir, à distance ou en alternance avec le CPF de transition.
-        </p>
-      </div>
-      <label class="career-step-toggle">
-        <input type="checkbox" class="career-step-checkbox" />
-        <span class="career-step-button" data-step="5">5</span>
-      </label>
-      <div class="career-step-image">
-        <%= image_tag "hired.jpg", alt: "apprentissage", class: "career-step-image" %>
-      </div>
-    </div>
-
+<div class="career-page">
+  <div class="career-header">
+    <h1 class="career-title">Ma Carrière</h1>
   </div>
-</div>
 
-<!-- Liens bas de page -->
-<div class="btn-links-wrapper">
-  <%= link_to "#", class: "haut-page-link" do %>
-    <%= image_tag "arrow-up.svg", alt: "flèche vers le haut" %>
-    <span>(haut de page)</span>
-  <% end %>
+  <h2 class="career-section-title">Ebéniste</h2>
 
-  <%= link_to dashboard_path, class: "tableau-de-bord" do %>
-    <%= image_tag "Logo.png", alt: "retour tableau de bord" %>
-    <span>(tableau de bord)</span>
-  <% end %>
+  <div class="career-steps">
+    <div class="steps-list" id="career-steps">
+      <div class="step-row">
+        <div class="career-step-item left">
+          <div class="career-step-background"></div>
+          <div class="career-step-content">
+            <h3>Construire son plan d'action</h3>
+            <p>Réfléchir à son projet : pourquoi devenir ébéniste ? Est-ce une passion, une envie de travailler le bois, de créer de ses mains ? Faire un bilan de compétences pour identifier ses atouts et les savoir-faire à acquérir dans l’artisanat.</p>
+          </div>
+          <label class="career-step-toggle">
+            <input type="checkbox" class="career-step-checkbox" />
+            <span class="career-step-button" data-step="1">1</span>
+          </label>
+          <div class="career-step-image">
+            <%= image_tag "construire-plan-action.jpg", alt: "action_plan", class: "career-step-image" %>
+          </div>
+        </div>
+        <div class="add-step-wrapper left" id="add-step-trigger">
+          <%= image_tag "bouton_plus.png", alt: "Ajouter une étape", class: "plus-icon" %>
+          <span class="add-step-label">Ajouter une étape</span>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="career-step-item right">
+          <div class="career-step-background"></div>
+          <div class="career-step-content">
+            <h3>Trouver sa formation</h3>
+            <p>Choisir un parcours adapté : CAP Ébéniste, Bac pro Artisanat et métiers d’art, formations spécialisées… disponibles en présentiel ou en ligne.</p>
+          </div>
+          <label class="career-step-toggle">
+            <input type="checkbox" class="career-step-checkbox" />
+            <span class="career-step-button" data-step="2">2</span>
+          </label>
+          <div class="career-step-image">
+            <%= image_tag "formation.jpeg", alt: "formation", class: "career-step-image" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="career-step-item left">
+          <div class="career-step-background"></div>
+          <div class="career-step-content">
+            <h3>Financer sa reconversion</h3>
+            <p>CPF, aides Pôle Emploi, Projet de Transition Pro, aides régionales… plusieurs solutions existent pour prendre en charge tout ou partie du coût.</p>
+          </div>
+          <label class="career-step-toggle">
+            <input type="checkbox" class="career-step-checkbox" />
+            <span class="career-step-button" data-step="3">3</span>
+          </label>
+          <div class="career-step-image">
+            <%= image_tag "financement_reconversion.png", alt: "fin_rec", class: "career-step-image" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="career-step-item right">
+          <div class="career-step-background"></div>
+          <div class="career-step-content">
+            <h3>Commencer son apprentissage</h3>
+            <p>CFA, écoles spécialisées, maître d’apprentissage… pour apprendre en conditions réelles, tout en étant rémunéré.</p>
+          </div>
+          <label class="career-step-toggle">
+            <input type="checkbox" class="career-step-checkbox" />
+            <span class="career-step-button" data-step="4">4</span>
+          </label>
+          <div class="career-step-image">
+            <%= image_tag "ebeniste.jpg", alt: "apprentissage", class: "career-step-image" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-row">
+        <div class="career-step-item left">
+          <div class="career-step-background"></div>
+          <div class="career-step-content">
+            <h3>Je travaille</h3>
+            <p>Formation tout en travaillant : cours du soir, à distance ou en alternance avec le CPF de transition.</p>
+          </div>
+          <label class="career-step-toggle">
+            <input type="checkbox" class="career-step-checkbox" />
+            <span class="career-step-button" data-step="5">5</span>
+          </label>
+          <div class="career-step-image">
+            <%= image_tag "hired.jpg", alt: "apprentissage", class: "career-step-image" %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="btn-links-wrapper-x">
+    <%= link_to "#", class: "haut-page-link" do %>
+      <%= image_tag "arrow-up.png", alt: "flèche vers le haut" %>
+      <span>Haut de page</span>
+    <% end %>
+    <%= link_to dashboard_path, class: "tableau-de-bord" do %>
+      <%= image_tag "x-file.png", alt: "retour tableau de bord" %>
+      <span>Tableau de bord</span>
+    <% end %>
+  </div>
 </div>
 
 <script>
@@ -124,14 +116,32 @@ document.addEventListener("turbo:load", () => {
   const trigger = document.getElementById("add-step-trigger");
   const steps = document.querySelectorAll(".career-step-item");
   let currentStep = 0;
-
   if (!trigger) return;
+
+  const updateTriggerPosition = (step) => {
+    const isLeft = step.classList.contains("left");
+    const row = step.parentElement;
+    row.classList.add("visible");
+    trigger.classList.remove("left", "right");
+    trigger.classList.add(isLeft ? "right" : "left");
+    if (isLeft) {
+      row.appendChild(trigger);
+    } else {
+      row.insertBefore(trigger, row.firstChild);
+    }
+  };
 
   trigger.addEventListener("click", () => {
     if (currentStep < steps.length) {
-      steps[currentStep].classList.add("show"); // ✅ transition visible
+      const step = steps[currentStep];
+      step.classList.add("show");
+      const stepRow = step.closest(".step-row");
+      if (stepRow) {
+        stepRow.style.display = "flex";
+        stepRow.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      updateTriggerPosition(step);
       currentStep++;
-
       if (currentStep === steps.length) {
         trigger.style.display = "none";
       }

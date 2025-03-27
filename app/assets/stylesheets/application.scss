@@ -56,6 +56,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Chillax-Medium';
+  src: url(asset-path('Chillax-Medium.woff2')) format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 body {
   background: linear-gradient(to bottom, #F9B872, #FF9F6F);
