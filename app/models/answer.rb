@@ -6,7 +6,7 @@ class Answer < ApplicationRecord
 
   QUIZZ = [
     {
-      question: "Tu démarres une nouvelle activité, tu préfères :",
+      question: "1/6 - Tu démarres une nouvelle activité, tu préfères :",
       answers: {
         "Suivre un plan précis et organisé." => 1,
         "Expérimenter et ajuster au fur et à mesure." => 2,
@@ -16,7 +16,7 @@ class Answer < ApplicationRecord
       }
     },
     {
-      question: "Dans un projet, tu es plutôt :",
+      question: "2/6 - Dans un projet, tu es plutôt :",
       answers: {
         "Celui/celle qui structure et planifie tout." => 1,
         " Celui/celle qui explore toutes les possibilités." => 2,
@@ -26,7 +26,7 @@ class Answer < ApplicationRecord
       }
     },
     {
-      question: "Ton environnement de travail idéal, c’est :",
+      question: "3/6 - Ton environnement de travail idéal, c’est :",
       answers: {
         "Stable, avec des règles claires et des objectifs précis." => 1,
         "Flexible, où tu peux tester différentes choses." => 2,
@@ -36,7 +36,7 @@ class Answer < ApplicationRecord
       }
     },
     {
-      question: "On te décrit plutôt comme quelqu’un de :",
+      question: "4/6 - On te décrit plutôt comme quelqu’un de :",
       answers: {
         "Fiable et organisé(e)." => 1,
         "Curieux(se) et analytique." => 2,
@@ -46,7 +46,7 @@ class Answer < ApplicationRecord
       }
     },
     {
-      question: "Quand tu dois apprendre quelque chose de nouveau, tu préfères :",
+      question: "5/6 - Quand tu dois apprendre quelque chose de nouveau, tu préfères :",
       answers: {
         "Suivre une formation bien structurée." => 1,
         "Lire, faire des recherches, creuser à fond." => 2,
@@ -56,7 +56,7 @@ class Answer < ApplicationRecord
       }
     },
     {
-      question: "Ton plus grand atout, c’est :",
+      question: "6/6 - Ton plus grand atout, c’est :",
       answers: {
         "Ta rigueur et ton sens de l’organisation." => 1,
         "Ta curiosité et ton esprit d’analyse." => 2,

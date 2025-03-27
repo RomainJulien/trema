@@ -28,20 +28,33 @@
 
 .quizz-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 90px;
   margin: 2rem 0;
   padding: 1rem;
   font-family: 'Chillax-Semibold', sans-serif;
   font-weight: 600;
-  color: #F6F6F6;
+  color: #2A1E5C;
 
 }
 
-.custom-radio-buttons {
+.quizz-sous-title {
+  font-size: 2rem;
+  font-family: 'Chillax-Light', sans-serif;
+  font-weight: 400;
+  color: #2A1E5C;
   position: relative;
-  display: flex;
-  width: 100%; /* Prendre toute la largeur de la carte */
-  margin: 0 auto;
+  top: -60px;
+  right: -410px;
+}
+
+.quizzes {
+  width: 1200px;
+}
+
+.custom-radio-buttons {
+  width: 100%;
+  // margin: 0 auto;
+  // align-items: center;
 }
 
 .custom-radio-buttons input[type="radio"] {
@@ -51,16 +64,17 @@
 .custom-radio-buttons label {
   padding: 15px 20px;
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #F6F6F6;
+  color: #2A1E5C;
   cursor: pointer;
   text-align: center;
+  font-size: 25px;
   margin: 5px;
-  width: 600px;
+  width: 800px;
   position: relative;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
   box-shadow: 0 2px 25px rgba(126, 189, 194, 0.5);
   border-radius: 12px;
-  border: 2px solid #F6F6F6;
+  border: 2px solid #2A1E5C;
 }
 
 .custom-radio-buttons label:hover {
@@ -79,17 +93,11 @@
   animation: topBubbles ease-in-out 0.75s forwards;
 }
 
-.custom-radio-buttons-left label {
-  justify-content: flex-start;
-}
-
-.custom-radio-buttons-right label {
-  justify-content: flex-end;
-}
-
 .chillax-text-question {
   font-family: 'Chillax-Semibold', sans-serif;
   font-weight: 600;
+  color: #2A1E5C;
+  font-size: 3rem;
 }
 
 .chillax-text-answer {
@@ -97,21 +105,47 @@
   font-weight: 300;
 }
 
+.chillax-text-question, .chillax-text-answer {
+  text-align: center;
+}
+
 .form-inputs {
-  position: relative;
-  top: 100px;
+  display: flex;
+  flex-direction: column;
+  bottom: 120px; /* Décale vers le bas */
+  right: 120px; /* Décale vers la droite */
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  width: 100%;
+  width: 30%;
   padding: 10px;
   font-size: 16px;
-  border: 2px solid #F6F6F6;
+  border: 2px solid #2A1E5C;
   border-radius: 12px;
   outline: none;
   transition: border-color 0.3s ease-in-out;
 }
 
+.box-form-devise {
+  margin: 0 auto;
+    // margin-top: 12rem;
+}
+
+.data-navigate-quizz-target {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .mb-3 {
-  margin-bottom: 0.5rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.quizz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quizz-page .custom-radio-buttons {
@@ -122,7 +156,7 @@
   margin: 20px auto;
   text-align: center;
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #F6F6F6;
+  color: #2A1E5C;
   font-size: 1.5rem;
   font-family: 'Chillax', sans-serif;
   font-weight: 600;
