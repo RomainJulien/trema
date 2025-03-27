@@ -55,13 +55,14 @@ $start-button-hover-bg: #41A7C7;
   grid-area: 5 / 2 / 6 / 6;
   padding-left: 200px;
   padding-bottom: -20px;
-  margin-left: 100px;
+  margin-left: 50px;
   /*  max-width: 100%; */
   font-size: 1.4rem;
   z-index: 3;
 }
 
 .start-description {
+  font-family: 'Chillax-Regular';
   color: #2A1E5C;
   font-size: 2em;
 }
@@ -110,6 +111,7 @@ $start-button-hover-bg: #41A7C7;
 }
 
 .bubbly-button {
+  font-family: 'Chillax-Light' !important;
   display: inline-block;
   font-size: 2em;
   padding: 1em 2em;
@@ -248,6 +250,7 @@ $start-button-hover-bg: #41A7C7;
 .bubbly-button,
 input[type="submit"].bubbly-button,
 button.bubbly-button {
+  font-family: 'Chillax-Light' !important;
   display: inline-block;
   font-size: 2em;
   padding: 1em 2em;
