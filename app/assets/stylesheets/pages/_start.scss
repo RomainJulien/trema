@@ -57,7 +57,7 @@ $start-font-primary: 'Chillax', sans-serif;
   /*  max-width: 100%; */
   font-size: 1.4rem;
   font-weight: 400;
-  color: #F0F0F6;
+  color: #2A1E5C;
   z-index: 3;
 }
 
@@ -98,7 +98,7 @@ $start-font-primary: 'Chillax', sans-serif;
 .start-cta-text {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #F6F6F6;
+  color: #2A1E5C;
 }
 
 .bubbly-button {
@@ -112,10 +112,10 @@ $start-font-primary: 'Chillax', sans-serif;
 
   /* Gradient background */
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #FFFFFF;
+  color: #2A1E5C;
 
   border-radius: 12px;
-  border: 2px solid #F6F6F6;
+  border: 2px solid #2A1E5C;
   cursor: pointer;
   position: relative;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
@@ -241,7 +241,7 @@ $start-font-primary: 'Chillax', sans-serif;
 input[type="submit"].bubbly-button,
 button.bubbly-button {
   display: inline-block;
-  font-size: 1em;
+  font-size: 2em;
   padding: 1em 2em;
   margin-top: 100px;
   margin-bottom: 60px;
@@ -250,10 +250,10 @@ button.bubbly-button {
 
   /* Gradient background */
   background: linear-gradient(90deg, #7EBDC2, #FF9F6F);
-  color: #FFFFFF;
+  color: #2A1E5C;
 
   border-radius: 12px;
-  border: 2px solid #F6F6F6;
+  border: 2px solid #2A1E5C;
   cursor: pointer;
   position: relative;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
